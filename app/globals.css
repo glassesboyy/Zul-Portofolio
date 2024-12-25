@@ -1,0 +1,149 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+  background-color: hsl(240 50% 10%); /* match dengan --background */
+}
+
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  z-index: 0;
+  opacity: 0.6;
+  mix-blend-mode: screen;
+}
+
+body::before {
+  background: var(--third-glow);
+  border-radius: 50%;
+  width: 40vw; /* ukuran lebih kecil */
+  height: 40vw;
+  top: -10vw; /* posisi lebih dekat */
+  right: -10vw;
+  filter: blur(80px); /* blur lebih kecil */
+  animation: animateBefore 10s cubic-bezier(0.47, 0, 0.745, 0.715) infinite;
+}
+
+body::after {
+  background: var(--secondary-glow);
+  border-radius: 50%;
+  width: 35vw; /* ukuran lebih kecil */
+  height: 35vw;
+  bottom: -5vw; /* posisi lebih dekat */
+  left: -5vw;
+  filter: blur(80px);
+  animation: animateAfter 10s cubic-bezier(0.47, 0, 0.745, 0.715) infinite;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@layer base {
+  :root {
+    --background: 240 50% 10%; /* ubah background menjadi lebih terang */
+    --foreground: 180 20% 96%;
+    --card: 260 50% 5%;
+    --card-foreground: 180 20% 96%;
+    --popover: 260 50% 5%;
+    --popover-foreground: 180 20% 96%;
+    --primary: 187 100% 42%; /* cyan primary */
+    --primary-foreground: 180 20% 96%;
+    --secondary: 260 30% 15%;
+    --secondary-foreground: 180 20% 96%;
+    --muted: 260 30% 15%;
+    --muted-foreground: 180 20% 60%;
+    --accent: 270 75% 60%; /* purple accent */
+    --accent-foreground: 180 20% 96%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 180 20% 96%;
+    --border: 260 30% 15%;
+    --input: 260 30% 15%;
+    --ring: 187 100% 42%;
+
+    --secondary-glow: conic-gradient(
+      from 0deg at 50% 50%,
+      #60a5fa 0deg,
+      /* blue-400 */ #2dd4bf 90deg,
+      /* teal-400 */ #818cf8 180deg,
+      /* indigo-400 */ #c084fc 270deg,
+      /* purple-400 */ #60a5fa 360deg
+    );
+
+    --third-glow: conic-gradient(
+      from 180deg at 50% 50%,
+      #7c3aed 0deg,
+      /* violet-600 */ #2563eb 90deg,
+      /* blue-600 */ #0d9488 180deg,
+      /* teal-600 */ #4f46e5 270deg,
+      /* indigo-600 */ #7c3aed 360deg
+    );
+  }
+  .dark {
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 0% 83.1%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+  }
+}
+
+@keyframes animateBefore {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(200px) scale(0.8);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes animateAfter {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-250px) scale(1.2);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
