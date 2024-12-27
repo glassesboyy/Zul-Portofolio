@@ -1,13 +1,13 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import {
   fadeInUp,
   heroImageAnimation,
-  infiniteTextContainer,
   infiniteTextAnimation,
+  infiniteTextContainer,
 } from "@/lib/animations";
+import { motion } from "framer-motion";
 
 export function Hero() {
   const title = "Zul Personal Website".split("");
