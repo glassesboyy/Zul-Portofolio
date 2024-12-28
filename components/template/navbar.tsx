@@ -1,50 +1,87 @@
 "use client";
 
-import { motion } from "framer-motion";
 import {
   NavigationMenu,
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
 } from "@/components/ui/navigation-menu";
-import {
-  navAnimation,
-  navItemAnimation,
-  staggerContainer,
-} from "@/lib/animations";
+import gsap from "gsap";
+import { useEffect, useRef } from "react";
 
 export function Navbar() {
+  const headerRef = useRef(null);
+  const menuItemsRef = useRef<(HTMLDivElement | null)[]>([]);
+
+  useEffect(() => {
+    const tl = gsap.timeline();
+
+    // Navbar animation
+    tl.fromTo(
+      headerRef.current,
+      {
+        y: -100,
+        opacity: 0,
+        backdropFilter: "blur(0px)",
+      },
+      {
+        y: 0,
+        opacity: 1,
+        backdropFilter: "blur(10px)",
+        duration: 1.2,
+        ease: "power3.out",
+      }
+    );
+
+    // Menu items animation
+    menuItemsRef.current.forEach((item, index) => {
+      tl.fromTo(
+        item,
+        {
+          y: -30,
+          opacity: 0,
+          scale: 0.8,
+          rotation: -15,
+        },
+        {
+          y: 0,
+          opacity: 1,
+          scale: 1,
+          rotation: 0,
+          duration: 0.6,
+          ease: "back.out(1.7)",
+        },
+        `-=${index ? 0.4 : 0}`
+      );
+    });
+  }, []);
+
   return (
-    <motion.header
-      initial="initial"
-      animate="animate"
-      variants={navAnimation}
+    <header
+      ref={headerRef}
       className="sticky top-0 z-50 w-full justify-items-center border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60"
     >
       <div className="container flex h-14 items-center">
         <NavigationMenu className="mx-auto">
-          <motion.div variants={staggerContainer}>
-            <NavigationMenuList>
-              {["Home", "About", "Projects", "Skills", "Contact"].map(
-                (item, i) => (
-                  <motion.div
-                    key={item}
-                    variants={navItemAnimation}
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.95 }}
-                  >
-                    <NavigationMenuItem>
-                      <NavigationMenuLink className="transisition duration-300 cursor-pointer group inline-flex h-9 w-max items-center justify-center rounded-full bg-background px-4 py-2 text-sm font-medium transition-colors hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50">
-                        {item}
-                      </NavigationMenuLink>
-                    </NavigationMenuItem>
-                  </motion.div>
-                )
-              )}
-            </NavigationMenuList>
-          </motion.div>
+          <NavigationMenuList>
+            {["Home", "About", "Projects", "Skills", "Contact"].map(
+              (item, i) => (
+                <div
+                  key={item}
+                  ref={(el) => {
+                    menuItemsRef.current[i] = el;
+                  }}
+                  className="relative"
+                >
+                  <NavigationMenuItem>
+                    <NavigationMenuLink>{item}</NavigationMenuLink>
+                  </NavigationMenuItem>
+                </div>
+              )
+            )}
+          </NavigationMenuList>
         </NavigationMenu>
       </div>
-    </motion.header>
+    </header>
   );
 }
