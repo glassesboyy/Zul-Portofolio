@@ -84,14 +84,14 @@ export function Hero() {
               </Avatar>
             </div>
 
-            <h1 className="scroll-m-20 text-5xl font-extrabold lg:text-8xl mt-8">
+            <h1 className="cursor-pointer scroll-m-20 text-5xl font-extrabold lg:text-8xl mt-8">
               {title.map((char, index) => (
                 <span
                   key={index}
                   ref={(el) => {
                     if (el) titleCharsRef.current[index] = el;
                   }}
-                  className="inline-block opacity-100"
+                  className="inline-block opacity-100 hover:text-cyan-500 transition-colors duration-500"
                   style={{ display: "inline-block" }}
                 >
                   {char === " " ? "\u00A0" : char}
