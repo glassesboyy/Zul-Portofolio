@@ -10,37 +10,6 @@ body {
   background-color: hsl(240 50% 10%); /* match dengan --background */
 }
 
-body::before,
-body::after {
-  content: "";
-  position: fixed;
-  z-index: 0;
-  opacity: 0.6;
-  mix-blend-mode: screen;
-}
-
-body::before {
-  background: var(--third-glow);
-  border-radius: 50%;
-  width: 40vw; /* ukuran lebih kecil */
-  height: 40vw;
-  top: -10vw; /* posisi lebih dekat */
-  right: -10vw;
-  filter: blur(80px); /* blur lebih kecil */
-  animation: animateBefore 10s cubic-bezier(0.47, 0, 0.745, 0.715) infinite;
-}
-
-body::after {
-  background: var(--secondary-glow);
-  border-radius: 50%;
-  width: 35vw; /* ukuran lebih kecil */
-  height: 35vw;
-  bottom: -5vw; /* posisi lebih dekat */
-  left: -5vw;
-  filter: blur(80px);
-  animation: animateAfter 10s cubic-bezier(0.47, 0, 0.745, 0.715) infinite;
-}
-
 @layer utilities {
   .text-balance {
     text-wrap: balance;
@@ -68,24 +37,8 @@ body::after {
     --border: 260 30% 15%;
     --input: 260 30% 15%;
     --ring: 187 100% 42%;
-
-    --secondary-glow: conic-gradient(
-      from 0deg at 50% 50%,
-      #60a5fa 0deg,
-      /* blue-400 */ #2dd4bf 90deg,
-      /* teal-400 */ #818cf8 180deg,
-      /* indigo-400 */ #c084fc 270deg,
-      /* purple-400 */ #60a5fa 360deg
-    );
-
-    --third-glow: conic-gradient(
-      from 180deg at 50% 50%,
-      #7c3aed 0deg,
-      /* violet-600 */ #2563eb 90deg,
-      /* blue-600 */ #0d9488 180deg,
-      /* teal-600 */ #4f46e5 270deg,
-      /* indigo-600 */ #7c3aed 360deg
-    );
+    --purple-500: rgb(168 85 247);
+    --cyan-500: rgb(6 182 212);
   }
   .dark {
     --background: 0 0% 3.9%;
@@ -112,30 +65,6 @@ body::after {
     --chart-3: 30 80% 55%;
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
-  }
-}
-
-@keyframes animateBefore {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(200px) scale(0.8);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
-
-@keyframes animateAfter {
-  0% {
-    transform: translateX(0);
-  }
-  50% {
-    transform: translateX(-250px) scale(1.2);
-  }
-  100% {
-    transform: translateX(0);
   }
 }
 

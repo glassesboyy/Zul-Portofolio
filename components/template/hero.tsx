@@ -1,13 +1,12 @@
 "use client";
-
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { useEffect, useRef } from "react";
-import { initHeroAnimation } from "../animation/heroAnimation";
-import { useAnimationStore } from "@/store/animationStore";
 import gsap from "gsap";
 
+import { useAnimationStore } from "@/store/animationStore";
+import { useEffect, useRef } from "react";
+import { initHeroAnimation } from "../animation/heroAnimation";
+import { HeroHighlight } from "../ui/hero-highlight";
+
 export function Hero() {
-  const avatarRef = useRef<HTMLDivElement>(null);
   const titleCharsRef = useRef<HTMLSpanElement[]>([]);
   const contentRef = useRef<HTMLDivElement>(null);
   const ctaRef = useRef<HTMLDivElement>(null);
@@ -16,96 +15,69 @@ export function Hero() {
   const { preloadComplete } = useAnimationStore();
 
   useEffect(() => {
-    // Set initial state untuk semua elemen
-    gsap.set(avatarRef.current, { scale: 0, opacity: 0 });
     gsap.set(titleCharsRef.current, { opacity: 0, y: 20 });
     gsap.set([contentRef.current, ctaRef.current], { y: 20, opacity: 0 });
   }, []);
 
   useEffect(() => {
     if (preloadComplete) {
-      const timeline = initHeroAnimation(
-        avatarRef.current,
-        titleCharsRef.current,
-        contentRef.current,
-        ctaRef.current
-      );
+      const delay = setTimeout(() => {
+        const timeline = initHeroAnimation(
+          titleCharsRef.current,
+          contentRef.current,
+          ctaRef.current
+        );
+
+        return () => {
+          timeline?.kill();
+        };
+      }, 1500);
 
       return () => {
-        timeline?.kill();
+        clearTimeout(delay);
       };
     }
   }, [preloadComplete]);
 
   return (
-    <div
-      className={`relative min-h-screen overflow-hidden transition-opacity duration-300 ${
-        !preloadComplete ? "opacity-0 pointer-events-none" : "opacity-100"
-      }`}
-    >
-      <div className="relative z-[1] justify-items-center">
-        <div className="container py-10 lg:py-16">
-          <div className="max-w-6xl text-center mx-auto">
-            <div ref={avatarRef} className="flex justify-center">
-              <Avatar className="mb-1">
-                <AvatarImage src="/assets/avatar.jpg" alt="Zul" />
-                <AvatarFallback>ZP</AvatarFallback>
-              </Avatar>
-            </div>
-
-            <h1 className="cursor-pointer scroll-m-20 text-5xl font-extrabold lg:text-8xl mt-8">
-              {title.map((char, index) => (
-                <span
-                  key={index}
-                  ref={(el) => {
-                    if (el) titleCharsRef.current[index] = el;
-                  }}
-                  className="inline-block opacity-100 hover:text-cyan-500 transition-colors duration-500"
-                  style={{ display: "inline-block" }}
-                >
-                  {char === " " ? "\u00A0" : char}
-                </span>
-              ))}
-            </h1>
-
-            <div ref={contentRef} className="mt-5 max-w-6xl">
-              <p className="text-lg">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum
-                similique doloribus numquam cum id perspiciatis explicabo
-                voluptas tenetur. Ducimus illo blanditiis tenetur? Quasi iste ex
-                sint dolorem non inventore minima.
-              </p>
-            </div>
-
-            <div ref={ctaRef} className="flex justify-center">
-              <a
-                className="mt-5 group overflow-hidden w-[40px] hover:w-[200px] inline-flex items-center gap-x-2 border border-violet-700 hover:border-cyan-500 text-sm p-1 rounded-full transition-all duration-500 hover:bg-cyan-900/30 shadow-sm shadow-violet-700 hover:shadow-2xl hover:shadow-violet-700"
-                href="#"
-              >
-                <span className="absolute scale-0 transition-transform [transition-duration:100ms] group-hover:scale-100 group-hover:[transition-duration:1000ms] ms-3">
-                  Get in Touch With Zul
-                </span>
-                <span className="ms-auto py-2 px-2 justify-center items-center gap-x-2 rounded-full bg-muted-foreground/15 font-semibold text-sm">
-                  <svg
-                    className="flex-shrink-0 w-3 h-3"
-                    xmlns="http://www.w3.org/2000/svg"
-                    width={24}
-                    height={24}
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth={2}
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
+    <section className="w-full min-h-screen relative z-10">
+      <HeroHighlight
+        className={`transition-opacity duration-300 ${
+          !preloadComplete ? "opacity-0 pointer-events-none" : "opacity-100"
+        }`}
+      >
+        <div className="relative z-10 justify-items-center">
+          <div className="container py-10 lg:py-16">
+            <div className="max-w-6xl text-center mx-auto text-foreground">
+              <h1 className="cursor-pointer scroll-m-20 text-5xl font-extrabold lg:text-8xl mt-8">
+                {title.map((char, index) => (
+                  <span
+                    key={index}
+                    ref={(el) => {
+                      if (el) titleCharsRef.current[index] = el;
+                    }}
+                    className="inline-block opacity-100"
+                    style={{ display: "inline-block" }}
                   >
-                    <path d="m9 18 6-6-6-6" />
-                  </svg>
-                </span>
-              </a>
+                    {char === " " ? "\u00A0" : char}
+                  </span>
+                ))}
+              </h1>
+
+              <div ref={contentRef} className="mt-5 max-w-6xl">
+                <p className="text-lg text-foreground/80">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum
+                  similique doloribus numquam cum id perspiciatis explicabo
+                  voluptas tenetur. Ducimus illo blanditiis tenetur? Quasi iste
+                  ex sint dolorem non inventore minima.
+                </p>
+              </div>
+
+              <div ref={ctaRef} className="flex justify-center"></div>
             </div>
           </div>
         </div>
-      </div>
-    </div>
+      </HeroHighlight>
+    </section>
   );
 }

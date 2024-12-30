@@ -1,28 +1,15 @@
 import gsap from "gsap";
 
 export const initHeroAnimation = (
-  avatarRef: HTMLDivElement | null,
   titleCharsRef: HTMLSpanElement[],
   contentRef: HTMLDivElement | null,
   ctaRef: HTMLDivElement | null
 ) => {
-  if (!avatarRef || !titleCharsRef.length) return;
+  if (!titleCharsRef.length) return;
 
   const tl = gsap.timeline();
 
-  tl.fromTo(
-    avatarRef,
-    {
-      scale: 0,
-      opacity: 0,
-    },
-    {
-      scale: 1,
-      opacity: 1,
-      duration: 1,
-      ease: "back.out(1.7)",
-    }
-  );
+  tl.set({}, {}, "+=0.3");
 
   titleCharsRef.forEach((char, index) => {
     tl.to(
