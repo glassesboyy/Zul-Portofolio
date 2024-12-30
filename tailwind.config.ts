@@ -4,7 +4,6 @@ const {
   default: flattenColorPalette,
 } = require("tailwindcss/lib/util/flattenColorPalette");
 
-// This plugin adds each Tailwind color as a global CSS variable, e.g. var(--gray-200).
 function addVariablesForColors({ addBase, theme }: any) {
   let allColors = flattenColorPalette(theme("colors"));
   let newVars = Object.fromEntries(
@@ -103,7 +102,7 @@ const config: Config = {
       },
       animation: {
         "bounce-horizontal": "bounce-horizontal 1s ease-in-out infinite",
-        shimmer: "shimmer 2s linear infinite",
+        shimmer: "shimmer 3s linear infinite",
       },
     },
   },

@@ -1,9 +1,9 @@
 "use client";
-import gsap from "gsap";
-
 import { useAnimationStore } from "@/store/animationStore";
+import gsap from "gsap";
 import { useEffect, useRef } from "react";
 import { initHeroAnimation } from "../animation/heroAnimation";
+import { HeroButton } from "../ui/hero-button";
 import { HeroHighlight } from "../ui/hero-highlight";
 
 export function Hero() {
@@ -73,7 +73,9 @@ export function Hero() {
                 </p>
               </div>
 
-              <div ref={ctaRef} className="flex justify-center"></div>
+              <div ref={ctaRef} className="flex justify-center mt-8">
+                <HeroButton />
+              </div>
             </div>
           </div>
         </div>
