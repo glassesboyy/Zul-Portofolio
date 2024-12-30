@@ -1,60 +1,34 @@
 "use client";
 
-import {
-  NavigationMenu,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-} from "@/components/ui/navigation-menu";
 import { useEffect, useRef } from "react";
-import { initNavbarAnimation } from "../animation/navbarAnimation";
 import { useAnimationStore } from "@/store/animationStore";
+import { FloatingNav } from "../ui/floating-navbar";
+import { initNavbarAnimation } from "../animation/navbarAnimation";
 
 export function Navbar() {
-  const headerRef = useRef(null);
-  const menuItemsRef = useRef<(HTMLDivElement | null)[]>([]);
   const { preloadComplete } = useAnimationStore();
-
-  const handleClick = (section: string) => {
-    const element = document.getElementById(section.toLowerCase());
-    element?.scrollIntoView({ behavior: "smooth" });
-  };
+  const navbarRef = useRef(null);
 
   useEffect(() => {
-    if (preloadComplete) {
-      initNavbarAnimation(headerRef.current, menuItemsRef.current);
+    if (preloadComplete && navbarRef.current) {
+      initNavbarAnimation(navbarRef.current);
     }
   }, [preloadComplete]);
 
+  if (!preloadComplete) {
+    return null;
+  }
+
   return (
-    <header
-      ref={headerRef}
-      className={`sticky top-0 z-50 w-full justify-items-center border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 transition-opacity duration-300 ${
-        !preloadComplete ? "opacity-0 pointer-events-none" : "opacity-100"
-      }`}
-    >
-      <div className="container flex h-14 items-center">
-        <NavigationMenu className="mx-auto">
-          <NavigationMenuList>
-            {["Home", "About", "Projects", "Skills", "Contact"].map(
-              (item, i) => (
-                <div
-                  key={item}
-                  ref={(el) => {
-                    menuItemsRef.current[i] = el;
-                  }}
-                  className="relative cursor-pointer"
-                  onClick={() => handleClick(item)}
-                >
-                  <NavigationMenuItem>
-                    <NavigationMenuLink>{item}</NavigationMenuLink>
-                  </NavigationMenuItem>
-                </div>
-              )
-            )}
-          </NavigationMenuList>
-        </NavigationMenu>
-      </div>
-    </header>
+    <FloatingNav
+      ref={navbarRef}
+      navItems={[
+        { name: "Home", link: "home" },
+        { name: "About", link: "about" },
+        { name: "Projects", link: "projects" },
+        { name: "Skills", link: "skills" },
+        { name: "Contact", link: "contact" },
+      ]}
+    />
   );
 }

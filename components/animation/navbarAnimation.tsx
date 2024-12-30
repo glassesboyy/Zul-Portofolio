@@ -1,62 +1,23 @@
 import gsap from "gsap";
 
-export const initNavbarAnimation = (
-  headerRef: HTMLElement | null,
-  menuItemsRef: (HTMLDivElement | null)[]
-) => {
+export const initNavbarAnimation = (navbarRef: HTMLElement | null) => {
   const tl = gsap.timeline();
 
   // Set initial state
-  gsap.set(headerRef, {
-    y: -100,
+  gsap.set(navbarRef, {
+    y: -50,
     opacity: 0,
-    backdropFilter: "blur(0px)",
+    scale: 0.9,
   });
 
-  gsap.set(menuItemsRef, {
-    y: -30,
-    opacity: 0,
-    scale: 0.8,
-    rotation: -15,
-  });
-
-  // Navbar animation
-  tl.fromTo(
-    headerRef,
-    {
-      y: -100,
-      opacity: 0,
-      backdropFilter: "blur(0px)",
-    },
-    {
-      y: 0,
-      opacity: 1,
-      backdropFilter: "blur(10px)",
-      duration: 1.2,
-      ease: "power3.out",
-    }
-  );
-
-  // Menu items animation
-  menuItemsRef.forEach((item, index) => {
-    tl.fromTo(
-      item,
-      {
-        y: -30,
-        opacity: 0,
-        scale: 0.8,
-        rotation: -15,
-      },
-      {
-        y: 0,
-        opacity: 1,
-        scale: 1,
-        rotation: 0,
-        duration: 0.6,
-        ease: "back.out(1.7)",
-      },
-      `-=${index ? 0.4 : 0}`
-    );
+  // Navbar reveal animation
+  tl.to(navbarRef, {
+    y: 0,
+    opacity: 1,
+    scale: 1,
+    duration: 0.8,
+    ease: "back.out(1.7)",
+    delay: 0.2,
   });
 
   return tl;
