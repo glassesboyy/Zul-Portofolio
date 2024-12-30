@@ -24,11 +24,6 @@ export const initHeroAnimation = (
     }
   );
 
-  gsap.set(titleCharsRef, {
-    opacity: 0,
-    y: 20,
-  });
-
   titleCharsRef.forEach((char, index) => {
     tl.to(
       char,

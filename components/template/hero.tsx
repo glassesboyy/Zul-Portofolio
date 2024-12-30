@@ -3,6 +3,8 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { useEffect, useRef } from "react";
 import { initHeroAnimation } from "../animation/heroAnimation";
+import { useAnimationStore } from "@/store/animationStore";
+import gsap from "gsap";
 
 export function Hero() {
   const avatarRef = useRef<HTMLDivElement>(null);
@@ -11,22 +13,36 @@ export function Hero() {
   const ctaRef = useRef<HTMLDivElement>(null);
 
   const title = "Zul Personal Website".split("");
+  const { preloadComplete } = useAnimationStore();
 
   useEffect(() => {
-    const timeline = initHeroAnimation(
-      avatarRef.current,
-      titleCharsRef.current,
-      contentRef.current,
-      ctaRef.current
-    );
-
-    return () => {
-      timeline?.kill();
-    };
+    // Set initial state untuk semua elemen
+    gsap.set(avatarRef.current, { scale: 0, opacity: 0 });
+    gsap.set(titleCharsRef.current, { opacity: 0, y: 20 });
+    gsap.set([contentRef.current, ctaRef.current], { y: 20, opacity: 0 });
   }, []);
 
+  useEffect(() => {
+    if (preloadComplete) {
+      const timeline = initHeroAnimation(
+        avatarRef.current,
+        titleCharsRef.current,
+        contentRef.current,
+        ctaRef.current
+      );
+
+      return () => {
+        timeline?.kill();
+      };
+    }
+  }, [preloadComplete]);
+
   return (
-    <div className="relative min-h-screen overflow-hidden">
+    <div
+      className={`relative min-h-screen overflow-hidden transition-opacity duration-300 ${
+        !preloadComplete ? "opacity-0 pointer-events-none" : "opacity-100"
+      }`}
+    >
       <div className="relative z-[1] justify-items-center">
         <div className="container py-10 lg:py-16">
           <div className="max-w-6xl text-center mx-auto">

@@ -6,6 +6,20 @@ export const initNavbarAnimation = (
 ) => {
   const tl = gsap.timeline();
 
+  // Set initial state
+  gsap.set(headerRef, {
+    y: -100,
+    opacity: 0,
+    backdropFilter: "blur(0px)",
+  });
+
+  gsap.set(menuItemsRef, {
+    y: -30,
+    opacity: 0,
+    scale: 0.8,
+    rotation: -15,
+  });
+
   // Navbar animation
   tl.fromTo(
     headerRef,
