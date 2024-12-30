@@ -1,8 +1,8 @@
 "use client";
 
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import gsap from "gsap";
 import { useEffect, useRef } from "react";
+import { initHeroAnimation } from "../animation/heroAnimation";
 
 export function Hero() {
   const avatarRef = useRef<HTMLDivElement>(null);
@@ -13,62 +13,15 @@ export function Hero() {
   const title = "Zul Personal Website".split("");
 
   useEffect(() => {
-    if (!avatarRef.current || !titleCharsRef.current.length) return;
-
-    const tl = gsap.timeline();
-
-    tl.fromTo(
+    const timeline = initHeroAnimation(
       avatarRef.current,
-      {
-        scale: 0,
-        opacity: 0,
-      },
-      {
-        scale: 1,
-        opacity: 1,
-        duration: 1,
-        ease: "back.out(1.7)",
-      }
-    );
-
-    const chars = titleCharsRef.current;
-
-    gsap.set(chars, {
-      opacity: 0,
-      y: 20,
-    });
-
-    chars.forEach((char, index) => {
-      tl.to(
-        char,
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.25,
-          delay: index * 0.01,
-          ease: "power2.out",
-        },
-        "-=0.25"
-      );
-    });
-
-    tl.fromTo(
-      [contentRef.current, ctaRef.current],
-      {
-        y: 20,
-        opacity: 0,
-      },
-      {
-        y: 0,
-        opacity: 1,
-        duration: 0.6,
-        stagger: 0.15,
-      },
-      "-=0.2"
+      titleCharsRef.current,
+      contentRef.current,
+      ctaRef.current
     );
 
     return () => {
-      tl.kill();
+      timeline?.kill();
     };
   }, []);
 

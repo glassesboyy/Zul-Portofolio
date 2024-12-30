@@ -6,54 +6,15 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
 } from "@/components/ui/navigation-menu";
-import gsap from "gsap";
 import { useEffect, useRef } from "react";
+import { initNavbarAnimation } from "../animation/navbarAnimation";
 
 export function Navbar() {
   const headerRef = useRef(null);
   const menuItemsRef = useRef<(HTMLDivElement | null)[]>([]);
 
   useEffect(() => {
-    const tl = gsap.timeline();
-
-    // Navbar animation
-    tl.fromTo(
-      headerRef.current,
-      {
-        y: -100,
-        opacity: 0,
-        backdropFilter: "blur(0px)",
-      },
-      {
-        y: 0,
-        opacity: 1,
-        backdropFilter: "blur(10px)",
-        duration: 1.2,
-        ease: "power3.out",
-      }
-    );
-
-    // Menu items animation
-    menuItemsRef.current.forEach((item, index) => {
-      tl.fromTo(
-        item,
-        {
-          y: -30,
-          opacity: 0,
-          scale: 0.8,
-          rotation: -15,
-        },
-        {
-          y: 0,
-          opacity: 1,
-          scale: 1,
-          rotation: 0,
-          duration: 0.6,
-          ease: "back.out(1.7)",
-        },
-        `-=${index ? 0.4 : 0}`
-      );
-    });
+    initNavbarAnimation(headerRef.current, menuItemsRef.current);
   }, []);
 
   return (
