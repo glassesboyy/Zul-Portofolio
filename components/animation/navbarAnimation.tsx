@@ -3,14 +3,12 @@ import gsap from "gsap";
 export const initNavbarAnimation = (navbarRef: HTMLElement | null) => {
   const tl = gsap.timeline();
 
-  // Set initial state
   gsap.set(navbarRef, {
     y: -50,
     opacity: 0,
     scale: 0.9,
   });
 
-  // Navbar reveal animation
   tl.to(navbarRef, {
     y: 0,
     opacity: 1,

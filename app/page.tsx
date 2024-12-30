@@ -12,46 +12,20 @@ export default function Home() {
 
   return (
     <>
-      <div className="preloader fixed inset-0 z-50 bg-gradient-to-br from-background via-background/95 to-background/90 text-white">
-        <div className="preloader-content absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full text-center">
-          <div className="preload-text overflow-visible mb-12">
-            {[
-              "A",
-              "b",
-              "s",
-              "o",
-              "l",
-              "u",
-              "t",
-              "e",
-              " ",
-              "C",
-              "i",
-              "n",
-              "e",
-              "m",
-              "a",
-              "!",
-            ].map((letter, index) => (
-              <span
-                key={index}
-                className={`preload-letter text-7xl font-extrabold inline-block ${
-                  letter === " " ? "mx-3" : "mx-[2px]"
-                } ${
-                  index > 2
-                    ? "bg-gradient-to-r from-cyan-400 to-cyan-600 bg-clip-text text-transparent [text-shadow:0_0_40px_rgba(6,182,212,0.6)]"
-                    : "bg-gradient-to-r from-white to-gray-200 bg-clip-text text-transparent [text-shadow:0_0_40px_rgba(255,255,255,0.3)]"
-                }`}
-              >
-                {letter}
-              </span>
-            ))}
+      <div className="preloader fixed inset-0 z-50 flex">
+        <div className="preloader-top absolute top-0 left-0 w-full h-1/2 bg-black"></div>
+        <div className="preloader-bottom absolute bottom-0 left-0 w-full h-1/2 bg-black"></div>
+        <div className="preloader-content fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full text-center z-10">
+          <div className="preload-text relative mb-8 overflow-hidden">
+            <h2 className="text-2xl md:text-4xl mb-5 font-bold bg-gradient-to-r from-violet-700  to-cyan-300 bg-clip-text text-transparent">
+              Ready for Absolute Cinema?
+            </h2>
           </div>
-          <div className="loading-wrapper w-72 mx-auto">
-            <div className="loading-bar-wrapper p-[2px] rounded-full bg-gradient-to-r from-cyan-500 to-cyan-700">
-              <div className="loading-bar h-1 bg-white rounded-full origin-left"></div>
+          <div className="loading-wrapper fixed bottom-0 left-0 w-full">
+            <div className="loading-bar-wrapper h-[2px] w-full bg-gradient-to-r from-violet-500/20 via-cyan-500/20 to-violet-500/20">
+              <div className="loading-bar h-full w-full bg-gradient-to-r from-violet-500 via-cyan-500 to-violet-500 shadow-[0_0_30px_rgba(139,92,246,0.5)]"></div>
             </div>
-            <div className="loading-percent text-sm mt-3 font-medium bg-gradient-to-r from-cyan-400 to-cyan-600 bg-clip-text text-transparent">
+            <div className="loading-percent mt-4 text-sm font-medium bg-gradient-to-r from-violet-400 to-cyan-400 bg-clip-text text-transparent">
               0
             </div>
           </div>

@@ -4,78 +4,68 @@ import { useAnimationStore } from "@/store/animationStore";
 export const initPreloadAnimation = () => {
   const tl = gsap.timeline();
 
-  // Initial state
   tl.set("body", { overflow: "hidden" })
-    .set(".preload-letter", {
+    .set(".preload-text", {
       opacity: 0,
-      y: 100,
-      rotateY: 45,
-      textShadow: "0 0 0 rgba(255,255,255,0)",
+      y: 30,
     })
-    .set(".loading-bar-wrapper", { opacity: 0 })
-    .set(".loading-bar", { scaleX: 0 })
-    .set(".loading-percent", { opacity: 0 });
+    .set(".loading-bar", { scaleX: 0, transformOrigin: "left" })
+    .set(".loading-percent", { opacity: 0 })
+    .set(".preloader-top", { yPercent: 0 })
+    .set(".preloader-bottom", { yPercent: 0 });
 
-  // Animation sequence
-  tl.to(".preload-letter", {
+  tl.to(".preload-text", {
     opacity: 1,
     y: 0,
-    rotateY: 0,
     duration: 1,
-    stagger: 0.08,
-    ease: "back.out(1.7)",
+    ease: "power2.out",
   })
-    // Add glow effect to letters
-    .to(
-      ".preload-letter",
-      {
-        textShadow: "0 0 40px rgba(255,255,255,0.2)",
-        duration: 1,
-        stagger: 0.08,
-      },
-      "<"
-    )
-    .to(".loading-bar-wrapper", {
-      opacity: 1,
-      duration: 0.5,
-    })
     .to(".loading-percent", {
       opacity: 1,
-      duration: 0.4,
+      duration: 0.3,
     })
-    .to(".loading-percent", {
-      innerText: "100",
+    .to(".loading-bar", {
+      scaleX: 1,
       duration: 2,
-      snap: { innerText: 1 },
       ease: "power1.inOut",
     })
     .to(
-      ".loading-bar",
+      ".loading-percent",
       {
-        scaleX: 1,
+        innerText: "100",
         duration: 2,
+        snap: { innerText: 1 },
         ease: "power1.inOut",
       },
       "<"
     )
+    .to(".preload-text", {
+      y: -30,
+      opacity: 0,
+      duration: 0.5,
+      ease: "power2.in",
+    })
     .to(
-      ".preloader-content",
+      ".loading-wrapper",
       {
         opacity: 0,
-        scale: 0.9,
-        duration: 0.8,
-        ease: "power2.inOut",
+        duration: 0.3,
       },
-      "+=0.2"
+      "<"
     )
+    .to(".preloader-top", {
+      yPercent: -100,
+      duration: 1.2,
+      ease: "power4.inOut",
+    })
     .to(
-      ".preloader",
+      ".preloader-bottom",
       {
-        clipPath: "circle(0% at 50% 50%)",
+        yPercent: 100,
         duration: 1.2,
         ease: "power4.inOut",
       },
-      "-=0.3"
+      "<"
     )
     .set("body", { overflow: "auto" })
     .set(".preloader", { display: "none" })
