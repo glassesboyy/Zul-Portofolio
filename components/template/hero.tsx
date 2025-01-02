@@ -52,7 +52,7 @@ export function Hero() {
           <div className="container py-10 lg:py-16">
             <div className="max-w-6xl text-center mx-auto text-foreground">
               <h1 className="cursor-pointer scroll-m-20 text-5xl font-extrabold lg:text-8xl mt-8 flex items-center justify-center">
-                <FlipWords words={greetings} duration={2000} />
+                <FlipWords words={greetings} duration={2500} />
                 {staticTitle.map((char, index) => (
                   <span
                     key={index}

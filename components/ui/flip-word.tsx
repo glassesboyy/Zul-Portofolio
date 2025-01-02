@@ -1,11 +1,11 @@
 "use client";
-import React, { useCallback, useEffect, useRef, useState } from "react";
-import { AnimatePresence, motion, LayoutGroup } from "framer-motion";
 import { cn } from "@/lib/utils";
+import { AnimatePresence, motion } from "framer-motion";
+import { useCallback, useEffect, useState } from "react";
 
 export const FlipWords = ({
   words,
-  duration = 3000,
+  duration = 6000, // doubled from 3000 to 6000
   className,
 }: {
   words: string[];
@@ -30,66 +30,79 @@ export const FlipWords = ({
   }, [isAnimating, duration, startAnimation]);
 
   return (
-    <AnimatePresence
-      onExitComplete={() => {
-        setIsAnimating(false);
-      }}
-    >
-      <motion.div
-        initial={{
-          opacity: 0,
-          y: 10,
+    <div className="relative overflow-hidden p-4">
+      <AnimatePresence
+        mode="wait"
+        onExitComplete={() => {
+          setIsAnimating(false);
         }}
-        animate={{
-          opacity: 1,
-          y: 0,
-        }}
-        transition={{
-          type: "spring",
-          stiffness: 100,
-          damping: 10,
-        }}
-        exit={{
-          opacity: 0,
-          filter: "blur(8px)",
-          scale: 0.5,
-          position: "absolute",
-        }}
-        className={cn(
-          "z-10 inline-block relative text-left px-2 text-shadow-gradient",
-          className
-        )}
-        key={currentWord}
       >
-        {currentWord.split(" ").map((word, wordIndex) => (
-          <motion.span
-            key={word + wordIndex}
-            initial={{ opacity: 0, y: 10, filter: "blur(8px)" }}
-            animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-            transition={{
-              delay: wordIndex * 0.3,
+        <motion.div
+          initial={{
+            opacity: 0,
+            scale: 0.8,
+            z: -100,
+          }}
+          animate={{
+            opacity: 1,
+            scale: 1,
+            z: 0,
+          }}
+          transition={{
+            type: "spring",
+            duration: 0.5,
+          }}
+          exit={{
+            opacity: 0,
+            scale: 0.8,
+            z: -100,
+            transition: {
               duration: 0.3,
-            }}
-            className="inline-block whitespace-nowrap text-shadow-gradient"
-          >
-            {word.split("").map((letter, letterIndex) => (
-              <motion.span
-                key={word + letterIndex}
-                initial={{ opacity: 0, y: 10, filter: "blur(8px)" }}
-                animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-                transition={{
-                  delay: wordIndex * 0.3 + letterIndex * 0.05,
-                  duration: 0.2,
-                }}
-                className="inline-block"
-              >
-                {letter}
-              </motion.span>
-            ))}
-            <span className="inline-block">&nbsp;</span>
-          </motion.span>
-        ))}
-      </motion.div>
-    </AnimatePresence>
+              ease: "easeOut",
+            },
+          }}
+          style={{
+            perspective: "1000px",
+            transformStyle: "preserve-3d",
+          }}
+          className={cn(
+            "z-10 inline-block text-left text-shadow-gradient",
+            className
+          )}
+          key={currentWord}
+        >
+          {currentWord.split(" ").map((word, wordIndex) => (
+            <motion.span
+              key={word + wordIndex}
+              initial={{ opacity: 0, scale: 0.9, z: -50 }}
+              animate={{ opacity: 1, scale: 1, z: 0 }}
+              transition={{
+                delay: wordIndex * 0.4, // doubled from 0.2 to 0.4
+                duration: 0.8, // doubled from 0.4 to 0.8
+                ease: "easeOut",
+              }}
+              className="inline-block whitespace-nowrap text-shadow-gradient"
+            >
+              {word.split("").map((letter, letterIndex) => (
+                <motion.span
+                  key={word + letterIndex}
+                  initial={{ opacity: 0, scale: 0.9, z: -25 }}
+                  animate={{ opacity: 1, scale: 1, z: 0 }}
+                  transition={{
+                    delay: wordIndex * 0.4 + letterIndex * 0.06, // doubled delays
+                    duration: 0.6, // doubled from 0.3 to 0.6
+                    ease: "easeOut",
+                  }}
+                  className="inline-block"
+                >
+                  {letter}
+                </motion.span>
+              ))}
+              <span className="inline-block">&nbsp;</span>
+            </motion.span>
+          ))}
+        </motion.div>
+      </AnimatePresence>
+    </div>
   );
 };

@@ -19,7 +19,7 @@ export const TextScrub = ({ children, className }: TextScrubProps) => {
     if (!textRef.current) return;
 
     const text = new SplitType(textRef.current, {
-      types: "lines,words,chars",
+      types: "words,chars", // remove 'lines'
       tagName: "span",
     });
 
@@ -46,7 +46,10 @@ export const TextScrub = ({ children, className }: TextScrubProps) => {
   }, []);
 
   return (
-    <div ref={textRef} className={className}>
+    <div
+      ref={textRef}
+      className={`whitespace-nowrap inline-block ${className}`}
+    >
       {children}
     </div>
   );
