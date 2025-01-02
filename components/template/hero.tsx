@@ -11,7 +11,7 @@ export function Hero() {
   const contentRef = useRef<HTMLDivElement>(null);
   const ctaRef = useRef<HTMLDivElement>(null);
 
-  const title = "Zul Personal Website".split("");
+  const title = "Hi, Im Teguh Surya Zulfikar!".split("");
   const { preloadComplete } = useAnimationStore();
 
   useEffect(() => {
@@ -49,7 +49,7 @@ export function Hero() {
         <div className="relative z-10 justify-items-center">
           <div className="container py-10 lg:py-16">
             <div className="max-w-6xl text-center mx-auto text-foreground">
-              <h1 className="cursor-pointer scroll-m-20 text-5xl font-extrabold lg:text-8xl mt-8">
+              <h1 className="cursor-pointer scroll-m-20 text-5xl font-extrabold lg:text-7xl mt-8">
                 {title.map((char, index) => (
                   <span
                     key={index}
@@ -66,10 +66,7 @@ export function Hero() {
 
               <div ref={contentRef} className="mt-5 max-w-6xl">
                 <p className="text-lg text-foreground/80">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum
-                  similique doloribus numquam cum id perspiciatis explicabo
-                  voluptas tenetur. Ducimus illo blanditiis tenetur? Quasi iste
-                  ex sint dolorem non inventore minima.
+                  Crafting Innovative Solutions as a Web Developer.
                 </p>
               </div>
 

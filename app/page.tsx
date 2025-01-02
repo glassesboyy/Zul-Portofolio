@@ -12,24 +12,28 @@ export default function Home() {
 
   return (
     <>
-      <div className="preloader fixed inset-0 z-50 flex">
-        <div className="preloader-top absolute top-0 left-0 w-full h-1/2 bg-black"></div>
-        <div className="preloader-bottom absolute bottom-0 left-0 w-full h-1/2 bg-black"></div>
-        <div className="preloader-content fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full text-center z-10">
-          <div className="preload-text relative mb-8 overflow-hidden">
-            <h2 className="text-2xl md:text-4xl mb-5 font-bold bg-gradient-to-r from-violet-700  to-cyan-300 bg-clip-text text-transparent">
-              Ready for Absolute Cinema?
-            </h2>
-          </div>
-          <div className="loading-wrapper fixed bottom-0 left-0 w-full">
-            <div className="loading-bar-wrapper h-[2px] w-full bg-gradient-to-r from-violet-500/20 via-cyan-500/20 to-violet-500/20">
-              <div className="loading-bar h-full w-full bg-gradient-to-r from-violet-500 via-cyan-500 to-violet-500 shadow-[0_0_30px_rgba(139,92,246,0.5)]"></div>
-            </div>
-            <div className="loading-percent mt-4 text-sm font-medium bg-gradient-to-r from-violet-400 to-cyan-400 bg-clip-text text-transparent">
-              0
-            </div>
-          </div>
-        </div>
+      <div className="preloader fixed inset-0 z-50 bg-black flex items-center justify-center">
+        <svg width="100" height="100" viewBox="0 0 200 200">
+          <path
+            className="z-letter"
+            d="M30 40
+               L170 40
+               L170 60
+               L70 140
+               L170 140
+               L170 160
+               L30 160
+               L30 140
+               L130 60
+               L30 60
+               Z"
+            stroke="white"
+            strokeWidth="5"
+            fill="none"
+            strokeLinecap="square"
+            strokeLinejoin="miter"
+          />
+        </svg>
       </div>
       <div className="flex min-h-screen flex-col">
         <Navbar />
