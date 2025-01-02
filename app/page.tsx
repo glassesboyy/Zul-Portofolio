@@ -4,6 +4,7 @@ import { initPreloadAnimation } from "@/components/animation/preloadAnimation";
 import { Hero } from "@/components/template/hero";
 import { Navbar } from "@/components/template/navbar";
 import { Philo } from "@/components/template/philo";
+import { Separator } from "@/components/ui/separator";
 import { useEffect } from "react";
 
 export default function Home() {
@@ -41,9 +42,10 @@ export default function Home() {
         <section id="home">
           <Hero />
         </section>
+        <Separator />
         <Philo />
-        <section id="about" className="min-h-screen">
-          {/* About content */}
+        <section id="tech" className="min-h-screen">
+          {/* Tech content */}
         </section>
         <section id="projects" className="min-h-screen">
           {/* Projects content */}

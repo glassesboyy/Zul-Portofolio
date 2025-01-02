@@ -99,10 +99,15 @@ const config: Config = {
             backgroundPosition: "200% center",
           },
         },
+        glow: {
+          "0%, 100%": { opacity: "0.5" },
+          "50%": { opacity: "1" },
+        },
       },
       animation: {
         "bounce-horizontal": "bounce-horizontal 1s ease-in-out infinite",
         shimmer: "shimmer 8s ease-in-out infinite",
+        glow: "glow 2s ease-in-out infinite",
       },
     },
   },
