@@ -14,7 +14,7 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Zul Personal Website",
+  title: "Personal Website | Teguh Surya Zulfikar",
 };
 
 export default function RootLayout({

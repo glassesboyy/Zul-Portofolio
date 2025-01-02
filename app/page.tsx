@@ -3,6 +3,7 @@
 import { initPreloadAnimation } from "@/components/animation/preloadAnimation";
 import { Hero } from "@/components/template/hero";
 import { Navbar } from "@/components/template/navbar";
+import { Philo } from "@/components/template/philo";
 import { useEffect } from "react";
 
 export default function Home() {
@@ -13,7 +14,7 @@ export default function Home() {
   return (
     <>
       <div className="preloader fixed inset-0 z-50 bg-black flex items-center justify-center">
-        <svg width="100" height="100" viewBox="0 0 200 200">
+        <svg width="120" height="120" viewBox="0 0 200 200">
           <path
             className="z-letter"
             d="M30 40
@@ -40,6 +41,7 @@ export default function Home() {
         <section id="home">
           <Hero />
         </section>
+        <Philo />
         <section id="about" className="min-h-screen">
           {/* About content */}
         </section>
