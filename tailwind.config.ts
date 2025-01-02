@@ -128,22 +128,20 @@ const config: Config = {
     },
     function ({ addUtilities }: any) {
       addUtilities({
-        ".text-stroke": {
-          "-webkit-text-stroke": "3px rgba(255, 255, 255, 0.7)",
-          "text-stroke": "3px rgba(255, 255, 255, 0.7)",
-          color: "transparent",
-        },
-        ".text-stroke-thin": {
-          "-webkit-text-stroke": "1px rgba(255, 255, 255, 0.3)",
-          "text-stroke": "1px rgba(255, 255, 255, 0.3)",
-          color: "transparent",
-        },
         ".text-shadow-gradient": {
           "text-shadow": `
         3px 3px 15px rgba(238, 130, 238, 0.4),
         6px 6px 25px rgba(75, 0, 130, 0.3),
         9px 9px 35px rgba(0, 0, 255, 0.2),
         12px 12px 50px rgba(0, 128, 0, 0.1)
+      `,
+        },
+        ".text-shadow-gradient-bright": {
+          "text-shadow": `
+        3px 3px 15px rgba(238, 130, 238, 0.7),
+        6px 6px 25px rgba(75, 0, 130, 0.6),
+        9px 9px 35px rgba(0, 0, 255, 0.5),
+        12px 12px 50px rgba(0, 128, 0, 0.4)
       `,
         },
       });
