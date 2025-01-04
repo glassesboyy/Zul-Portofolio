@@ -4,7 +4,10 @@ import { initPreloadAnimation } from "@/components/animation/preloadAnimation";
 import { Hero } from "@/components/template/hero";
 import { Navbar } from "@/components/template/navbar";
 import { Philo } from "@/components/template/philo";
+import { Tech } from "@/components/template/tech";
 import { Separator } from "@/components/ui/separator";
+import { SeparatorRoundDown } from "@/components/ui/separator-round-down";
+import { SeparatorRoundUp } from "@/components/ui/separator-round-up";
 import { useEffect } from "react";
 
 export default function Home() {
@@ -45,7 +48,9 @@ export default function Home() {
         <Separator />
         <Philo />
         <section id="tech" className="min-h-screen">
-          {/* Tech content */}
+          <SeparatorRoundUp />
+          <Tech />
+          <SeparatorRoundDown />
         </section>
         <section id="projects" className="min-h-screen">
           {/* Projects content */}
@@ -53,6 +58,7 @@ export default function Home() {
         <section id="skills" className="min-h-screen">
           {/* Skills content */}
         </section>
+        {/* Separator Round Kebawah */}
         <section id="contact" className="min-h-screen">
           {/* Contact content */}
         </section>
