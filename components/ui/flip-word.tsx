@@ -49,8 +49,8 @@ export const FlipWords = ({
             z: 0,
           }}
           transition={{
-            type: "spring",
-            duration: 0.5,
+            type: "easeIn",
+            duration: 1,
           }}
           exit={{
             opacity: 0,
@@ -81,7 +81,7 @@ export const FlipWords = ({
                 duration: 0.8, // doubled from 0.4 to 0.8
                 ease: "easeOut",
               }}
-              className="inline-block whitespace-nowrap text-shadow-gradient"
+              className="inline-block whitespace-nowrap"
             >
               {word.split("").map((letter, letterIndex) => (
                 <motion.span
