@@ -74,7 +74,7 @@ export const SeparatorRoundDown = forwardRef<HTMLDivElement, SeparatorProps>(
             d="M 0,0 C 300,210 900,210 1200,0"
             fill="none"
             stroke="url(#gradient-down)"
-            strokeWidth="15"
+            strokeWidth="5"
             mask="url(#reveal-mask-down)"
           />
           <defs>

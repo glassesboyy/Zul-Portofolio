@@ -54,7 +54,7 @@ export const SeparatorRoundUp = forwardRef<HTMLDivElement, SeparatorProps>(
             d="M 0,240 C 300,30 900,30 1200,240"
             fill="none"
             stroke="url(#gradient-up)"
-            strokeWidth="15"
+            strokeWidth="5"
             mask="url(#reveal-mask-up)"
           />
         </svg>

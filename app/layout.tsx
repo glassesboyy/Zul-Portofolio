@@ -9,6 +9,7 @@ const raleway = Raleway({
 
 export const metadata: Metadata = {
   title: "Personal Website | Teguh Surya Zulfikar",
+  description: "Your portfolio description",
 };
 
 export default function RootLayout({
@@ -18,6 +19,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark">
+      <head>
+        <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
+        />
+      </head>
       <body
         className={`${raleway.variable} antialiased bg-background text-foreground`}
       >
