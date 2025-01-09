@@ -1,6 +1,7 @@
 "use client";
 
 import { initPreloadAnimation } from "@/components/animation/preloadAnimation";
+import { About } from "@/components/template/about";
 import { Hero } from "@/components/template/hero";
 import { Navbar } from "@/components/template/navbar";
 import { Philo } from "@/components/template/philo";
@@ -47,11 +48,15 @@ export default function Home() {
         </section>
         <Separator />
         <Philo />
-        <section id="tech" className="min-h-screen">
-          <SeparatorRoundUp />
-          <Tech />
-          <SeparatorRoundDown />
+        <SeparatorRoundUp />
+        <section id="about" className="h-fit my-10">
+          <About />
         </section>
+        <Separator />
+        <section id="tech" className="h-fit my-10">
+          <Tech />
+        </section>
+        <SeparatorRoundDown />
         <section id="projects" className="min-h-screen">
           {/* Projects content */}
         </section>
