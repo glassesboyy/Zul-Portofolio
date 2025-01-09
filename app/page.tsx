@@ -49,11 +49,11 @@ export default function Home() {
         <Separator />
         <Philo />
         <SeparatorRoundUp />
-        <section id="about" className="h-fit my-10">
+        <section id="about" className="h-fit">
           <About />
         </section>
         <Separator />
-        <section id="tech" className="h-fit my-10">
+        <section id="tech" className="h-fit my-20">
           <Tech />
         </section>
         <SeparatorRoundDown />
