@@ -106,11 +106,22 @@ const config: Config = {
           "0%, 100%": { opacity: "0.5" },
           "50%": { opacity: "1" },
         },
+        "gradient-x": {
+          "0%, 100%": {
+            "background-size": "200% 200%",
+            "background-position": "left center",
+          },
+          "50%": {
+            "background-size": "200% 200%",
+            "background-position": "right center",
+          },
+        },
       },
       animation: {
         "bounce-horizontal": "bounce-horizontal 1s ease-in-out infinite",
         shimmer: "shimmer 8s ease-in-out infinite",
         glow: "glow 2s ease-in-out infinite",
+        "gradient-x": "gradient-x 5s ease-in-out infinite",
       },
     },
   },
