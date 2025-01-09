@@ -68,7 +68,8 @@ export function Hero() {
               </h1>
               <div ref={contentRef} className="mt-5 max-w-6xl">
                 <p className="text-lg text-foreground/80">
-                  Crafting Innovative Solutions as a Web Developer.
+                  Crafting Innovative Solutions as a Passionate Fullstack Web
+                  Developer.
                 </p>
               </div>
 
