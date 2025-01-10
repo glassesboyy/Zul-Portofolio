@@ -14,12 +14,14 @@ const techStack = [
   { name: "TypeScript", icon: "devicon-typescript-plain" },
   { name: "Next.js", icon: "devicon-nextjs-plain" },
   { name: "React", icon: "devicon-react-original" },
-  { name: "Vue", icon: "devicon-vuejs-plain" },
-  { name: "Tailwind", icon: "devicon-tailwindcss-plain" },
   { name: "Bootstrap", icon: "devicon-bootstrap-plain" },
+  { name: "Tailwind", icon: "devicon-tailwindcss-plain" },
+  { name: "Mysql", icon: "devicon-mysql-plain" },
   { name: "Node.js", icon: "devicon-nodejs-plain" },
   { name: "Express", icon: "devicon-express-original" },
   { name: "MongoDB", icon: "devicon-mongodb-plain" },
+  { name: "Laravel", icon: "devicon-laravel-plain" },
+  { name: "Php", icon: "devicon-php-plain" },
 ];
 
 export const Tech = () => {
@@ -168,7 +170,7 @@ export const Tech = () => {
       </h1>
       <div
         ref={containerRef}
-        className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 place-items-center gap-4 px-4 md:px-20 lg:px-72"
+        className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-7 place-items-center gap-4 px-4 md:px-20 lg:px-48"
       >
         {techStack.map((tech, index) => (
           <CardContainer
@@ -198,7 +200,7 @@ export const Tech = () => {
             `}
             >
               <CardItem
-                translateZ={100}
+                translateZ={150}
                 className="text-7xl flex items-center justify-center w-full h-full text-violet-300"
               >
                 <div className="flex flex-col items-center gap-2">
