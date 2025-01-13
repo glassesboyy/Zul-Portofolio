@@ -2,7 +2,7 @@
 
 import { cn } from "@/lib/utils";
 import { motion, useScroll } from "framer-motion";
-import { useEffect, useState, forwardRef } from "react";
+import { forwardRef, useEffect, useState } from "react";
 
 export const FloatingNav = forwardRef<
   HTMLDivElement,
@@ -56,7 +56,7 @@ export const FloatingNav = forwardRef<
       )}
     >
       <div
-        className="flex items-center gap-6 px-8 py-3 rounded-full 
+        className="flex items-center gap-6 px-8 py-3 rounded-full
         border border-white/10 
         bg-black/50 backdrop-blur-xl
         transition-all duration-300

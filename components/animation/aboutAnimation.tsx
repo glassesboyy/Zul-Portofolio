@@ -3,7 +3,7 @@ import gsap from "gsap";
 export const initAboutAnimation = (container: HTMLElement) => {
   const tl = gsap.timeline();
 
-  // Set initial state
+  // Set initial states
   gsap.set(".profile-image-container", {
     visibility: "visible",
     opacity: 0,
@@ -11,11 +11,11 @@ export const initAboutAnimation = (container: HTMLElement) => {
     y: 30,
   });
 
-  // Initial entrance animation
+  // Enhanced animation sequence
   tl.from(container, {
     opacity: 0,
     y: 50,
-    duration: 0.8,
+    duration: 1,
     ease: "power3.out",
   })
     .to(
@@ -24,30 +24,30 @@ export const initAboutAnimation = (container: HTMLElement) => {
         opacity: 1,
         scale: 1,
         y: 0,
-        duration: 1,
+        duration: 1.2,
         ease: "power3.out",
       },
-      0 // Start at the same time as container animation
+      0.3
     )
     .from(
       ".about-title",
       {
         y: 30,
         opacity: 0,
-        duration: 0.6,
+        duration: 0.8,
         ease: "power3.out",
       },
-      "-=0.6"
+      "-=0.8"
     );
 
-  // Add floating animation
+  // Enhanced floating animation
   gsap.to(".profile-image-container", {
-    y: -20,
-    duration: 1,
+    y: -15,
+    duration: 2,
     ease: "power1.inOut",
     yoyo: true,
     repeat: -1,
-    delay: 1, // Start after initial animation
+    delay: 1.5,
   });
 
   return tl;
