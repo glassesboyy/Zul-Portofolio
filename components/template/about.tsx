@@ -7,17 +7,15 @@ import {
   IconBrandLinkedin,
   IconMail,
 } from "@tabler/icons-react";
-import { motion, useInView } from "framer-motion";
+import { useInView } from "framer-motion";
 import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import { initAboutAnimation } from "../animation/aboutAnimation";
 import { FloatingDock } from "../ui/floating-dock";
-import { TextGenerateEffect } from "../ui/text-generate-effect";
 
 export const About = () => {
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
-  const [showDescription, setShowDescription] = useState(false);
   const preloadComplete = useAnimationStore((state) => state.preloadComplete);
 
   const description = `Let's collaborate to build exceptional digital experiences. As a full-stack developer, I transform innovative ideas into powerful, user-friendly solutions.`;
@@ -25,7 +23,6 @@ export const About = () => {
   useEffect(() => {
     if (isInView && preloadComplete && ref.current) {
       initAboutAnimation(ref.current);
-      setTimeout(() => setShowDescription(true), 1000);
     }
   }, [isInView, preloadComplete]);
 
@@ -72,7 +69,7 @@ export const About = () => {
             <div className="absolute inset-0 rounded-xl bg-gradient-to-tr from-violet-500 to-cyan-500 blur-lg opacity-70 animate-pulse" />
             <div className="relative rounded-xl overflow-hidden w-full h-full group">
               <Image
-                src="/assets/fotogitar.png"
+                src="/assets/me.png"
                 alt="Profile picture"
                 fill
                 className="object-cover transition-all duration-700 filter grayscale group-hover:grayscale-0"
@@ -86,12 +83,7 @@ export const About = () => {
         {/* Right Column - Content */}
         <div className="order-1 lg:order-2 flex flex-col justify-center space-y-8">
           <div className="text-left space-y-6">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.8 }}
-              className="relative z-10 space-y-2"
-            >
+            <div className="title-container opacity-0 relative z-10 space-y-2">
               <div className="inline-flex items-center gap-1 cursor-pointer group">
                 <span className="text-sm uppercase tracking-wider text-violet-400 font-medium">
                   About Me
@@ -118,32 +110,21 @@ export const About = () => {
                   Surya Zulfikar
                 </h2>
               </div>
-            </motion.div>
+            </div>
 
-            {isInView && showDescription && (
-              <div className="space-y-8">
-                <div className="max-w-2xl">
-                  <TextGenerateEffect
-                    words={description}
-                    className="text-base sm:text-lg md:text-xl font-medium text-white/70 leading-relaxed"
-                    duration={0.3}
-                  />
-                </div>
+            <div className="space-y-8">
+              <p className="description opacity-0 text-base sm:text-lg md:text-xl font-medium text-white/70 leading-relaxed max-w-2xl">
+                {description}
+              </p>
 
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.5 }}
-                  className="w-full max-w-md"
-                >
-                  <FloatingDock
-                    items={socialLinks}
-                    desktopClassName="backdrop-blur-sm bg-transparent"
-                    mobileClassName="backdrop-blur-sm bg-transparent"
-                  />
-                </motion.div>
+              <div className="social-links opacity-0 w-full max-w-md">
+                <FloatingDock
+                  items={socialLinks}
+                  desktopClassName="backdrop-blur-sm bg-transparent"
+                  mobileClassName="backdrop-blur-sm bg-transparent"
+                />
               </div>
-            )}
+            </div>
           </div>
         </div>
       </div>
