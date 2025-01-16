@@ -1,9 +1,7 @@
 "use client";
 
-import { useInView } from "framer-motion";
-import { useRef } from "react";
+import { TestimonialsAnimation } from "../animation/testimonialsAnimation";
 import { InfiniteMovingCards } from "../ui/infinite-moving-cards";
-import { TextGenerateEffect } from "../ui/text-generate-effect";
 
 const testimonials = [
   {
@@ -39,57 +37,56 @@ const testimonials = [
 ];
 
 export const Testimonials = () => {
-  const titleRef = useRef(null);
-  const isInView = useInView(titleRef, { once: true });
-
   return (
     <div className="relative flex flex-col items-center justify-center overflow-hidden min-h-screen">
-      <div className="w-full flex flex-col md:flex-row items-center justify-between px-4 py-16 md:px-6 gap-8">
+      <div className="w-full max-w-[1400px] mx-auto flex flex-col md:flex-row items-center justify-between px-4 py-16 md:px-6 gap-8">
         {/* Title Section - Left Side */}
-        <div ref={titleRef} className="w-full md:w-1/3 space-y-4">
-          <h2 className="text-2xl md:text-4xl font-bold text-left bg-gradient-to-r from-violet-500 via-purple-500 to-cyan-400 text-transparent bg-clip-text">
-            Client Testimonials
-          </h2>
-          {isInView && (
-            <TextGenerateEffect
-              words="What others say about my work and collaboration"
-              className="text-lg font-normal md:text-lg text-white/70 text-left"
-            />
-          )}
+        <div className="w-full md:w-1/3 space-y-4 flex-shrink-0">
+          <TestimonialsAnimation type="title">
+            <h2 className="text-2xl md:text-4xl font-bold text-left bg-gradient-to-r from-violet-500 via-purple-500 to-cyan-400 text-transparent bg-clip-text">
+              Client Testimonials
+            </h2>
+
+            <p className="text-xs font-normal md:text-base text-white text-left">
+              What others say about my work and collaboration
+            </p>
+          </TestimonialsAnimation>
         </div>
 
         {/* Cards Section - Right Side */}
-        <div className="relative w-full md:w-2/3 h-[40rem] flex flex-col items-center justify-center gap-[-1] overflow-hidden bg-black">
-          <div className="absolute left-0 top-0 w-[10%] h-full bg-gradient-to-r from-black to-transparent z-10" />
-          <div className="absolute right-0 top-0 w-[10%] h-full bg-gradient-to-l from-black to-transparent z-10" />
+        <TestimonialsAnimation type="cards">
+          <div className="relative w-full md:w-2/3 h-[40rem] flex flex-col items-center justify-center overflow-hidden bg-black flex-shrink-0">
+            <div className="absolute left-0 top-0 w-[10%] h-full bg-gradient-to-r from-black to-transparent z-10" />
+            <div className="absolute right-0 top-0 w-[10%] h-full bg-gradient-to-l from-black to-transparent z-10" />
 
-          {/* First Row - Moving Right */}
-          <div className="w-full h-1/3">
-            <InfiniteMovingCards
-              items={testimonials}
-              direction="right"
-              speed="slow"
-            />
-          </div>
+            {/* First Row - Moving Right */}
+            <div className="w-full h-1/3">
+              <InfiniteMovingCards
+                items={testimonials}
+                direction="right"
+                speed="slow"
+              />
+            </div>
 
-          {/* Second Row - Moving Left */}
-          <div className="w-full h-1/3">
-            <InfiniteMovingCards
-              items={testimonials.slice().reverse()}
-              direction="left"
-              speed="slow"
-            />
-          </div>
+            {/* Second Row - Moving Left */}
+            <div className="w-full h-1/3">
+              <InfiniteMovingCards
+                items={testimonials.slice().reverse()}
+                direction="left"
+                speed="slow"
+              />
+            </div>
 
-          {/* Third Row - Moving Right */}
-          <div className="w-full h-1/3">
-            <InfiniteMovingCards
-              items={testimonials}
-              direction="right"
-              speed="slow"
-            />
+            {/* Third Row - Moving Right */}
+            <div className="w-full h-1/3">
+              <InfiniteMovingCards
+                items={testimonials}
+                direction="right"
+                speed="slow"
+              />
+            </div>
           </div>
-        </div>
+        </TestimonialsAnimation>
       </div>
     </div>
   );

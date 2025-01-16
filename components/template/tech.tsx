@@ -6,7 +6,6 @@ import gsap from "gsap";
 import { useEffect, useRef } from "react";
 import { initTechAnimation } from "../animation/techAnimation";
 import { CardBody, CardContainer, CardItem } from "../ui/3d-card";
-import { TextGenerateEffect } from "../ui/text-generate-effect"; // Add this import
 
 const techStack = [
   { name: "HTML", icon: "devicon-html5-plain" },
@@ -166,7 +165,7 @@ export const Tech = () => {
         </motion.div>
         <span
           ref={titleRef}
-          className="inline-block text-5xl font-bold text-white"
+          className="inline-block text-5xl font-bold bg-gradient-to-r from-violet-500 via-purple-500 to-cyan-400 text-transparent bg-clip-text"
         >
           Tech Stack
         </span>
@@ -175,10 +174,10 @@ export const Tech = () => {
       {/* Modified subtitle section */}
       <div ref={subtitleRef} className="mb-12 text-center">
         {isSubtitleInView && (
-          <TextGenerateEffect
-            words="Mastering modern technologies to create exceptional digital experiences"
-            className="font-normal"
-          />
+          <p className="text-xs font-normal md:text-lg text-white text-center">
+            Mastering modern technologies to create exceptional digital
+            experiences
+          </p>
         )}
       </div>
 
@@ -200,7 +199,7 @@ export const Tech = () => {
               border border-violet-900/50 rounded-xl p-4
               transition-all duration-300 ease-out
               hover:border-violet-600/50
-              hover:scale-110
+              hover:scale-95
               before:absolute before:inset-0 before:bg-gradient-to-br 
               before:from-violet-600/20 before:via-violet-800/10 before:to-black/20 
               before:rounded-xl before:opacity-0 
@@ -215,7 +214,7 @@ export const Tech = () => {
             `}
             >
               <CardItem
-                translateZ={150}
+                translateZ={200}
                 className="text-7xl flex items-center justify-center w-full h-full text-violet-300"
               >
                 <div className="flex flex-col items-center gap-2">
