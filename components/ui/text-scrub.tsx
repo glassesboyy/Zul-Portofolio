@@ -19,18 +19,18 @@ export const TextScrub = ({ children, className }: TextScrubProps) => {
     if (!textRef.current) return;
 
     const text = new SplitType(textRef.current, {
-      types: "words,chars", // remove 'lines'
+      types: "words,chars",
       tagName: "span",
     });
 
     gsap.from(text.chars, {
       opacity: 0.2,
       scale: 0.8,
-      duration: 0.8,
+      duration: 0.3,
       ease: "power4.out",
       stagger: {
-        amount: 0.4,
-        from: "random",
+        amount: 0.01,
+        from: "start",
       },
       scrollTrigger: {
         trigger: textRef.current,
