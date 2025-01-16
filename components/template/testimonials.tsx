@@ -41,23 +41,48 @@ export const Testimonials = () => {
     <div className="relative flex flex-col items-center justify-center overflow-hidden min-h-screen">
       <div className="w-full max-w-[1400px] mx-auto flex flex-col md:flex-row items-center justify-between px-4 py-16 md:px-6 gap-8">
         {/* Title Section - Left Side */}
-        <div className="w-full md:w-1/3 space-y-4 flex-shrink-0">
+        <div className="w-full md:w-1/3 space-y-6 flex-shrink-0">
           <TestimonialsAnimation type="title">
-            <h2 className="text-2xl md:text-4xl font-bold text-left bg-gradient-to-r from-violet-500 via-purple-500 to-cyan-400 text-transparent bg-clip-text">
-              Client Testimonials
-            </h2>
+            <div className="space-y-2">
+              <div className="inline-flex items-center gap-1 cursor-pointer group">
+                <span className="text-sm font-medium text-violet-400 uppercase tracking-widest">
+                  Testimonials
+                </span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="17"
+                  height="17"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1"
+                  className="transition-transform duration-300 group-hover:translate-x-1 text-violet-400"
+                >
+                  <path d="M5 12h14" />
+                  <path d="m12 5 7 7-7 7" />
+                </svg>
+              </div>
+              <h2 className="text-3xl md:text-5xl font-bold text-left [text-wrap:balance]">
+                <span className="inline-block bg-gradient-to-r from-violet-500 via-purple-500 to-cyan-400 text-transparent bg-clip-text pb-2">
+                  What People Are Saying
+                </span>
+              </h2>
+            </div>
 
-            <p className="text-xs font-normal md:text-base text-white text-left">
-              What others say about my work and collaboration
+            <p className="text-base md:text-lg leading-relaxed max-w-[90%] [text-wrap:balance]">
+              Trusted by clients worldwide, delivering exceptional results and
+              transforming ideas into reality.
             </p>
           </TestimonialsAnimation>
         </div>
 
         {/* Cards Section - Right Side */}
         <TestimonialsAnimation type="cards">
-          <div className="relative w-full md:w-2/3 h-[40rem] flex flex-col items-center justify-center overflow-hidden bg-black flex-shrink-0">
-            <div className="absolute left-0 top-0 w-[10%] h-full bg-gradient-to-r from-black to-transparent z-10" />
-            <div className="absolute right-0 top-0 w-[10%] h-full bg-gradient-to-l from-black to-transparent z-10" />
+          <div className="relative w-full md:w-2/3 h-[46rem] flex flex-col items-center justify-center overflow-hidden rounded-3xl flex-shrink-0">
+            <div className="absolute inset-0 bg-gradient-to-br from-violet-900/10 via-black to-black/90" />
+            <div className="absolute left-0 top-0 w-[20%] h-full bg-gradient-to-r from-black to-transparent z-10" />
+            <div className="absolute right-0 top-0 w-[20%] h-full bg-gradient-to-l from-black to-transparent z-10" />
+            <div className="absolute inset-0 bg-grid-white/[0.02] bg-[size:30px_30px]" />
 
             {/* First Row - Moving Right */}
             <div className="w-full h-1/3">

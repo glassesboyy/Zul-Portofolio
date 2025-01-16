@@ -1,4 +1,7 @@
 import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export const initTechAnimation = (
   titleRef: HTMLElement | null,
@@ -51,4 +54,51 @@ export const initTechAnimation = (
   tl.play();
 
   return tl;
+};
+
+export const initScrollAnimation = (
+  element: HTMLElement | null,
+  type: "title" | "subtitle"
+) => {
+  if (!element) return;
+
+  if (type === "title") {
+    gsap.fromTo(
+      element,
+      {
+        opacity: 0,
+        y: 20,
+      },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1.2,
+        scrollTrigger: {
+          trigger: element,
+          start: "top center+=200",
+          toggleActions: "play none none reverse",
+        },
+      }
+    );
+  } else {
+    gsap.fromTo(
+      element,
+      {
+        opacity: 0,
+        y: 30,
+      },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1.2,
+        delay: 0.3,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: element,
+          start: "top center+=200",
+          toggleActions: "play none none reverse",
+        },
+      }
+    );
+  }
 };

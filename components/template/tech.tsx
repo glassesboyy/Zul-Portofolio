@@ -1,10 +1,13 @@
 "use client";
 
 import { useAnimationStore } from "@/store/animationStore";
-import { motion, useInView } from "framer-motion";
+import { useInView } from "framer-motion";
 import gsap from "gsap";
 import { useEffect, useRef } from "react";
-import { initTechAnimation } from "../animation/techAnimation";
+import {
+  initScrollAnimation,
+  initTechAnimation,
+} from "../animation/techAnimation";
 import { CardBody, CardContainer, CardItem } from "../ui/3d-card";
 
 const techStack = [
@@ -25,13 +28,11 @@ const techStack = [
 ];
 
 export const Tech = () => {
-  const titleRef = useRef<HTMLSpanElement>(null);
+  const titleRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const { preloadComplete } = useAnimationStore();
   const animationTriggered = useRef(false);
-  const geometryRef = useRef(null);
-  const isInView = useInView(geometryRef, { once: true, margin: "-100px" });
-  const subtitleRef = useRef(null);
+  const subtitleRef = useRef<HTMLDivElement>(null);
   const isSubtitleInView = useInView(subtitleRef, { once: true });
 
   useEffect(() => {
@@ -76,107 +77,51 @@ export const Tech = () => {
     };
   }, [preloadComplete]);
 
+  useEffect(() => {
+    initScrollAnimation(titleRef.current, "title");
+    initScrollAnimation(subtitleRef.current, "subtitle");
+  }, []);
+
   return (
     <div>
-      <h1 ref={geometryRef} className="mb-4 text-center relative">
-        {" "}
-        {/* Changed mb-12 to mb-4 */}
-        {/* Left geometric shape */}
-        <motion.div
-          initial={{ scale: 0, rotate: 0, x: 50, opacity: 0 }}
-          animate={
-            isInView
-              ? {
-                  scale: 1,
-                  rotate: 360,
-                  x: 0,
-                  opacity: 1.2,
-                }
-              : {
-                  scale: 0,
-                  rotate: 0,
-                  x: 50,
-                  opacity: 0,
-                }
-          }
-          transition={{
-            delay: 0.5,
-            duration: 1,
-            rotate: {
-              duration: 3,
-              repeat: Infinity,
-              ease: "linear",
-            },
-          }}
-          className="absolute right-[calc(50%+150px)] top-1/3 -translate-y-1/2 w-4 h-4 bg-gradient-to-tr from-violet-500 to-cyan-500"
-        >
-          <motion.div
-            animate={{ opacity: isInView ? [0.5, 1, 0.5] : 0 }}
-            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute inset-0 bg-gradient-to-tr from-violet-400 to-cyan-400 blur-sm"
-          />
-          <motion.div
-            initial={{ scale: 0 }}
-            animate={isInView ? { scale: 1.5 } : { scale: 0 }}
-            transition={{ delay: 0.8, duration: 0.5 }}
-            className="absolute inset-0 bg-white/30 blur-xl"
-          />
-        </motion.div>
-        {/* Right geometric shape */}
-        <motion.div
-          initial={{ scale: 0, rotate: 0, x: -50, opacity: 0 }}
-          animate={
-            isInView
-              ? {
-                  scale: 1,
-                  rotate: -360,
-                  x: 0,
-                  opacity: 1,
-                }
-              : {
-                  scale: 0,
-                  rotate: 0,
-                  x: -50,
-                  opacity: 0,
-                }
-          }
-          transition={{
-            delay: 0.5,
-            duration: 1.2,
-            rotate: {
-              duration: 3,
-              repeat: Infinity,
-              ease: "linear",
-            },
-          }}
-          className="absolute left-[calc(50%+150px)] top-1/3 -translate-y-1/2 w-4 h-4 bg-gradient-to-tr from-violet-500 to-cyan-500"
-        >
-          <motion.div
-            animate={{ opacity: isInView ? [0.5, 1, 0.5] : 0 }}
-            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute inset-0 bg-gradient-to-tr from-violet-400 to-cyan-400 blur-sm"
-          />
-          <motion.div
-            initial={{ scale: 0 }}
-            animate={isInView ? { scale: 1.5 } : { scale: 0 }}
-            transition={{ delay: 1, duration: 0.5 }}
-            className="absolute inset-0 bg-white/30 blur-xl"
-          />
-        </motion.div>
-        <span
-          ref={titleRef}
-          className="inline-block text-5xl font-bold bg-gradient-to-r from-violet-500 via-purple-500 to-cyan-400 text-transparent bg-clip-text"
-        >
-          Tech Stack
-        </span>
-      </h1>
+      <div ref={titleRef}>
+        <h1 className="mb-4 text-center relative">
+          <div className="space-y-2">
+            <div className="inline-flex items-center gap-1 cursor-pointer group">
+              <span className="text-sm font-medium text-violet-400 uppercase tracking-widest">
+                Tech Stack
+              </span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="17"
+                height="17"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1"
+                className="transition-transform duration-300 group-hover:translate-x-1 text-violet-400"
+              >
+                <path d="M5 12h14" />
+                <path d="m12 5 7 7-7 7" />
+              </svg>
+            </div>
+            <h2 className="text-3xl md:text-5xl font-bold text-center [text-wrap:balance]">
+              <span
+                ref={titleRef}
+                className="inline-block bg-gradient-to-r from-violet-500 via-purple-500 to-cyan-400 text-transparent bg-clip-text pb-2"
+              >
+                Technologies & Tools
+              </span>
+            </h2>
+          </div>
+        </h1>
+      </div>
 
-      {/* Modified subtitle section */}
       <div ref={subtitleRef} className="mb-12 text-center">
         {isSubtitleInView && (
-          <p className="text-xs font-normal md:text-lg text-white text-center">
-            Mastering modern technologies to create exceptional digital
-            experiences
+          <p className="text-base md:text-lg leading-relaxed [text-wrap:balance] max-w-[90%] mx-auto">
+            Crafting powerful web solutions with cutting-edge technologies and
+            proven frameworks
           </p>
         )}
       </div>
