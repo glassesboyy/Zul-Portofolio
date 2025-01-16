@@ -116,12 +116,18 @@ const config: Config = {
             "background-position": "right center",
           },
         },
+        scroll: {
+          from: { transform: "translateX(0)" },
+          to: { transform: "translateX(calc(-50%))" },
+        },
       },
       animation: {
         "bounce-horizontal": "bounce-horizontal 1s ease-in-out infinite",
         shimmer: "shimmer 8s ease-in-out infinite",
         glow: "glow 2s ease-in-out infinite",
         "gradient-x": "gradient-x 5s ease-in-out infinite",
+        scroll:
+          "scroll var(--animation-duration, 40s) var(--animation-direction, normal) linear infinite",
       },
     },
   },

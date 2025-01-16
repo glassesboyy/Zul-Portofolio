@@ -7,7 +7,7 @@ body {
   min-height: 100vh;
   position: relative;
   overflow-x: hidden;
-  background-color: hsl(240 50% 10%); /* match dengan --background */
+  background-color: black; /* Ubah ke warna hitam solid */
 }
 
 @layer utilities {
@@ -18,7 +18,7 @@ body {
 
 @layer base {
   :root {
-    --background: 240 50% 10%; /* ubah background menjadi lebih terang */
+    --background: 0 0% 0%; /* Ubah background menjadi hitam */
     --foreground: 180 20% 96%;
     --card: 260 50% 5%;
     --card-foreground: 180 20% 96%;

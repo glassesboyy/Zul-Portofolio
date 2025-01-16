@@ -16,7 +16,7 @@ export const initTechAnimation = (
     titleRef,
     {
       opacity: 0,
-      y: 100,
+      y: -100,
       scale: 0.9,
     },
     {

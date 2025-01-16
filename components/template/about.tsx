@@ -68,7 +68,7 @@ export const About = () => {
       >
         {/* Left Column - Image */}
         <div className="profile-image-container opacity-0 order-2 lg:order-1">
-          <div className="relative w-full max-w-[280px] h-[280px] lg:max-w-[450px] lg:h-[450px] mx-auto">
+          <div className="relative w-full max-w-[280px] h-[280px] lg:max-w-[400px] lg:h-[400px] mx-auto">
             <div className="absolute inset-0 rounded-xl bg-gradient-to-tr from-violet-500 to-cyan-500 blur-lg opacity-70 animate-pulse" />
             <div className="relative rounded-xl overflow-hidden w-full h-full group">
               <Image

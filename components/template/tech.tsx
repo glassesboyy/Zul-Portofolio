@@ -1,11 +1,12 @@
 "use client";
 
 import { useAnimationStore } from "@/store/animationStore";
-import { motion, useInView } from "framer-motion"; // Add this import
-import gsap from "gsap"; // Add this import
+import { motion, useInView } from "framer-motion";
+import gsap from "gsap";
 import { useEffect, useRef } from "react";
 import { initTechAnimation } from "../animation/techAnimation";
 import { CardBody, CardContainer, CardItem } from "../ui/3d-card";
+import { TextGenerateEffect } from "../ui/text-generate-effect"; // Add this import
 
 const techStack = [
   { name: "HTML", icon: "devicon-html5-plain" },
@@ -31,6 +32,8 @@ export const Tech = () => {
   const animationTriggered = useRef(false);
   const geometryRef = useRef(null);
   const isInView = useInView(geometryRef, { once: true, margin: "-100px" });
+  const subtitleRef = useRef(null);
+  const isSubtitleInView = useInView(subtitleRef, { once: true });
 
   useEffect(() => {
     // Set initial state when component mounts
@@ -76,7 +79,9 @@ export const Tech = () => {
 
   return (
     <div>
-      <h1 ref={geometryRef} className="mb-12 text-center relative">
+      <h1 ref={geometryRef} className="mb-4 text-center relative">
+        {" "}
+        {/* Changed mb-12 to mb-4 */}
         {/* Left geometric shape */}
         <motion.div
           initial={{ scale: 0, rotate: 0, x: 50, opacity: 0 }}
@@ -118,7 +123,6 @@ export const Tech = () => {
             className="absolute inset-0 bg-white/30 blur-xl"
           />
         </motion.div>
-
         {/* Right geometric shape */}
         <motion.div
           initial={{ scale: 0, rotate: 0, x: -50, opacity: 0 }}
@@ -160,7 +164,6 @@ export const Tech = () => {
             className="absolute inset-0 bg-white/30 blur-xl"
           />
         </motion.div>
-
         <span
           ref={titleRef}
           className="inline-block text-5xl font-bold text-white"
@@ -168,6 +171,17 @@ export const Tech = () => {
           Tech Stack
         </span>
       </h1>
+
+      {/* Modified subtitle section */}
+      <div ref={subtitleRef} className="mb-12 text-center">
+        {isSubtitleInView && (
+          <TextGenerateEffect
+            words="Mastering modern technologies to create exceptional digital experiences"
+            className="font-normal"
+          />
+        )}
+      </div>
+
       <div
         ref={containerRef}
         className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-7 place-items-center gap-4 px-4 md:px-20 lg:px-48"
@@ -186,6 +200,7 @@ export const Tech = () => {
               border border-violet-900/50 rounded-xl p-4
               transition-all duration-300 ease-out
               hover:border-violet-600/50
+              hover:scale-110
               before:absolute before:inset-0 before:bg-gradient-to-br 
               before:from-violet-600/20 before:via-violet-800/10 before:to-black/20 
               before:rounded-xl before:opacity-0 

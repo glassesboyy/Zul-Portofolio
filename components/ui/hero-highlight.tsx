@@ -34,7 +34,7 @@ export const HeroHighlight = ({
       animate={{ opacity: preloadComplete ? 1 : 0 }}
       transition={{ duration: 0.8, delay: 0.2, ease: "easeInOut" }}
       className={cn(
-        "relative min-h-screen flex items-center bg-background/95 justify-center w-full group",
+        "relative min-h-screen flex items-center bg-black justify-center w-full group",
         containerClassName
       )}
       onMouseMove={handleMouseMove}

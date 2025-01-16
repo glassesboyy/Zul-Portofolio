@@ -6,6 +6,7 @@ import { Hero } from "@/components/template/hero";
 import { Navbar } from "@/components/template/navbar";
 import { Philo } from "@/components/template/philo";
 import { Tech } from "@/components/template/tech";
+import { Testimonials } from "@/components/template/testimonials";
 import { Separator } from "@/components/ui/separator";
 import { SeparatorRoundDown } from "@/components/ui/separator-round-down";
 import { SeparatorRoundUp } from "@/components/ui/separator-round-up";
@@ -41,7 +42,7 @@ export default function Home() {
           />
         </svg>
       </div>
-      <div className="flex min-h-screen flex-col">
+      <div className="flex min-h-screen flex-col bg-black">
         <Navbar />
         <section id="home">
           <Hero />
@@ -57,6 +58,9 @@ export default function Home() {
           <Tech />
         </section>
         <SeparatorRoundDown />
+        <section id="testimonials" className="h-fit bg-black">
+          <Testimonials />
+        </section>
         <section id="projects" className="min-h-screen">
           {/* Projects content */}
         </section>
