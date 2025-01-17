@@ -139,28 +139,18 @@ export const Tech = () => {
             <CardBody
               className={`
               relative group/card h-32 w-32 cursor-pointer
-              bg-gradient-to-br from-black via-slate-950 to-violet-900
-              dark:hover:shadow-2xl dark:hover:shadow-violet-500/[0.2]
-              border border-violet-900/50 rounded-xl p-4
+              bg-gradient-to-t from-black/10 to-violet-800/30
+              dark:hover:shadow-2xl dark:hover:shadow-violet-600/30
+              border border-violet-900/10 rounded-xl
               transition-all duration-300 ease-out
               hover:border-violet-600/50
               hover:scale-95
-              before:absolute before:inset-0 before:bg-gradient-to-br 
-              before:from-violet-600/20 before:via-violet-800/10 before:to-black/20 
-              before:rounded-xl before:opacity-0 
-              before:transition-opacity before:duration-500
               hover:before:opacity-100
-              after:absolute after:inset-0 
-              after:bg-gradient-to-br 
-              after:from-violet-500/0 after:via-violet-500/[0.1] after:to-black/0 
-              after:opacity-0 after:group-hover/card:opacity-100 
-              after:transition-opacity after:duration-500 
-              after:rounded-xl
             `}
             >
               <CardItem
-                translateZ={200}
-                className="text-7xl flex items-center justify-center w-full h-full text-violet-300"
+                translateZ={160}
+                className="text-7xl flex items-center justify-center w-full h-full text-white"
               >
                 <div className="flex flex-col items-center gap-2">
                   <i
