@@ -1,84 +1,99 @@
+"use client";
+
+import { useEffect, useRef } from "react";
 import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-export const initAboutAnimation = (container: HTMLElement) => {
-  const tl = gsap.timeline();
+gsap.registerPlugin(ScrollTrigger);
 
-  // Initial states
-  gsap.set(
-    [
-      ".profile-image-container",
-      ".title-container",
-      ".description",
-      ".social-links",
-    ],
-    {
-      opacity: 0,
-      y: 30,
-    }
-  );
+type AnimationProps = {
+  children: React.ReactNode;
+  type: "image" | "content";
+};
 
-  gsap.set(".profile-image-container", {
-    scale: 0.8,
-  });
+export const AboutAnimation = ({ children, type }: AnimationProps) => {
+  const elementRef = useRef<HTMLDivElement>(null);
 
-  // Animation sequence
-  tl.from(container, {
-    opacity: 0,
-    y: 50,
-    duration: 1,
-    ease: "power3.out",
-  })
-    .to(
-      ".profile-image-container",
-      {
-        opacity: 1,
-        scale: 1,
-        y: 0,
-        duration: 1.2,
-        ease: "power3.out",
-      },
-      0.3
-    )
-    .to(
-      ".title-container",
-      {
-        opacity: 1,
-        y: 0,
-        duration: 0.8,
-        ease: "power3.out",
-      },
-      "-=0.8"
-    )
-    .to(
-      ".description",
-      {
-        opacity: 1,
-        y: 0,
-        duration: 0.6,
-        ease: "power3.out",
-      },
-      "-=0.4"
-    )
-    .to(
-      ".social-links",
-      {
-        opacity: 1,
-        y: 0,
-        duration: 0.6,
-        ease: "power3.out",
-      },
-      "-=0.3"
-    );
+  useEffect(() => {
+    const element = elementRef.current;
+    if (!element) return;
 
-  // Floating animation
-  gsap.to(".profile-image-container", {
-    y: -15,
-    duration: 2,
-    ease: "power1.inOut",
-    yoyo: true,
-    repeat: -1,
-    delay: 1.5,
-  });
+    const ctx = gsap.context(() => {
+      if (type === "image") {
+        gsap.fromTo(
+          element,
+          {
+            opacity: 0,
+            scale: 0.8,
+            y: 30,
+          },
+          {
+            opacity: 1,
+            scale: 1,
+            y: 0,
+            duration: 1.2,
+            scrollTrigger: {
+              trigger: element,
+              start: "top center+=200",
+              toggleActions: "play none none reverse",
+            },
+          }
+        );
 
-  return tl;
+        // Floating animation
+        gsap.to(element, {
+          y: -15,
+          duration: 2,
+          ease: "power1.inOut",
+          yoyo: true,
+          repeat: -1,
+          delay: 1.5,
+        });
+      } else {
+        // Animasi untuk konten teks
+        const titleElement = element.querySelector(
+          ".title-container"
+        ) as HTMLElement;
+        const descElement = element.querySelector(
+          ".description"
+        ) as HTMLElement;
+        const socialElement = element.querySelector(
+          ".social-links"
+        ) as HTMLElement;
+
+        // Memastikan semua elemen ditemukan
+        if (!titleElement || !descElement || !socialElement) return;
+
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: element,
+            start: "top center+=200",
+            toggleActions: "play none none reverse",
+          },
+        });
+
+        tl.fromTo(
+          titleElement,
+          { opacity: 0, y: 30 },
+          { opacity: 1, y: 0, duration: 0.8 }
+        )
+          .fromTo(
+            descElement,
+            { opacity: 0, y: 30 },
+            { opacity: 1, y: 0, duration: 0.8 },
+            "-=0.4"
+          )
+          .fromTo(
+            socialElement,
+            { opacity: 0, y: 30 },
+            { opacity: 1, y: 0, duration: 0.8 },
+            "-=0.4"
+          );
+      }
+    }, element); // Specify the scope for the context
+
+    return () => ctx.revert();
+  }, [type]);
+
+  return <div ref={elementRef}>{children}</div>;
 };
