@@ -28,6 +28,8 @@ const config: Config = {
         sans: ["var(--font-raleway)"],
       },
       fontSize: {
+        xxxs: ["0.55rem", { lineHeight: "1rem" }],
+        xxs: ["0.625rem", { lineHeight: "1rem" }],
         xs: ["0.75rem", { lineHeight: "1rem" }],
         sm: ["0.875rem", { lineHeight: "1.25rem" }],
         base: ["1rem", { lineHeight: "1.5rem" }],
