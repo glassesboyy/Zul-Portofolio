@@ -7,6 +7,7 @@ import { Navbar } from "@/components/template/navbar";
 import { Philo } from "@/components/template/philo";
 import { Tech } from "@/components/template/tech";
 import { Testimonials } from "@/components/template/testimonials";
+import { Projects } from "@/components/template/projects";
 import { Separator } from "@/components/ui/separator";
 import { SeparatorRoundDown } from "@/components/ui/separator-round-down";
 import { SeparatorRoundUp } from "@/components/ui/separator-round-up";
@@ -62,7 +63,7 @@ export default function Home() {
           <Testimonials />
         </section>
         <section id="projects" className="min-h-screen">
-          {/* Projects content */}
+          <Projects />
         </section>
         <section id="skills" className="min-h-screen">
           {/* Skills content */}
