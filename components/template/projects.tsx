@@ -2,30 +2,6 @@
 
 import { Separator } from "../ui/separator";
 
-const projects = [
-  {
-    title: "Project Alpha",
-    description: "A modern web application built with Next.js and TypeScript",
-    tech: ["Next.js", "TypeScript", "Tailwind CSS"],
-    image: "/assets/me.png",
-    link: "https://example.com",
-  },
-  {
-    title: "Beta Platform",
-    description: "Full-stack e-commerce solution with real-time features",
-    tech: ["React", "Node.js", "MongoDB"],
-    image: "/projects/project2.jpg",
-    link: "https://example.com",
-  },
-  {
-    title: "Gamma Dashboard",
-    description: "Analytics dashboard with advanced data visualization",
-    tech: ["Vue.js", "D3.js", "Firebase"],
-    image: "/projects/project3.jpg",
-    link: "https://example.com",
-  },
-];
-
 export const Projects = () => {
   return (
     <div className="my-24 relative h-full w-full py-40 overflow-hidden bg-gradient-to-b from-black via-violet-900 to-violet-700">
