@@ -80,16 +80,18 @@ export const FloatingNav = forwardRef<
             {item.icon}
             <span className="relative">
               {item.name}
-              {activeSection === item.name.toLowerCase()}
+              {activeSection === item.name.toLowerCase() && (
+                <span className="absolute -bottom-2.5 -left-2 w-full h-[3px] bg-gradient-to-r from-transparent via-cyan-700 to-transparent" />
+              )}{" "}
             </span>
             {activeSection === item.name.toLowerCase() && (
               <motion.div
                 layoutId="pill"
                 className={cn(
                   "absolute inset-0 rounded-full",
-                  "bg-gradient-to-r from-violet-950/50 to-violet-900/50",
-                  "border border-violet-500/20",
-                  "shadow-inner shadow-violet-500/10"
+                  "bg-black/10",
+                  "border border-violet-500/50",
+                  "shadow-inner shadow-violet-500/50"
                 )}
                 transition={{
                   type: "spring",

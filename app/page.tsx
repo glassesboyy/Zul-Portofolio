@@ -48,9 +48,9 @@ export default function Home() {
         <section id="home">
           <Hero />
         </section>
-        <Separator />
+        <SeparatorRoundDown />
         <Philo />
-        <Separator />
+        <SeparatorRoundUp />
         <section id="about" className="h-fit">
           <About />
         </section>
