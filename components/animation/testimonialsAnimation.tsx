@@ -1,8 +1,8 @@
 "use client";
 
-import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useEffect, useRef } from "react";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -30,12 +30,11 @@ export const TestimonialsAnimation = ({
         {
           opacity: 1,
           y: 0,
-          duration: 1.2,
+          duration: 2,
           scrollTrigger: {
             trigger: element,
             start: "top center+=200",
             toggleActions: "play none none reverse",
-            // markers: true, // Uncomment untuk debugging
           },
         }
       );
@@ -51,14 +50,13 @@ export const TestimonialsAnimation = ({
           opacity: 1,
           y: 0,
           width: "100%",
-          duration: 1.2,
-          delay: 0.3, // Menambah delay untuk cards
+          duration: 2,
+          delay: 1.5,
           ease: "power3.out",
           scrollTrigger: {
             trigger: element,
             start: "top center+=200",
             toggleActions: "play none none reverse",
-            // markers: true, // Uncomment untuk debugging
           },
         }
       );

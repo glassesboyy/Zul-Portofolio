@@ -51,41 +51,53 @@ export const FloatingNav = forwardRef<
       animate={hidden ? "hidden" : "visible"}
       transition={{ duration: 0.35, ease: "easeInOut" }}
       className={cn(
-        "fixed top-10 inset-x-0 max-w-fit mx-auto z-[100] group",
+        "fixed top-6 inset-x-0 max-w-fit mx-auto z-[100]",
         className
       )}
     >
       <div
-        className="flex items-center gap-6 px-8 py-3 rounded-full
-        border border-white/10 
-        bg-black/50 backdrop-blur-xl
-        transition-all duration-300
-        group-hover:shadow-[0_5px_20px_0_rgba(31,38,135,0.37)]
-        relative
-        before:absolute before:inset-0 before:-z-10 before:rounded-full
-        before:opacity-0 group-hover:before:opacity-100
-        before:bg-gradient-to-r before:from-violet-500/20 before:to-cyan-500/20
-        before:blur-xl before:transition-all before:duration-1000"
+        className={cn(
+          "relative flex items-center gap-4 px-4 py-2 rounded-full",
+          "border border-violet-500/20",
+          "bg-black/70",
+          "shadow-lg shadow-violet-500/10",
+          "backdrop-blur-md"
+        )}
       >
         {navItems.map((item) => (
           <button
             key={item.name}
             onClick={() => handleClick(item.name)}
             className={cn(
-              "text-sm transition-all relative group/item",
+              "relative flex items-center gap-2 px-4 py-2 text-sm",
+              "transition-all duration-300 rounded-full",
+              "hover:bg-violet-500/10 hover:scale-105",
               activeSection === item.name.toLowerCase()
-                ? "after:absolute after:bottom-0 after:left-0 after:right-0 after:h-px after:bg-gradient-to-r after:from-violet-500 after:to-cyan-500"
-                : "",
-              "bg-gradient-to-r from-violet-400 to-cyan-400 bg-clip-text hover:text-transparent",
-              activeSection === item.name.toLowerCase()
-                ? "text-transparent"
-                : "text-zinc-100"
+                ? "text-violet-300 font-medium"
+                : "text-zinc-400"
             )}
           >
-            <span className="flex items-center gap-1">
-              {item.icon}
-              <span>{item.name}</span>
+            {item.icon}
+            <span className="relative">
+              {item.name}
+              {activeSection === item.name.toLowerCase()}
             </span>
+            {activeSection === item.name.toLowerCase() && (
+              <motion.div
+                layoutId="pill"
+                className={cn(
+                  "absolute inset-0 rounded-full",
+                  "bg-gradient-to-r from-violet-950/50 to-violet-900/50",
+                  "border border-violet-500/20",
+                  "shadow-inner shadow-violet-500/10"
+                )}
+                transition={{
+                  type: "spring",
+                  bounce: 0.3,
+                  duration: 0.6,
+                }}
+              />
+            )}
           </button>
         ))}
       </div>

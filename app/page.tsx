@@ -5,9 +5,9 @@ import { About } from "@/components/template/about";
 import { Hero } from "@/components/template/hero";
 import { Navbar } from "@/components/template/navbar";
 import { Philo } from "@/components/template/philo";
+import { Projects } from "@/components/template/projects";
 import { Tech } from "@/components/template/tech";
 import { Testimonials } from "@/components/template/testimonials";
-import { Projects } from "@/components/template/projects";
 import { Separator } from "@/components/ui/separator";
 import { SeparatorRoundDown } from "@/components/ui/separator-round-down";
 import { SeparatorRoundUp } from "@/components/ui/separator-round-up";
@@ -50,7 +50,7 @@ export default function Home() {
         </section>
         <Separator />
         <Philo />
-        <SeparatorRoundUp />
+        <Separator />
         <section id="about" className="h-fit">
           <About />
         </section>
@@ -58,12 +58,12 @@ export default function Home() {
         <section id="tech" className="h-fit my-20">
           <Tech />
         </section>
-        <SeparatorRoundDown />
-        <section id="testimonials" className="h-fit bg-black">
-          <Testimonials />
-        </section>
+        <Separator />
         <section id="projects" className="min-h-screen">
           <Projects />
+        </section>
+        <section id="testimonials" className="h-fit bg-black">
+          <Testimonials />
         </section>
         <section id="skills" className="min-h-screen">
           {/* Skills content */}
