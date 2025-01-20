@@ -50,13 +50,13 @@ export const TestimonialsAnimation = ({
           opacity: 1,
           y: 0,
           width: "100%",
-          duration: 2,
-          delay: 1.5,
+          duration: 1.5,
+          delay: 1,
           ease: "power3.out",
           scrollTrigger: {
             trigger: element,
             start: "top center+=200",
-            toggleActions: "play none none reverse",
+            toggleActions: "play reverse restart reverse",
           },
         }
       );

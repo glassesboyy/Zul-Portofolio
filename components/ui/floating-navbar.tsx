@@ -81,7 +81,7 @@ export const FloatingNav = forwardRef<
             <span className="relative">
               {item.name}
               {activeSection === item.name.toLowerCase() && (
-                <span className="absolute -bottom-2.5 -left-2 w-full h-[3px] bg-gradient-to-r from-transparent via-cyan-700 to-transparent" />
+                <span className="absolute -bottom-2.5 -left-2 w-full h-[3.5px] bg-gradient-to-r from-transparent via-cyan-700 to-transparent" />
               )}{" "}
             </span>
             {activeSection === item.name.toLowerCase() && (

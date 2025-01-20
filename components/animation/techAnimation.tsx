@@ -96,7 +96,7 @@ export const initScrollAnimation = (
         scrollTrigger: {
           trigger: element,
           start: "top center+=200",
-          toggleActions: "play none none reverse",
+          toggleActions: "play reverse restart reverse",
         },
       }
     );

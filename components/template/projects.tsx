@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { PinContainer } from "../ui/3d-pin";
 import { Separator } from "../ui/separator";
 
@@ -41,10 +41,25 @@ const Chip = ({ text }: { text: string }) => (
 
 export const Projects = () => {
   const [isClient, setIsClient] = useState(false);
+  const titleContainerRef = useRef<HTMLDivElement>(null);
+  const projectsContainerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     setIsClient(true);
   }, []);
+
+  useEffect(() => {
+    if (isClient) {
+      import("../animation/projectsAnimation").then(
+        ({ initProjectsAnimation }) => {
+          initProjectsAnimation(
+            titleContainerRef.current,
+            projectsContainerRef.current
+          );
+        }
+      );
+    }
+  }, [isClient]);
 
   return (
     <div className="my-20 relative h-full w-full py-40 overflow-hidden bg-gradient-to-b from-black via-violet-900 to-violet-700">
@@ -58,8 +73,11 @@ export const Projects = () => {
         </div>
       </div>
 
-      {/* Content Container - Adjusted padding */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 pt-16">
+      {/* Content Container - Now with ref */}
+      <div
+        ref={titleContainerRef}
+        className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 pt-16"
+      >
         <div className="text-center mb-0 pt-16">
           <div className="space-y-2">
             <div className="inline-flex items-center gap-1 cursor-pointer group">
@@ -94,9 +112,12 @@ export const Projects = () => {
         </div>
       </div>
 
-      {/* Project Grid - Only render on client side */}
+      {/* Project Grid - Now with ref */}
       {isClient && (
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6">
+        <div
+          ref={projectsContainerRef}
+          className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6"
+        >
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-1">
             {projects.map((project, index) => (
               <div

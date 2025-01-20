@@ -1,8 +1,8 @@
 "use client";
 
-import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useEffect, useRef } from "react";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -35,14 +35,14 @@ export const AboutAnimation = ({ children, type }: AnimationProps) => {
             scrollTrigger: {
               trigger: element,
               start: "top center+=200",
-              toggleActions: "play none none reverse",
+              toggleActions: "play reverse restart reverse",
             },
           }
         );
 
         // Floating animation
         gsap.to(element, {
-          y: -15,
+          y: -12,
           duration: 2,
           ease: "power1.inOut",
           yoyo: true,
@@ -68,7 +68,7 @@ export const AboutAnimation = ({ children, type }: AnimationProps) => {
           scrollTrigger: {
             trigger: element,
             start: "top center+=200",
-            toggleActions: "play none none reverse",
+            toggleActions: "play reverse restart reverse",
           },
         });
 
