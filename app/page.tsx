@@ -11,6 +11,7 @@ import { Testimonials } from "@/components/template/testimonials";
 import { Separator } from "@/components/ui/separator";
 import { SeparatorRoundDown } from "@/components/ui/separator-round-down";
 import { SeparatorRoundUp } from "@/components/ui/separator-round-up";
+import { Certificate } from "@/components/template/certificate";
 import { useEffect } from "react";
 
 export default function Home() {
@@ -65,8 +66,9 @@ export default function Home() {
         <section id="testimonials" className="h-fit bg-black">
           <Testimonials />
         </section>
-        <section id="skills" className="min-h-screen">
-          {/* Skills content */}
+        <Separator />
+        <section id="certificate" className="min-h-screen">
+          <Certificate />
         </section>
         {/* Separator Round Kebawah */}
         <section id="contact" className="min-h-screen">
