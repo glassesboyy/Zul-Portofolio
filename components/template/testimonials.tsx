@@ -89,7 +89,7 @@ export const Testimonials = () => {
               <InfiniteMovingCards
                 items={testimonials}
                 direction="right"
-                speed="slow"
+                speed="normal"
               />
             </div>
 
@@ -98,7 +98,7 @@ export const Testimonials = () => {
               <InfiniteMovingCards
                 items={testimonials.slice().reverse()}
                 direction="left"
-                speed="slow"
+                speed="normal"
               />
             </div>
 
@@ -107,7 +107,7 @@ export const Testimonials = () => {
               <InfiniteMovingCards
                 items={testimonials}
                 direction="right"
-                speed="slow"
+                speed="normal"
               />
             </div>
           </div>
