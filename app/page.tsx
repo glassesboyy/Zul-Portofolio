@@ -2,16 +2,17 @@
 
 import { initPreloadAnimation } from "@/components/animation/preloadAnimation";
 import { About } from "@/components/template/about";
+import { Certificate } from "@/components/template/certificate";
 import { Hero } from "@/components/template/hero";
 import { Navbar } from "@/components/template/navbar";
 import { Philo } from "@/components/template/philo";
 import { Projects } from "@/components/template/projects";
+import { Services } from "@/components/template/services";
 import { Tech } from "@/components/template/tech";
 import { Testimonials } from "@/components/template/testimonials";
 import { Separator } from "@/components/ui/separator";
 import { SeparatorRoundDown } from "@/components/ui/separator-round-down";
 import { SeparatorRoundUp } from "@/components/ui/separator-round-up";
-import { Certificate } from "@/components/template/certificate";
 import { useEffect } from "react";
 
 export default function Home() {
@@ -69,6 +70,10 @@ export default function Home() {
         <Separator />
         <section id="certificate" className="min-h-screen">
           <Certificate />
+        </section>
+        <Separator />
+        <section id="services" className="min-h-screen">
+          <Services />
         </section>
         {/* Separator Round Kebawah */}
         <section id="contact" className="min-h-screen">
