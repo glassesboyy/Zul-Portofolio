@@ -86,17 +86,17 @@ export const About = () => {
                     </svg>
                   </div>
                   <div className="space-y-1">
-                    <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold bg-gradient-to-r from-violet-500 via-purple-500 to-cyan-400 text-transparent bg-clip-text leading-[1.1]">
+                    <h2 className="text-3xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold bg-gradient-to-r from-violet-500 via-purple-500 to-cyan-400 text-transparent bg-clip-text leading-[1.1]">
                       Hi There! Its Me,
                     </h2>
-                    <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-extrabold text-white leading-[1.1]">
+                    <h2 className="text-5xl sm:text-4xl md:text-5xl lg:text-7xl font-extrabold text-white leading-[1.1]">
                       Surya Zulfikar
                     </h2>
                   </div>
                 </div>
 
                 <div className="space-y-8">
-                  <p className="description text-lg sm:text-lg md:text-lg text-justify font-medium text-white/70 leading-relaxed max-w-lg">
+                  <p className="description text-md sm:text-lg md:text-lg text-justify font-medium text-white/70 leading-relaxed max-w-lg">
                     {description}
                   </p>
 

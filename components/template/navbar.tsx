@@ -6,8 +6,11 @@ import {
   IconCertificate,
   IconCode,
   IconHome,
+  IconHotelService,
   IconMail,
   IconMessageStar,
+  IconServerBolt,
+  IconServicemark,
   IconUser,
 } from "@tabler/icons-react";
 import { useEffect, useRef } from "react";
@@ -53,6 +56,11 @@ export function Navbar() {
           name: "Certificate",
           link: "certificate",
           icon: <IconCertificate className="w-4 h-4" />,
+        },
+        {
+          name: "Services",
+          link: "services",
+          icon: <IconHotelService className="w-4 h-4" />,
         },
         {
           name: "Contact",
