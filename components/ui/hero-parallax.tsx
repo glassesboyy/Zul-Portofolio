@@ -147,19 +147,20 @@ export const ProductCard = ({
       <Link
         href={product.link}
         className="block relative h-full w-full rounded-xl overflow-hidden
-          before:absolute before:inset-0 
-          before:bg-gradient-to-t before:from-black/80 before:to-transparent before:z-10
-          before:opacity-60 before:transition-opacity before:duration-700
+          before:absolute before:inset-0
+          before:bg-gradient-to-t before:from-black/80 before:to-transparent
+          before:opacity-100 before:transition-opacity before:duration-700
+          before:z-10
           group-hover/product:before:opacity-30"
       >
         <div
           className="absolute inset-0 bg-gradient-to-t from-black/90 to-violet-900/60 
-          opacity-0 group-hover/product:opacity-100 transition-opacity duration-700 z-20"
+          opacity-100 group-hover/product:opacity-0 transition-opacity duration-700 z-20"
         />
 
         <div
-          className="absolute inset-0 border border-violet-500/20 rounded-xl z-20
-          group-hover/product:border-violet-500/50 group-hover/product:shadow-lg
+          className="absolute inset-0 border border-violet-500/50 rounded-xl z-20
+          group-hover/product:border-violet-500/20 group-hover/product:shadow-lg
           group-hover/product:shadow-violet-600/20 transition-all duration-700"
         />
 
@@ -174,16 +175,16 @@ export const ProductCard = ({
 
         <div className="absolute bottom-0 left-0 right-0 p-4 z-30">
           <h2
-            className="text-white font-medium text-lg opacity-0 
-            group-hover/product:opacity-100 transform translate-y-4 
-            group-hover/product:translate-y-0 transition-all duration-700
+            className="text-white font-medium text-lg opacity-100 
+            group-hover/product:opacity-0 transform translate-y-0 
+            group-hover/product:translate-y-4 transition-all duration-700
             text-shadow-lg shadow-black/50"
           >
             {product.title}
           </h2>
           <div
-            className="h-[0.5px] w-0 bg-gradient-to-r from-violet-500 via-violet-500 
-            to-cyan-400 rounded-full group-hover/product:w-full transition-all duration-700"
+            className="h-[0.5px] w-full bg-gradient-to-r from-violet-500 via-violet-500 
+            to-cyan-400 rounded-full group-hover/product:w-0 transition-all duration-700"
           />
         </div>
       </Link>

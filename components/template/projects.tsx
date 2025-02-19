@@ -1,11 +1,36 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { PinContainer } from "../ui/3d-pin";
 import { Separator } from "../ui/separator";
 
 const projects = [
+  {
+    title: "E-Commerce Platform",
+    description:
+      "Full-stack e-commerce solution with real-time inventory management",
+    href: "https://project1.demo",
+    tech: "Next.js • TypeScript • MongoDB",
+  },
+  {
+    title: "Task Management App",
+    description: "Collaborative project management tool with real-time updates",
+    href: "https://project2.demo",
+    tech: "React • Node.js • Socket.io",
+  },
+  {
+    title: "Learning Platform",
+    description: "Interactive online learning platform with video streaming",
+    href: "https://project3.demo",
+    tech: "Laravel • MySQL • AWS",
+  },
+  {
+    title: "Social Network",
+    description: "Feature-rich social platform with real-time messaging",
+    href: "https://project4.demo",
+    tech: "Next.js • PostgreSQL • Redis",
+  },
   {
     title: "E-Commerce Platform",
     description:
