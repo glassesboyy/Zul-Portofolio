@@ -64,6 +64,7 @@ export default function Home() {
         <section id="projects" className="min-h-screen">
           <Projects />
         </section>
+        <Separator />
         <section id="testimonials" className="h-fit bg-black">
           <Testimonials />
         </section>

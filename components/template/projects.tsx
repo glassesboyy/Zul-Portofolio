@@ -87,7 +87,7 @@ export const Projects = () => {
   }, [isClient]);
 
   return (
-    <div className="my-20 relative h-full w-full py-40 overflow-hidden bg-gradient-to-b from-black via-violet-900 to-violet-700">
+    <div className="pt-40 pb-10 relative h-full w-full overflow-hidden bg-gradient-to-b from-black via-violet-900 to-violet-700">
       <div className="absolute inset-0 overflow-hidden">
         {/* Primary curve */}
         <div className="absolute inset-0 -top-44">
