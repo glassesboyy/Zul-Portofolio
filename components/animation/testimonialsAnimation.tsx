@@ -25,16 +25,19 @@ export const TestimonialsAnimation = ({
         element,
         {
           opacity: 0,
-          y: 20,
+          y: 100,
         },
         {
           opacity: 1,
           y: 0,
-          duration: 2,
+          duration: 1.8,
+          ease: "power2.out",
           scrollTrigger: {
             trigger: element,
-            start: "top center+=200",
+            start: "top bottom-=100",
+            end: "top center",
             toggleActions: "play none none reverse",
+            scrub: 1,
           },
         }
       );
@@ -43,26 +46,26 @@ export const TestimonialsAnimation = ({
         element,
         {
           opacity: 0,
-          y: 50,
-          width: "100%",
+          y: 150,
+          scale: 0.95,
         },
         {
           opacity: 1,
           y: 0,
-          width: "100%",
-          duration: 1.5,
-          delay: 1,
-          ease: "power3.out",
+          scale: 1,
+          duration: 2,
+          ease: "power2.out",
           scrollTrigger: {
             trigger: element,
-            start: "top center+=200",
-            toggleActions: "play reverse restart reverse",
+            start: "top bottom-=50",
+            end: "top center+=100",
+            toggleActions: "play none none reverse",
+            scrub: 1.5,
           },
         }
       );
     }
 
-    // Cleanup
     return () => {
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     };

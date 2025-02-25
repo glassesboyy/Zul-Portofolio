@@ -107,7 +107,9 @@ export const HeroParallax = ({
       >
         {/* Single Row with all certificates */}
         <motion.div className="flex overflow-x-auto scrollbar-hide mb-10">
-          <div className="flex space-x-7 min-w-max px-4">
+          <div className="flex space-x-10 min-w-max px-4">
+            {" "}
+            {/* Increased spacing from space-x-7 to space-x-10 */}
             {products.map((product) => (
               <ProductCard
                 product={product}
@@ -142,7 +144,7 @@ export const ProductCard = ({
         scale: 0.95,
       }}
       key={product.title}
-      className="group/product h-64 w-96 relative flex-shrink-0"
+      className="group/product h-72 w-[460px] relative flex-shrink-0"
     >
       <Link
         href={product.link}
@@ -175,15 +177,15 @@ export const ProductCard = ({
 
         <div className="absolute bottom-0 left-0 right-0 p-4 z-30">
           <h2
-            className="text-white font-medium text-lg opacity-100 
-            group-hover/product:opacity-0 transform translate-y-0 
+            className="text-white font-medium text-lg opacity-100
+            group-hover/product:opacity-0 transform translate-y-0
             group-hover/product:translate-y-4 transition-all duration-700
             text-shadow-lg shadow-black/50"
           >
             {product.title}
           </h2>
           <div
-            className="h-[0.5px] w-full bg-gradient-to-r from-violet-500 via-violet-500 
+            className="h-[0.5px] w-full bg-gradient-to-r from-violet-500 via-violet-500
             to-cyan-400 rounded-full group-hover/product:w-0 transition-all duration-700"
           />
         </div>
