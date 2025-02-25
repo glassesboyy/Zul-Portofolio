@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
+import { useInView } from "framer-motion";
 import { PinContainer } from "../ui/3d-pin";
 import { Separator } from "../ui/separator";
 
@@ -66,8 +67,10 @@ const Chip = ({ text }: { text: string }) => (
 
 export const Projects = () => {
   const [isClient, setIsClient] = useState(false);
-  const titleContainerRef = useRef<HTMLDivElement>(null);
+  const titleRef = useRef<HTMLDivElement>(null);
+  const subtitleRef = useRef<HTMLDivElement>(null);
   const projectsContainerRef = useRef<HTMLDivElement>(null);
+  const isSubtitleInView = useInView(subtitleRef, { once: true });
 
   useEffect(() => {
     setIsClient(true);
@@ -78,7 +81,8 @@ export const Projects = () => {
       import("../animation/projectsAnimation").then(
         ({ initProjectsAnimation }) => {
           initProjectsAnimation(
-            titleContainerRef.current,
+            titleRef.current,
+            subtitleRef.current,
             projectsContainerRef.current
           );
         }
@@ -98,46 +102,50 @@ export const Projects = () => {
         </div>
       </div>
 
-      {/* Content Container - Now with ref */}
-      <div
-        ref={titleContainerRef}
-        className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 pt-16"
-      >
-        <div className="text-center mb-0 pt-16">
-          <div className="space-y-2">
-            <div className="inline-flex items-center gap-1 cursor-pointer group">
-              <span className="text-sm font-medium text-violet-400 uppercase tracking-widest">
-                Projects
-              </span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="17"
-                height="17"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1"
-                className="transition-transform duration-300 group-hover:translate-x-1 text-violet-400"
-              >
-                <path d="M5 12h14" />
-                <path d="m12 5 7 7-7 7" />
-              </svg>
+      {/* Content Container */}
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 pt-16">
+        <div ref={titleRef}>
+          <h1 className="mb-4 text-center relative">
+            <div className="space-y-2">
+              <div className="inline-flex items-center gap-1 cursor-pointer group">
+                <span className="text-sm font-medium text-violet-400 uppercase tracking-widest">
+                  Projects
+                </span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="17"
+                  height="17"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1"
+                  className="transition-transform duration-300 group-hover:translate-x-1 text-violet-400"
+                >
+                  <path d="M5 12h14" />
+                  <path d="m12 5 7 7-7 7" />
+                </svg>
+              </div>
+              <h2 className="text-3xl md:text-5xl font-bold text-center [text-wrap:balance]">
+                <span className="inline-block bg-gradient-to-r from-violet-500 via-purple-500 to-cyan-400 text-transparent bg-clip-text pb-2">
+                  Featured Projects
+                </span>
+              </h2>
             </div>
-            <h2 className="text-3xl md:text-6xl font-bold [text-wrap:balance]">
-              <span className="inline-block bg-gradient-to-r from-violet-500 via-purple-500 to-cyan-400 text-transparent bg-clip-text pb-2">
-                Featured Projects
-              </span>
-            </h2>
-            <p className="text-base md:text-base text-white max-w-2xl mx-auto [text-wrap:balance]">
+          </h1>
+        </div>
+
+        <div ref={subtitleRef} className="mb-12 text-center">
+          {isSubtitleInView && (
+            <p className="text-base md:text-lg text-white max-w-2xl mx-auto [text-wrap:balance]">
               Explore my latest work showcasing innovative solutions and
               creative designs
             </p>
-            <Separator />
-          </div>
+          )}
         </div>
+        <Separator />
       </div>
 
-      {/* Project Grid - Now with ref */}
+      {/* Project Grid */}
       {isClient && (
         <div
           ref={projectsContainerRef}

@@ -30,13 +30,13 @@ export const TestimonialsAnimation = ({
         {
           opacity: 1,
           y: 0,
-          duration: 1.8,
+          duration: 5,
           ease: "power2.out",
           scrollTrigger: {
             trigger: element,
             start: "top bottom-=100",
             end: "top center",
-            toggleActions: "play none none reverse",
+            toggleActions: "play reverse restart reverse",
             scrub: 1,
           },
         }
@@ -59,7 +59,7 @@ export const TestimonialsAnimation = ({
             trigger: element,
             start: "top bottom-=50",
             end: "top center+=100",
-            toggleActions: "play none none reverse",
+            toggleActions: "play reverse restart reverse",
             scrub: 1.5,
           },
         }

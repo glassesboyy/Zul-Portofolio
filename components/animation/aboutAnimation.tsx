@@ -90,7 +90,7 @@ export const AboutAnimation = ({ children, type }: AnimationProps) => {
             "-=0.4"
           );
       }
-    }, element); // Specify the scope for the context
+    }, element);
 
     return () => ctx.revert();
   }, [type]);

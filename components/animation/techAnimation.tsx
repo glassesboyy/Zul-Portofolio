@@ -67,7 +67,7 @@ export const initScrollAnimation = (
       element,
       {
         opacity: 0,
-        y: 20,
+        y: 30,
       },
       {
         opacity: 1,
@@ -76,7 +76,7 @@ export const initScrollAnimation = (
         scrollTrigger: {
           trigger: element,
           start: "top center+=200",
-          toggleActions: "play none none reverse",
+          toggleActions: "play reverse restart reverse",
         },
       }
     );

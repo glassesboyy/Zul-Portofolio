@@ -5,29 +5,52 @@ gsap.registerPlugin(ScrollTrigger);
 
 export const initProjectsAnimation = (
   titleContainer: HTMLElement | null,
+  subtitleContainer: HTMLElement | null,
   projectsContainer: HTMLElement | null
 ) => {
   if (!titleContainer || !projectsContainer) return;
 
   // Title section animation
   gsap.fromTo(
-    titleContainer.children,
+    titleContainer,
     {
       opacity: 0,
-      y: 50,
+      y: 30,
     },
     {
       opacity: 1,
       y: 0,
-      duration: 1,
-      stagger: 0.2,
+      duration: 1.2,
       scrollTrigger: {
         trigger: titleContainer,
-        start: "top center+=100",
+        start: "top center+=200",
         toggleActions: "play reverse restart reverse",
       },
     }
   );
+
+  // Subtitle animation
+  if (subtitleContainer) {
+    gsap.fromTo(
+      subtitleContainer,
+      {
+        opacity: 0,
+        y: 30,
+      },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1.2,
+        delay: 0.3,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: subtitleContainer,
+          start: "top center+=200",
+          toggleActions: "play reverse restart reverse",
+        },
+      }
+    );
+  }
 
   // Projects grid animation
   const projectCards = projectsContainer.children;

@@ -2,7 +2,7 @@
 
 import { cn } from "@/lib/utils";
 import { useInView } from "framer-motion";
-import { useRef, useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { GlowingEffect } from "../ui/glowing-effect";
 
 const services = [
