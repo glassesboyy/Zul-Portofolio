@@ -3,6 +3,7 @@
 import { initPreloadAnimation } from "@/components/animation/preloadAnimation";
 import { About } from "@/components/template/about";
 import { Certificate } from "@/components/template/certificate";
+import { Contact } from "@/components/template/contact";
 import { Hero } from "@/components/template/hero";
 import { Navbar } from "@/components/template/navbar";
 import { Philo } from "@/components/template/philo";
@@ -76,9 +77,9 @@ export default function Home() {
         <section id="services" className="min-h-screen">
           <Services />
         </section>
-        {/* Separator Round Kebawah */}
+        <SeparatorRoundDown />
         <section id="contact" className="min-h-screen">
-          {/* Contact content */}
+          <Contact />
         </section>
       </div>
     </>

@@ -1,8 +1,9 @@
 "use client";
 
+import { useInView } from "framer-motion";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
-import { useInView } from "framer-motion";
 import { PinContainer } from "../ui/3d-pin";
 import { Separator } from "../ui/separator";
 
@@ -13,24 +14,28 @@ const projects = [
       "Full-stack e-commerce solution with real-time inventory management",
     href: "https://project1.demo",
     tech: "Next.js • TypeScript • MongoDB",
+    image: "/assets/projects/dummy1.png",
   },
   {
     title: "Task Management App",
     description: "Collaborative project management tool with real-time updates",
     href: "https://project2.demo",
     tech: "React • Node.js • Socket.io",
+    image: "/assets/projects/dummy2.png",
   },
   {
     title: "Learning Platform",
     description: "Interactive online learning platform with video streaming",
     href: "https://project3.demo",
     tech: "Laravel • MySQL • AWS",
+    image: "/assets/projects/dummy1.png",
   },
   {
     title: "Social Network",
     description: "Feature-rich social platform with real-time messaging",
     href: "https://project4.demo",
     tech: "Next.js • PostgreSQL • Redis",
+    image: "/assets/projects/dummy2.png",
   },
   {
     title: "E-Commerce Platform",
@@ -38,24 +43,28 @@ const projects = [
       "Full-stack e-commerce solution with real-time inventory management",
     href: "https://project1.demo",
     tech: "Next.js • TypeScript • MongoDB",
+    image: "/assets/projects/dummy1.png",
   },
   {
     title: "Task Management App",
     description: "Collaborative project management tool with real-time updates",
     href: "https://project2.demo",
     tech: "React • Node.js • Socket.io",
+    image: "/assets/projects/dummy2.png",
   },
   {
     title: "Learning Platform",
     description: "Interactive online learning platform with video streaming",
     href: "https://project3.demo",
     tech: "Laravel • MySQL • AWS",
+    image: "/assets/projects/dummy1.png",
   },
   {
     title: "Social Network",
     description: "Feature-rich social platform with real-time messaging",
     href: "https://project4.demo",
     tech: "Next.js • PostgreSQL • Redis",
+    image: "/assets/projects/dummy2.png",
   },
 ];
 
@@ -70,6 +79,7 @@ export const Projects = () => {
   const titleRef = useRef<HTMLDivElement>(null);
   const subtitleRef = useRef<HTMLDivElement>(null);
   const projectsContainerRef = useRef<HTMLDivElement>(null);
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
   const isSubtitleInView = useInView(subtitleRef, { once: true });
 
   useEffect(() => {
@@ -90,8 +100,22 @@ export const Projects = () => {
     }
   }, [isClient]);
 
+  const scroll = (direction: "left" | "right") => {
+    if (scrollContainerRef.current) {
+      const scrollAmount = window.innerWidth * 0.8;
+      const newPosition =
+        scrollContainerRef.current.scrollLeft +
+        (direction === "right" ? scrollAmount : -scrollAmount);
+
+      scrollContainerRef.current.scrollTo({
+        left: newPosition,
+        behavior: "smooth",
+      });
+    }
+  };
+
   return (
-    <div className="pt-40 pb-10 relative h-full w-full overflow-hidden bg-gradient-to-b from-black via-violet-900 to-violet-700">
+    <div className="pt-80 pb-10 relative h-full w-full overflow-hidden bg-gradient-to-b from-black via-violet-900 to-violet-700">
       <div className="absolute inset-0 overflow-hidden">
         {/* Primary curve */}
         <div className="absolute inset-0 -top-44">
@@ -145,47 +169,71 @@ export const Projects = () => {
         <Separator />
       </div>
 
-      {/* Project Grid */}
+      {/* Project Carousel */}
       {isClient && (
-        <div
-          ref={projectsContainerRef}
-          className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6"
-        >
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-1">
-            {projects.map((project, index) => (
-              <div
-                key={index}
-                className="h-[20rem] w-full flex items-center justify-center"
-              >
-                <PinContainer title={project.title} href={project.href}>
-                  <div className="flex basis-full flex-col py-2 px-4 tracking-tight text-white/70 w-[15rem] h-[17rem]">
-                    <h3 className="max-w-xs !pb-2 !m-0 font-bold text-lg text-white">
-                      {project.title}
-                    </h3>
-                    <div className="text-xs !m-0 !p-0 font-normal">
-                      <span className="text-white/70">
-                        {project.description}
-                      </span>
+        <div className="relative z-10 max-w-full px-4 sm:px-6">
+          <div
+            ref={scrollContainerRef}
+            className="relative overflow-x-auto hide-scrollbar"
+            style={{ scrollSnapType: "x mandatory" }}
+          >
+            <div ref={projectsContainerRef} className="flex px-4">
+              {projects.map((project, index) => (
+                <div
+                  key={index}
+                  className="min-w-[70vw] h-[80vh] flex items-center justify-center"
+                  style={{ scrollSnapAlign: "center" }}
+                >
+                  <PinContainer title={project.title} href={project.href}>
+                    <div className="flex basis-full flex-col p-6 tracking-tight text-white/70 w-full h-full min-w-[60vw]">
+                      <h3 className="max-w-xs !pb-2 !m-0 font-bold text-2xl text-white">
+                        {project.title}
+                      </h3>
+                      <div className="text-base !m-0 !p-0 font-normal">
+                        <span className="text-white/70">
+                          {project.description}
+                        </span>
+                      </div>
+                      <div className="mt-4 flex flex-wrap gap-2">
+                        {project.tech.split("•").map((tech, i) => (
+                          <Chip key={i} text={tech.trim()} />
+                        ))}
+                      </div>
+                      <div
+                        className="relative w-[90%] mx-auto mt-6 rounded-lg overflow-hidden"
+                        style={{ aspectRatio: "21/9" }}
+                      >
+                        <Image
+                          src={project.image}
+                          alt={project.title}
+                          fill
+                          className="object-cover"
+                          sizes="(max-width: 768px) 90vw, (max-width: 1200px) 45vw, 30vw"
+                          priority
+                        />
+                        <div className="absolute inset-0 bg-black/20 hover:bg-black/0 transition-colors duration-300" />
+                      </div>
                     </div>
-                    <div className="mt-4 flex flex-wrap gap-1">
-                      {project.tech.split("•").map((tech, i) => (
-                        <Chip key={i} text={tech.trim()} />
-                      ))}
-                    </div>
-                    <div className="relative flex-1 w-full mt-4 rounded-lg overflow-hidden">
-                      <Image
-                        src="/assets/dummy1.png"
-                        alt={project.title}
-                        fill
-                        className="object-cover transform transition-transform duration-300 hover:scale-110"
-                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                      />
-                      <div className="absolute inset-0 bg-black/20 hover:bg-black/0 transition-colors duration-300" />
-                    </div>
-                  </div>
-                </PinContainer>
-              </div>
-            ))}
+                  </PinContainer>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Navigation Arrows */}
+          <div className="flex justify-center gap-4 mt-8">
+            <button
+              onClick={() => scroll("left")}
+              className="p-2 rounded-full bg-violet-500/20 hover:bg-violet-500/30 transition-colors"
+            >
+              <ChevronLeft className="w-6 h-6 text-white" />
+            </button>
+            <button
+              onClick={() => scroll("right")}
+              className="p-2 rounded-full bg-violet-500/20 hover:bg-violet-500/30 transition-colors"
+            >
+              <ChevronRight className="w-6 h-6 text-white" />
+            </button>
           </div>
         </div>
       )}

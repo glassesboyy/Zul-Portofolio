@@ -33,7 +33,7 @@ export const SeparatorRoundUp = forwardRef<HTMLDivElement, SeparatorProps>(
                 animate={isInView ? { scaleX: 1 } : { scaleX: 0 }}
                 transition={{
                   duration: 5,
-                  ease: [0.34, 1.56, 0.64, 1], // Custom spring-like curve
+                  ease: [0.34, 1.56, 0.64, 1],
                   delay: 0.1,
                 }}
                 x="0"
