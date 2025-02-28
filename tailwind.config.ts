@@ -23,6 +23,14 @@ const config: Config = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    screens: {
+      xs: "375px",
+      sm: "425px",
+      md: "768px",
+      lg: "1025px",
+      xl: "1280px",
+      "2xl": "1536px",
+    },
     extend: {
       fontFamily: {
         sans: ["var(--font-raleway)"],
