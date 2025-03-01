@@ -53,7 +53,9 @@ export const FloatingNav = forwardRef<
       animate={hidden ? "hidden" : "visible"}
       transition={{ duration: 0.35, ease: "easeInOut" }}
       className={cn(
-        "fixed top-6 inset-x-0 max-w-fit mx-auto z-[100]",
+        "fixed top-6 z-[100]",
+        "lg:inset-x-0 lg:max-w-fit lg:mx-auto", // Center alignment only for desktop
+        "w-full", // Full width container for mobile
         className
       )}
     >
@@ -108,11 +110,13 @@ export const FloatingNav = forwardRef<
       </div>
 
       {/* Mobile and Tablet Navigation (0-1024px) */}
-      <div className="lg:hidden">
+      <div className="lg:hidden flex justify-end px-6">
+        {" "}
+        {/* Added padding and justify-end */}
         <button
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           className={cn(
-            "fixed top-6 right-6 p-2 rounded-full",
+            "p-2 rounded-full",
             "bg-black/70 border border-violet-500/20",
             "backdrop-blur-md z-[101]"
           )}
@@ -124,7 +128,6 @@ export const FloatingNav = forwardRef<
             <IconMenu2 className="w-6 h-6 text-violet-300" />
           )}
         </button>
-
         {isMenuOpen && (
           <motion.div
             initial={{ opacity: 0, y: -20 }}
