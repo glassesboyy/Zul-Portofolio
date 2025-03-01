@@ -13,7 +13,7 @@ export function Hero() {
   const ctaRef = useRef<HTMLDivElement>(null);
 
   const staticTitle = "I'AM ZUL!".split("");
-  const greetings = ["HI", "HOLA", "CIAO", "HEJ", "CZE", "OLA", "HOI"];
+  const greetings = ["HOLA", "HI", "CIAO", "HEJ", "CZE", "OLA", "HOI"];
   const { preloadComplete } = useAnimationStore();
 
   useEffect(() => {
