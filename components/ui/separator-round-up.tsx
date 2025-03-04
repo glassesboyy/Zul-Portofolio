@@ -19,7 +19,7 @@ export const SeparatorRoundUp = forwardRef<HTMLDivElement, SeparatorProps>(
         initial={{ opacity: 0 }}
         animate={isInView ? { opacity: 1 } : { opacity: 0 }}
         transition={{ duration: 0.5 }}
-        className={cn("w-full h-48 relative", className)}
+        className={cn("w-full h-24 md:h-32 lg:h-48 relative", className)}
       >
         <svg
           viewBox="0 0 1200 240"
@@ -54,7 +54,7 @@ export const SeparatorRoundUp = forwardRef<HTMLDivElement, SeparatorProps>(
             d="M 0,240 C 300,30 900,30 1200,240"
             fill="none"
             stroke="url(#gradient-up)"
-            strokeWidth="5"
+            className="stroke-[2] md:stroke-[3] lg:stroke-[5]"
             mask="url(#reveal-mask-up)"
           />
         </svg>

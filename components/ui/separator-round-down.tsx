@@ -19,7 +19,10 @@ export const SeparatorRoundDown = forwardRef<HTMLDivElement, SeparatorProps>(
         initial={{ opacity: 0 }}
         animate={isInView ? { opacity: 1 } : { opacity: 0 }}
         transition={{ duration: 0.5 }}
-        className={cn("w-full h-48 relative bg-transparent", className)}
+        className={cn(
+          "w-full h-24 md:h-32 lg:h-48 relative bg-transparent",
+          className
+        )}
       >
         <svg
           viewBox="0 0 1200 240"
@@ -33,7 +36,7 @@ export const SeparatorRoundDown = forwardRef<HTMLDivElement, SeparatorProps>(
                 animate={isInView ? { scaleX: 1 } : { scaleX: 0 }}
                 transition={{
                   duration: 5,
-                  ease: [0.34, 1.56, 0.64, 1], // Custom spring-like curve
+                  ease: [0.34, 1.56, 0.64, 1],
                   delay: 0.1,
                 }}
                 x="0"
@@ -60,7 +63,7 @@ export const SeparatorRoundDown = forwardRef<HTMLDivElement, SeparatorProps>(
             d="M 0,0 C 300,210 900,210 1200,0"
             fill="none"
             stroke="url(#gradient-down)"
-            strokeWidth="25"
+            className="stroke-[15] md:stroke-[20] lg:stroke-[25]"
             strokeLinecap="round"
             pathLength="1200"
             style={{
@@ -69,12 +72,11 @@ export const SeparatorRoundDown = forwardRef<HTMLDivElement, SeparatorProps>(
             }}
             mask="url(#reveal-mask-down)"
           />
-          {/* Add overlay path with varying thickness */}
           <path
             d="M 0,0 C 300,210 900,210 1200,0"
             fill="none"
             stroke="url(#gradient-down)"
-            strokeWidth="5"
+            className="stroke-[2] md:stroke-[3] lg:stroke-[5]"
             mask="url(#reveal-mask-down)"
           />
           <defs>
