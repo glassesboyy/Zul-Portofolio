@@ -4,6 +4,7 @@ import { initPreloadAnimation } from "@/components/animation/preloadAnimation";
 import { About } from "@/components/template/about";
 import { Certificate } from "@/components/template/certificate";
 import { Contact } from "@/components/template/contact";
+import { Faq } from "@/components/template/faq";
 import { Hero } from "@/components/template/hero";
 import { Navbar } from "@/components/template/navbar";
 import { Philo } from "@/components/template/philo";
@@ -62,6 +63,10 @@ export default function Home() {
           <Tech />
         </section>
         <Separator />
+        <section id="certificate" className="min-h-screen">
+          <Certificate />
+        </section>
+        <Separator />
         <section id="projects" className="min-h-screen">
           <Projects />
         </section>
@@ -70,12 +75,9 @@ export default function Home() {
           <Testimonials />
         </section>
         <Separator />
-        <section id="certificate" className="min-h-screen">
-          <Certificate />
-        </section>
-        <Separator />
         <section id="services" className="min-h-screen">
           <Services />
+          <Faq />
         </section>
         <SeparatorRoundDown />
         <section id="contact" className="min-h-screen">

@@ -2,15 +2,18 @@
 
 import { useAnimationStore } from "@/store/animationStore";
 import {
+  IconActivity,
+  IconArrowGuide,
+  IconArrowGuideFilled,
   IconBriefcase,
   IconCertificate,
   IconCode,
+  IconFilterQuestion,
   IconHome,
   IconHotelService,
   IconMail,
   IconMessageStar,
-  IconServerBolt,
-  IconServicemark,
+  IconQuestionMark,
   IconUser,
 } from "@tabler/icons-react";
 import { useEffect, useRef } from "react";
@@ -43,6 +46,11 @@ export function Navbar() {
         },
         { name: "Tech", link: "tech", icon: <IconCode className="w-4 h-4" /> },
         {
+          name: "Certificate",
+          link: "certificate",
+          icon: <IconCertificate className="w-4 h-4" />,
+        },
+        {
           name: "Projects",
           link: "projects",
           icon: <IconBriefcase className="w-4 h-4" />,
@@ -53,14 +61,14 @@ export function Navbar() {
           icon: <IconMessageStar className="w-4 h-4" />,
         },
         {
-          name: "Certificate",
-          link: "certificate",
-          icon: <IconCertificate className="w-4 h-4" />,
-        },
-        {
           name: "Services",
           link: "services",
-          icon: <IconHotelService className="w-4 h-4" />,
+          icon: <IconArrowGuideFilled className="w-4 h-4" />,
+        },
+        {
+          name: "FAQ",
+          link: "faq",
+          icon: <IconQuestionMark className="w-4 h-4" />,
         },
         {
           name: "Contact",
