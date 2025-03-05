@@ -2,15 +2,11 @@
 
 import { useAnimationStore } from "@/store/animationStore";
 import {
-  IconActivity,
-  IconArrowGuide,
   IconArrowGuideFilled,
   IconBriefcase,
   IconCertificate,
   IconCode,
-  IconFilterQuestion,
   IconHome,
-  IconHotelService,
   IconMail,
   IconMessageStar,
   IconQuestionMark,

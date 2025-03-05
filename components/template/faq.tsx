@@ -6,52 +6,63 @@ import { useInView } from "framer-motion";
 
 const faqs = [
   {
+    id: "faq-1",
     question: "What is your development process?",
     answer:
       "My development process follows an agile methodology, starting with requirement gathering, followed by design, development, testing, and deployment. I ensure continuous communication and iterations based on feedback.",
   },
   {
+    id: "faq-2",
     question: "How do you handle project timelines?",
     answer:
       "I break down projects into manageable milestones with clear deadlines. Regular updates and transparent communication help keep projects on track and address any potential delays proactively.",
   },
   {
+    id: "faq-3",
     question: "Do you provide ongoing support?",
     answer:
       "Yes, I offer post-development support and maintenance services to ensure your application runs smoothly. This includes bug fixes, updates, and feature enhancements as needed.",
   },
   {
+    id: "faq-4",
     question: "What technologies do you specialize in?",
     answer:
       "I specialize in modern web technologies including React, Next.js, TypeScript, Node.js, and various other frontend and backend technologies. I stay updated with the latest industry trends.",
   },
   {
+    id: "faq-5",
     question: "How do you ensure project quality?",
     answer:
       "I implement comprehensive testing strategies, including unit testing, integration testing, and end-to-end testing. Code reviews and best practices are integral to my development process.",
   },
   {
+    id: "faq-6",
     question: "What is your communication style?",
     answer:
       "I maintain clear and consistent communication through regular updates, scheduled meetings, and responsive channels. I believe in transparency and keeping all stakeholders informed throughout the project lifecycle.",
   },
   {
+    id: "faq-7",
     question: "Do you offer custom solutions?",
     answer:
       "Yes, I specialize in creating tailored solutions that meet specific business needs. Each project is approached uniquely, considering your requirements, goals, and target audience.",
   },
   {
+    id: "faq-8",
     question: "What is your pricing structure?",
     answer:
       "I offer flexible pricing models including project-based, hourly rates, and retainer options. Each quote is customized based on project scope, complexity, and timeline requirements.",
   },
 ];
 
+const leftColumnFaqs = faqs.slice(0, 4);
+const rightColumnFaqs = faqs.slice(4, 8);
+
 export const Faq = () => {
   const [isClient, setIsClient] = useState(false);
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const [activeId, setActiveId] = useState<string | null>(null);
   const titleRef = useRef<HTMLDivElement>(null);
-  const faqItemsRef = useRef<HTMLDivElement>(null);
+  const faqContainerRef = useRef<HTMLDivElement>(null);
   const subtitleRef = useRef<HTMLDivElement>(null);
   const isSubtitleInView = useInView(subtitleRef, { once: true });
 
@@ -60,11 +71,15 @@ export const Faq = () => {
   }, []);
 
   useEffect(() => {
-    if (isClient && faqItemsRef.current) {
-      const faqItems = faqItemsRef.current.querySelectorAll(".faq-item");
+    if (isClient && faqContainerRef.current) {
+      const faqItems = faqContainerRef.current.querySelectorAll(".faq-item");
       initFaqAnimation(titleRef.current, Array.from(faqItems));
     }
   }, [isClient]);
+
+  const handleClick = (id: string) => {
+    setActiveId(activeId === id ? null : id);
+  };
 
   return (
     <div className="w-full py-20 px-4 sm:px-6 lg:px-8 bg-black">
@@ -105,46 +120,95 @@ export const Faq = () => {
           </div>
         </div>
 
-        <div ref={faqItemsRef} className="grid md:grid-cols-2 gap-4 md:gap-6">
-          {faqs.map((faq, index) => (
-            <div
-              key={index}
-              className="faq-item group rounded-lg border border-violet-500/20 bg-violet-500/5 hover:border-violet-500/40 transition-all duration-300"
-            >
-              <button
-                className="flex w-full items-center justify-between px-4 py-5 sm:p-6"
-                onClick={() => setOpenIndex(openIndex === index ? null : index)}
-              >
-                <span className="text-lg font-semibold text-white">
-                  {faq.question}
-                </span>
-                <span className="ml-6 flex-shrink-0">
-                  <svg
-                    className={`h-6 w-6 text-violet-400 transition-transform duration-300 ${
-                      openIndex === index ? "rotate-180" : ""
-                    }`}
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M19 9l-7 7-7-7"
-                    />
-                  </svg>
-                </span>
-              </button>
+        <div
+          ref={faqContainerRef}
+          className="flex flex-col md:flex-row gap-4 md:gap-6"
+        >
+          {/* Left Column */}
+          <div className="flex-1 space-y-4">
+            {leftColumnFaqs.map((faq) => (
               <div
-                className={`px-4 pb-5 sm:px-6 sm:pb-6 ${
-                  openIndex === index ? "block" : "hidden"
-                }`}
+                key={faq.id}
+                className="faq-item group rounded-lg border border-violet-500/20 bg-violet-500/5 hover:border-violet-500/40 transition-all duration-300"
               >
-                <p className="text-base text-white/70">{faq.answer}</p>
+                <button
+                  className="flex w-full items-center justify-between px-4 py-5 sm:p-6"
+                  onClick={() => handleClick(faq.id)}
+                >
+                  <span className="text-lg font-semibold text-white">
+                    {faq.question}
+                  </span>
+                  <span className="ml-6 flex-shrink-0">
+                    <svg
+                      className={`h-6 w-6 text-violet-400 transition-transform duration-300 ${
+                        activeId === faq.id ? "rotate-180" : ""
+                      }`}
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M19 9l-7 7-7-7"
+                      />
+                    </svg>
+                  </span>
+                </button>
+                <div
+                  className={`px-4 pb-5 sm:px-6 sm:pb-6 ${
+                    activeId === faq.id ? "block" : "hidden"
+                  }`}
+                >
+                  <p className="text-base text-white/70">{faq.answer}</p>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
+
+          {/* Right Column */}
+          <div className="flex-1 space-y-4">
+            {rightColumnFaqs.map((faq) => (
+              <div
+                key={faq.id}
+                className="faq-item group rounded-lg border border-violet-500/20 bg-violet-500/5 hover:border-violet-500/40 transition-all duration-300"
+              >
+                <button
+                  className="flex w-full items-center justify-between px-4 py-5 sm:p-6"
+                  onClick={() => handleClick(faq.id)}
+                >
+                  <span className="text-lg font-semibold text-white">
+                    {faq.question}
+                  </span>
+                  <span className="ml-6 flex-shrink-0">
+                    <svg
+                      className={`h-6 w-6 text-violet-400 transition-transform duration-300 ${
+                        activeId === faq.id ? "rotate-180" : ""
+                      }`}
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M19 9l-7 7-7-7"
+                      />
+                    </svg>
+                  </span>
+                </button>
+                <div
+                  className={`px-4 pb-5 sm:px-6 sm:pb-6 ${
+                    activeId === faq.id ? "block" : "hidden"
+                  }`}
+                >
+                  <p className="text-base text-white/70">{faq.answer}</p>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>
