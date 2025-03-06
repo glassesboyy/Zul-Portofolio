@@ -88,7 +88,7 @@ export const Tech = () => {
         <h1 className="mb-4 text-center relative">
           <div className="space-y-2">
             <div className="inline-flex items-center gap-1 cursor-pointer group">
-              <span className="text-sm font-medium text-violet-400 uppercase tracking-widest">
+              <span className="text-xs md:text-sm lg:text-base font-medium text-violet-400 uppercase tracking-widest">
                 Tech Stack
               </span>
               <svg
@@ -119,7 +119,7 @@ export const Tech = () => {
 
       <div ref={subtitleRef} className="mb-12 text-center">
         {isSubtitleInView && (
-          <p className="text-base md:text-lg leading-relaxed [text-wrap:balance] max-w-[90%] mx-auto">
+          <p className="text-sm md:text-base lg:text-lg leading-relaxed [text-wrap:balance] max-w-[90%] mx-auto">
             Crafting powerful web solutions with cutting-edge technologies and
             proven frameworks
           </p>

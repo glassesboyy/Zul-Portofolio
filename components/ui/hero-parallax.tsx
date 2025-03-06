@@ -1,4 +1,5 @@
 "use client";
+import { useMediaQuery } from "@/hooks/use-media-query";
 import {
   motion,
   MotionValue,
@@ -31,42 +32,63 @@ export const HeroParallax = ({
     offset: ["start start", "end start"],
   });
 
-  const springConfig = { stiffness: 300, damping: 30, bounce: 100 };
+  const isDesktop = useMediaQuery("(min-width: 1025px)");
+  const isTablet = useMediaQuery("(min-width: 768px)");
+
+  const springConfig = {
+    stiffness: isDesktop ? 300 : isTablet ? 250 : 200,
+    damping: isDesktop ? 30 : isTablet ? 25 : 20,
+    bounce: isDesktop ? 100 : isTablet ? 80 : 60,
+  };
 
   const translateX = useSpring(
     useTransform(scrollYProgress, [0, 0], [0, 0]),
     springConfig
   );
-  // const translateXReverse = useSpring(
-  //   useTransform(scrollYProgress, [0, 1], [0, -800]),
-  //   springConfig
-  // );
+
   const rotateX = useSpring(
-    useTransform(scrollYProgress, [0, 0.1], [30, 0]),
+    useTransform(
+      scrollYProgress,
+      [0, 0.1],
+      [isDesktop ? 35 : isTablet ? 35 : 35, 0]
+    ),
     springConfig
   );
+
   const opacity = useSpring(
-    useTransform(scrollYProgress, [0, 0.2], [0.05, 1]),
+    useTransform(scrollYProgress, [0, 0.1], [0.6, 1]),
     springConfig
   );
+
   const rotateZ = useSpring(
     useTransform(scrollYProgress, [0, 0.1], [0, 0]),
     springConfig
   );
+
   const translateY = useSpring(
-    useTransform(scrollYProgress, [0, 0.1], [-400, -100]),
+    useTransform(
+      scrollYProgress,
+      [0, 0.1],
+      [
+        isDesktop ? -50 : isTablet ? -10 : 10,
+        isDesktop ? -50 : isTablet ? -10 : 10,
+      ]
+    ),
     springConfig
   );
+
   return (
     <div
       ref={ref}
-      className="h-[110vh] bg-black overflow-hidden antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]"
+      className="h-[40vh] md:h-[40vh] lg:h-[85vh] 
+        bg-black overflow-hidden antialiased relative flex flex-col self-auto 
+        [perspective:1000px] [transform-style:preserve-3d]"
     >
-      <div className="max-w-7xl relative mx-auto my-20 md:my-40 px-4 w-full left-0 top-0">
+      <div className="max-w-7xl relative mx-auto my-4 md:my-8 lg:my-16 px-4 w-full left-0 top-0">
         <div className="space-y-2 text-right">
           {headerTag && (
             <div className="inline-flex items-center gap-1 cursor-pointer group">
-              <span className="text-sm font-medium text-violet-400 uppercase tracking-widest">
+              <span className="text-xs md:text-sm lg:text-base font-medium text-violet-400 uppercase tracking-widest">
                 {headerTag}
               </span>
               <svg
@@ -84,13 +106,13 @@ export const HeroParallax = ({
               </svg>
             </div>
           )}
-          <h1 className="text-3xl md:text-5xl font-bold dark:text-white">
+          <h2 className="text-3xl md:text-5xl font-bold dark:text-white">
             <span className="inline-block bg-gradient-to-r from-violet-500 via-purple-500 to-cyan-400 text-transparent bg-clip-text pb-2">
               {headerTitle}
             </span>
-          </h1>
+          </h2>
           {headerSubtitle && (
-            <p className="text-base md:text-lg mt-8 dark:text-neutral-200 w-full ml-auto">
+            <p className="text-sm md:text-base lg:text-lg mt-2 md:mt-4 lg:mt-8 dark:text-neutral-200 w-full ml-auto">
               {headerSubtitle}
             </p>
           )}
@@ -103,13 +125,11 @@ export const HeroParallax = ({
           translateY,
           opacity,
         }}
-        className="relative w-full px-4 mt-20"
+        className="relative w-full px-4 mt-6 md:mt-8 lg:mt-16"
       >
         {/* Single Row with all certificates */}
-        <motion.div className="flex overflow-x-auto scrollbar-hide mb-10">
-          <div className="flex space-x-10 min-w-max px-4">
-            {" "}
-            {/* Increased spacing from space-x-7 to space-x-10 */}
+        <motion.div className="flex overflow-x-auto scrollbar-hide mb-4 md:mb-6 lg:mb-10">
+          <div className="flex space-x-4 md:space-x-6 lg:space-x-8 min-w-max px-4">
             {products.map((product) => (
               <ProductCard
                 product={product}
@@ -144,11 +164,11 @@ export const ProductCard = ({
         scale: 0.95,
       }}
       key={product.title}
-      className="group/product h-72 w-[460px] relative flex-shrink-0"
+      className="group/product h-40 md:h-52 lg:h-72 w-[240px] md:w-[320px] lg:w-[460px] relative flex-shrink-0"
     >
       <Link
         href={product.link}
-        className="block relative h-full w-full rounded-xl overflow-hidden
+        className="block relative h-full w-full rounded-lg md:rounded-xl overflow-hidden
           before:absolute before:inset-0
           before:bg-gradient-to-t before:from-black/80 before:to-transparent
           before:opacity-100 before:transition-opacity before:duration-700
@@ -175,12 +195,12 @@ export const ProductCard = ({
           alt={product.title}
         />
 
-        <div className="absolute bottom-0 left-0 right-0 p-4 z-30">
+        <div className="absolute bottom-0 left-0 right-0 p-3 md:p-4 z-30">
           <h2
-            className="text-white font-medium text-lg opacity-100
-            group-hover/product:opacity-0 transform translate-y-0
-            group-hover/product:translate-y-4 transition-all duration-700
-            text-shadow-lg shadow-black/50"
+            className="text-white font-medium text-xs md:text-sm lg:text-lg
+              opacity-100 group-hover/product:opacity-0 
+              transform translate-y-0 group-hover/product:translate-y-4 
+              transition-all duration-700 text-shadow-lg shadow-black/50"
           >
             {product.title}
           </h2>
