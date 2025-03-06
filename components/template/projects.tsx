@@ -181,7 +181,7 @@ export const Projects = () => {
               {projects.map((project, index) => (
                 <div
                   key={index}
-                  className="min-w-[70vw] h-[80vh] flex items-center justify-center"
+                  className="h-[40vh] min-w-[70vw] lg:min-w-[70vw] lg:h-[80vh] flex items-center justify-center"
                   style={{ scrollSnapAlign: "center" }}
                 >
                   <PinContainer title={project.title} href={project.href}>

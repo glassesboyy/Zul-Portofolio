@@ -128,17 +128,17 @@ export const Tech = () => {
 
       <div
         ref={containerRef}
-        className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-7 place-items-center gap-4 px-4 md:px-20 lg:px-48"
+        className="grid grid-cols-3 md:grid-cols-5 lg:grid-cols-7 place-items-center gap-2 md:gap-4 px-6 md:px-8 lg:px-12"
       >
         {techStack.map((tech, index) => (
           <CardContainer
             key={index}
             className="inter-var tech-card"
-            containerClassName="py-2"
+            containerClassName="py-1 md:py-2"
           >
             <CardBody
               className={`
-              relative group/card h-32 w-32 cursor-pointer
+              relative group/card h-20 w-20 md:h-28 md:w-28 lg:h-32 lg:w-32 cursor-pointer
               bg-gradient-to-t from-black/10 to-violet-800/30
               dark:hover:shadow-2xl dark:hover:shadow-violet-600/30
               border border-violet-900/10 rounded-xl
@@ -150,13 +150,13 @@ export const Tech = () => {
             >
               <CardItem
                 translateZ={160}
-                className="text-7xl flex items-center justify-center w-full h-full text-white"
+                className="text-4xl md:text-5xl lg:text-7xl flex items-center justify-center w-full h-full text-white"
               >
-                <div className="flex flex-col items-center gap-2">
+                <div className="flex flex-col items-center md:gap-2">
                   <i
                     className={`${tech.icon} group-hover/card:text-violet-100 transition-all duration-500 transform group-hover/card:scale-110`}
                   />
-                  <span className="text-xs font-medium text-violet-300 group-hover/card:text-violet-100 transition-colors duration-300">
+                  <span className="-mb-4 md:mb-0 text-[8px] sm:text-[10px] md:text-xs font-medium text-violet-300 group-hover/card:text-violet-100 transition-colors duration-300">
                     {tech.name}
                   </span>
                 </div>
