@@ -115,13 +115,13 @@ export const Projects = () => {
   };
 
   return (
-    <div className="pt-80 pb-10 relative h-full w-full overflow-hidden bg-gradient-to-b from-black via-violet-900 to-violet-700">
+    <div className="pt-60 md:pt-60 lg:pt-80 pb-10 relative h-full w-full overflow-hidden bg-gradient-to-b from-black via-violet-900 to-violet-700">
       <div className="absolute inset-0 overflow-hidden">
         {/* Primary curve */}
-        <div className="absolute inset-0 -top-44">
+        <div className="absolute inset-0 -top-16 md:-top-36 lg:-top-44">
           <div
             className="absolute inset-0 bg-black
-            rounded-t-[100%] transform origin-center scale-x-[1.7]  translate-y-[25%]"
+            rounded-t-[100%] transform origin-center scale-x-[2.3] md:scale-x-[1.9] lg:scale-x-[1.7]  translate-y-[25%]"
           />
         </div>
       </div>
@@ -132,7 +132,7 @@ export const Projects = () => {
           <h1 className="mb-4 text-center relative">
             <div className="space-y-2">
               <div className="inline-flex items-center gap-1 cursor-pointer group">
-                <span className="text-sm font-medium text-violet-400 uppercase tracking-widest">
+                <span className="text-xs md:text-sm lg:text-base font-medium text-violet-400 uppercase tracking-widest">
                   Projects
                 </span>
                 <svg
@@ -160,7 +160,7 @@ export const Projects = () => {
 
         <div ref={subtitleRef} className="mb-12 text-center">
           {isSubtitleInView && (
-            <p className="text-base md:text-lg text-white max-w-2xl mx-auto [text-wrap:balance]">
+            <p className="text-sm md:text-base lg:text-lg leading-relaxed text-white max-w-2xl mx-auto [text-wrap:balance]">
               Explore my latest work showcasing innovative solutions and
               creative designs
             </p>
@@ -181,15 +181,15 @@ export const Projects = () => {
               {projects.map((project, index) => (
                 <div
                   key={index}
-                  className="h-[40vh] min-w-[70vw] lg:min-w-[70vw] lg:h-[80vh] flex items-center justify-center"
+                  className="h-[37vh] min-w-[70vw] lg:min-w-[70vw] lg:h-[80vh] flex items-center justify-center"
                   style={{ scrollSnapAlign: "center" }}
                 >
                   <PinContainer title={project.title} href={project.href}>
                     <div className="flex basis-full flex-col p-6 tracking-tight text-white/70 w-full h-full min-w-[60vw]">
-                      <h3 className="max-w-xs !pb-2 !m-0 font-bold text-2xl text-white">
+                      <h3 className="!pb-2 !m-0 font-bold text-lg md:text-3xl lg:text-5xl text-white">
                         {project.title}
                       </h3>
-                      <div className="text-base !m-0 !p-0 font-normal">
+                      <div className="text-xs md:text-base lg:text-lg !m-0 !p-0 font-normal">
                         <span className="text-white/70">
                           {project.description}
                         </span>

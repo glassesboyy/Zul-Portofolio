@@ -4,8 +4,8 @@ import gsap from "gsap";
 import { useEffect, useRef } from "react";
 import { initHeroAnimation } from "../animation/heroAnimation";
 import { FlipWords } from "../ui/flip-word";
-import { PrimaryButton } from "../ui/primary-button";
 import { HeroHighlight } from "../ui/hero-highlight";
+import { PrimaryButton } from "../ui/primary-button";
 
 export function Hero() {
   const titleCharsRef = useRef<HTMLSpanElement[]>([]);
