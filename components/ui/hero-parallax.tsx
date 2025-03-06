@@ -84,7 +84,7 @@ export const HeroParallax = ({
               </svg>
             </div>
           )}
-          <h1 className="text-2xl md:text-5xl font-bold dark:text-white">
+          <h1 className="text-3xl md:text-5xl font-bold dark:text-white">
             <span className="inline-block bg-gradient-to-r from-violet-500 via-purple-500 to-cyan-400 text-transparent bg-clip-text pb-2">
               {headerTitle}
             </span>

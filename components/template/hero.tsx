@@ -4,7 +4,7 @@ import gsap from "gsap";
 import { useEffect, useRef } from "react";
 import { initHeroAnimation } from "../animation/heroAnimation";
 import { FlipWords } from "../ui/flip-word";
-import { HeroButton } from "../ui/hero-button";
+import { PrimaryButton } from "../ui/primary-button";
 import { HeroHighlight } from "../ui/hero-highlight";
 
 export function Hero() {
@@ -74,7 +74,12 @@ export function Hero() {
               </div>
 
               <div ref={ctaRef} className="flex justify-center mt-8">
-                <HeroButton />
+                <PrimaryButton
+                  text="Let's Collaborate"
+                  fromColor="from-violet-600"
+                  toColor="to-cyan-600"
+                  radius="rounded-full"
+                />
               </div>
             </div>
           </div>

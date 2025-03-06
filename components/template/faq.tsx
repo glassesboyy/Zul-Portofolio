@@ -104,7 +104,7 @@ export const Faq = () => {
                 <path d="m12 5 7 7-7 7" />
               </svg>
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold [text-wrap:balance]">
+            <h2 className="text-3xl md:text-5xl font-bold [text-wrap:balance]">
               <span className="inline-block bg-gradient-to-r from-violet-500 via-purple-500 to-cyan-400 text-transparent bg-clip-text pb-2">
                 Frequently Asked Questions
               </span>
