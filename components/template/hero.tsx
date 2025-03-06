@@ -51,7 +51,7 @@ export function Hero() {
         <div className="relative z-10 justify-items-center">
           <div className="container py-10 lg:py-16">
             <div className="max-w-6xl text-center mx-auto text-foreground">
-              <h1 className="cursor-pointer scroll-m-20 text-5xl md:text-9xl lg:text-9xl font-extrabold mt-8 flex items-center justify-center">
+              <h1 className="cursor-pointer scroll-m-20 text-5xl md:text-8xl lg:text-9xl font-extrabold mt-8 flex items-center justify-center">
                 <FlipWords words={greetings} duration={2500} />
                 {staticTitle.map((char, index) => (
                   <span
@@ -67,7 +67,7 @@ export function Hero() {
                 ))}
               </h1>
               <div ref={contentRef} className="mt-5 max-w-6xl">
-                <p className="text-sm md:text-4xl lg:text-2xl text-foreground/80">
+                <p className="text-sm md:text-2xl lg:text-2xl text-foreground/80">
                   Crafting Innovative Solutions as a Passionate Fullstack Web
                   Developer.
                 </p>
