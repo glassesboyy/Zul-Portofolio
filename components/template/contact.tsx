@@ -97,7 +97,7 @@ export const Contact = () => {
                     <h3 className="text-xl font-semibold">{link.title}</h3>
                     <IconExternalLink className="h-4 w-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   </div>
-                  <p className="text-xs text-gray-400 mt-1 group-hover:text-white/90 transition-colors duration-300">
+                  <p className="text-xxs md:text-xs lg:text-xs text-gray-400 mt-1 group-hover:text-white/90 transition-colors duration-300">
                     {link.description}
                   </p>
                 </div>
