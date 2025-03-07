@@ -168,7 +168,7 @@ export const Services = () => {
         <div ref={titleRef} className="text-center mb-16">
           <div className="space-y-2">
             <div className="inline-flex items-center gap-1 cursor-pointer group">
-              <span className="text-sm font-medium text-violet-400 uppercase tracking-widest">
+              <span className="text-xs md:text-sm lg:text-base font-medium text-violet-400 uppercase tracking-widest">
                 Services
               </span>
               <svg
@@ -193,7 +193,7 @@ export const Services = () => {
           </div>
           <div ref={subtitleRef}>
             {isSubtitleInView && (
-              <p className="text-base md:text-lg text-white/70 max-w-2xl mx-auto mt-4 [text-wrap:balance]">
+              <p className="text-sm md:text-base lg:text-lg text-white/70 max-w-2xl mx-auto mt-4 [text-wrap:balance]">
                 Comprehensive web development solutions tailored to your needs
               </p>
             )}
@@ -210,12 +210,12 @@ export const Services = () => {
               key={index}
               className={cn(
                 "relative min-h-[20rem]",
-                index === 0 && "md:col-span-4",
-                index === 1 && "md:col-span-2",
-                index === 2 && "md:col-span-2",
-                index === 3 && "md:col-span-4",
-                index === 4 && "md:col-span-3",
-                index === 5 && "md:col-span-3"
+                index === 0 && "md:col-span-3 lg:col-span-4",
+                index === 1 && "md:col-span-3 lg:col-span-2",
+                index === 2 && "md:col-span-3 lg:col-span-2",
+                index === 3 && "md:col-span-3 lg:col-span-4",
+                index === 4 && "md:col-span-3 lg:col-span-3",
+                index === 5 && "md:col-span-3 lg:col-span-3"
               )}
             >
               <div className="relative h-full rounded-2xl border p-2">

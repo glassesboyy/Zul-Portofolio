@@ -62,14 +62,14 @@ export const Testimonials = () => {
                   <path d="m12 5 7 7-7 7" />
                 </svg>
               </div>
-              <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold text-left [text-wrap:balance]">
+              <h2 className="text-3xl md:text-5xl font-bold text-left [text-wrap:balance]">
                 <span className="inline-block bg-gradient-to-r from-violet-500 via-purple-500 to-cyan-400 text-transparent bg-clip-text pb-2">
                   What People Are Saying
                 </span>
               </h2>
             </div>
 
-            <p className="text-xs md:text-sm lg:text-base leading-relaxed max-w-[90%] [text-wrap:balance]">
+            <p className="text-sm md:text-base lg:text-lg leading-relaxed max-w-[90%] [text-wrap:balance]">
               Trusted by clients worldwide, delivering exceptional results and
               transforming ideas into reality.
             </p>
