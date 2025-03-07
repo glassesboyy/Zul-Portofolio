@@ -48,7 +48,7 @@ export const Contact = () => {
         <div className="text-center space-y-4 mb-16">
           <div className="inline-flex items-center gap-1 group">
             <span className="text-xs md:text-sm lg:text-base font-medium text-violet-400 uppercase tracking-widest">
-              Let's Connect
+              Contact
             </span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -66,7 +66,7 @@ export const Contact = () => {
           </div>
           <h2 className="text-3xl md:text-5xl font-bold [text-wrap:balance]">
             <span className="inline-block bg-gradient-to-r from-violet-500 via-purple-500 to-cyan-400 text-transparent bg-clip-text pb-2">
-              Get in Touch
+              Get in Touch With Me
             </span>
           </h2>
           <p className="text-sm md:text-base lg:text-lg text-white/70 max-w-2xl mx-auto">
