@@ -129,13 +129,13 @@ export const Faq = () => {
             {leftColumnFaqs.map((faq) => (
               <div
                 key={faq.id}
-                className="faq-item group rounded-lg border border-violet-500/20 bg-violet-500/5 hover:border-violet-500/40 transition-all duration-300"
+                className="faq-item group rounded-2xl border border-violet-500/20 bg-violet-500/5 hover:border-violet-500/40 transition-all duration-300"
               >
                 <button
                   className="flex w-full items-center justify-between px-4 py-5 sm:p-6"
                   onClick={() => handleClick(faq.id)}
                 >
-                  <span className="text-lg font-semibold text-white">
+                  <span className="text-base md:text-xl lg:text-lg font-medium text-white">
                     {faq.question}
                   </span>
                   <span className="ml-6 flex-shrink-0">
@@ -161,7 +161,9 @@ export const Faq = () => {
                     activeId === faq.id ? "block" : "hidden"
                   }`}
                 >
-                  <p className="text-base text-white/70">{faq.answer}</p>
+                  <p className="text-xs md:text-base lg:text-base text-white/70">
+                    {faq.answer}
+                  </p>
                 </div>
               </div>
             ))}
@@ -172,13 +174,13 @@ export const Faq = () => {
             {rightColumnFaqs.map((faq) => (
               <div
                 key={faq.id}
-                className="faq-item group rounded-lg border border-violet-500/20 bg-violet-500/5 hover:border-violet-500/40 transition-all duration-300"
+                className="faq-item group rounded-2xl border border-violet-500/20 bg-violet-500/5 hover:border-violet-500/40 transition-all duration-300"
               >
                 <button
                   className="flex w-full items-center justify-between px-4 py-5 sm:p-6"
                   onClick={() => handleClick(faq.id)}
                 >
-                  <span className="text-lg font-semibold text-white">
+                  <span className="text-base md:text-xl lg:text-lg font-medium text-white">
                     {faq.question}
                   </span>
                   <span className="ml-6 flex-shrink-0">
@@ -204,7 +206,9 @@ export const Faq = () => {
                     activeId === faq.id ? "block" : "hidden"
                   }`}
                 >
-                  <p className="text-base text-white/70">{faq.answer}</p>
+                  <p className="text-xs md:text-base lg:text-base text-white/70">
+                    {faq.answer}
+                  </p>
                 </div>
               </div>
             ))}
