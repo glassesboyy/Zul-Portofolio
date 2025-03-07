@@ -39,13 +39,13 @@ const testimonials = [
 export const Testimonials = () => {
   return (
     <div className="relative flex flex-col items-center justify-center overflow-hidden min-h-screen">
-      <div className="w-full max-w-[1400px] mx-auto flex flex-col md:flex-row items-center justify-between px-4 py-16 md:px-6 gap-8">
+      <div className="w-full max-w-[1400px] mx-auto flex flex-col md:flex-row items-center justify-between px-4 md:px-5 lg:px-6 py-12 md:py-14 lg:py-16 gap-6 md:gap-7 lg:gap-8">
         {/* Title Section - Left Side */}
-        <div className="w-full md:w-1/3 space-y-6 flex-shrink-0">
+        <div className="w-full md:w-1/3 space-y-4 md:space-y-5 lg:space-y-6 flex-shrink-0">
           <TestimonialsAnimation type="title">
             <div className="space-y-2">
               <div className="inline-flex items-center gap-1 cursor-pointer group">
-                <span className="text-sm font-medium text-violet-400 uppercase tracking-widest">
+                <span className="text-xs md:text-sm lg:text-base font-medium text-violet-400 uppercase tracking-widest">
                   Testimonials
                 </span>
                 <svg
@@ -62,14 +62,14 @@ export const Testimonials = () => {
                   <path d="m12 5 7 7-7 7" />
                 </svg>
               </div>
-              <h2 className="text-3xl md:text-5xl font-bold text-left [text-wrap:balance]">
+              <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold text-left [text-wrap:balance]">
                 <span className="inline-block bg-gradient-to-r from-violet-500 via-purple-500 to-cyan-400 text-transparent bg-clip-text pb-2">
                   What People Are Saying
                 </span>
               </h2>
             </div>
 
-            <p className="text-base md:text-lg leading-relaxed max-w-[90%] [text-wrap:balance]">
+            <p className="text-xs md:text-sm lg:text-base leading-relaxed max-w-[90%] [text-wrap:balance]">
               Trusted by clients worldwide, delivering exceptional results and
               transforming ideas into reality.
             </p>
@@ -78,7 +78,7 @@ export const Testimonials = () => {
 
         {/* Cards Section - Right Side */}
         <TestimonialsAnimation type="cards">
-          <div className="relative w-full md:w-2/3 h-[46rem] flex flex-col items-center justify-center overflow-hidden rounded-3xl flex-shrink-0">
+          <div className="relative w-full md:w-2/3 h-[38rem] md:h-[42rem] lg:h-[46rem] flex flex-col items-center justify-center overflow-hidden rounded-3xl flex-shrink-0">
             <div className="absolute inset-0 bg-gradient-to-br from-violet-900/10 via-black to-black/90" />
             <div className="absolute left-0 top-0 w-[20%] h-full bg-gradient-to-r from-black to-transparent z-10" />
             <div className="absolute right-0 top-0 w-[20%] h-full bg-gradient-to-l from-black to-transparent z-10" />
