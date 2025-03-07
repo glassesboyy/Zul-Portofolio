@@ -83,7 +83,7 @@ export const Tech = () => {
   }, []);
 
   return (
-    <div>
+    <div className="my-12 md:my-20 lg:my-20">
       <div ref={titleRef}>
         <h1 className="mb-4 text-center relative">
           <div className="space-y-2">
@@ -119,7 +119,7 @@ export const Tech = () => {
 
       <div ref={subtitleRef} className="mb-12 text-center">
         {isSubtitleInView && (
-          <p className="text-sm md:text-base lg:text-lg leading-relaxed [text-wrap:balance] max-w-[90%] mx-auto">
+          <p className="text-sm md:text-base lg:text-lg text-white/70 leading-relaxed [text-wrap:balance] max-w-[90%] mx-auto">
             Crafting powerful web solutions with cutting-edge technologies and
             proven frameworks
           </p>

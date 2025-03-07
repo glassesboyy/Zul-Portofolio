@@ -160,7 +160,7 @@ export const Projects = () => {
 
         <div ref={subtitleRef} className="mb-12 text-center">
           {isSubtitleInView && (
-            <p className="text-sm md:text-base lg:text-lg leading-relaxed text-white max-w-2xl mx-auto [text-wrap:balance]">
+            <p className="text-sm md:text-base lg:text-lg leading-relaxed text-white/70 max-w-2xl mx-auto [text-wrap:balance]">
               Explore my latest work showcasing innovative solutions and
               creative designs
             </p>

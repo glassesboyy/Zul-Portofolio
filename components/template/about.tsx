@@ -39,7 +39,7 @@ export const About = () => {
   ];
 
   return (
-    <div className="container mx-auto px-4 py-8 sm:py-16 md:py-24 flex flex-col items-center gap-8 md:gap-12 h-fit relative overflow-hidden">
+    <div className="container mx-auto px-4 py-8 md:py-20 flex flex-col items-center gap-8 md:gap-12 h-fit relative overflow-hidden">
       <div className="grid md:grid-cols-2 gap-8 md:gap-12 max-w-7xl relative w-full">
         {/* Left Column - Image */}
         <div className="flex justify-center items-center order-2 md:order-1">

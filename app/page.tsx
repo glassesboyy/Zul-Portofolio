@@ -59,7 +59,7 @@ export default function Home() {
           <About />
         </section>
         <Separator />
-        <section id="tech" className="h-fit my-20">
+        <section id="tech" className="h-fit">
           <Tech />
         </section>
         <Separator />
@@ -82,10 +82,11 @@ export default function Home() {
         <section id="faq" className="h-fit">
           <Faq />
         </section>
-        <SeparatorRoundDown />
-        <section id="contact" className="min-h-screen">
+        <Separator />
+        <section id="contact" className="h-fit">
           <Contact />
         </section>
+        <SeparatorRoundDown />
       </div>
     </>
   );

@@ -43,11 +43,11 @@ export const Contact = () => {
   ];
 
   return (
-    <div className="relative flex flex-col items-center min-h-screen p-4">
+    <div className="relative flex flex-col items-center p-4 md:mt-16">
       <ContactAnimation type="title">
         <div className="text-center space-y-4 mb-16">
           <div className="inline-flex items-center gap-1 group">
-            <span className="text-sm font-medium text-violet-400 uppercase tracking-widest">
+            <span className="text-xs md:text-sm lg:text-base font-medium text-violet-400 uppercase tracking-widest">
               Let's Connect
             </span>
             <svg
@@ -69,7 +69,7 @@ export const Contact = () => {
               Get in Touch
             </span>
           </h2>
-          <p className="text-base md:text-lg text-gray-400 max-w-2xl mx-auto">
+          <p className="text-sm md:text-base lg:text-lg text-white/70 max-w-2xl mx-auto">
             Feel free to reach out through any of these platforms. I'm always
             open to new opportunities and connections.
           </p>
@@ -97,7 +97,7 @@ export const Contact = () => {
                     <h3 className="text-xl font-semibold">{link.title}</h3>
                     <IconExternalLink className="h-4 w-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   </div>
-                  <p className="text-gray-400 mt-1 group-hover:text-white/90 transition-colors duration-300">
+                  <p className="text-xs text-gray-400 mt-1 group-hover:text-white/90 transition-colors duration-300">
                     {link.description}
                   </p>
                 </div>

@@ -39,7 +39,7 @@ const testimonials = [
 export const Testimonials = () => {
   return (
     <div className="relative flex flex-col items-center justify-center overflow-hidden h-fit">
-      <div className="w-full max-w-[1400px] mx-auto flex flex-col md:flex-row items-center justify-between px-4 md:px-5 lg:px-6 py-12 md:py-14 lg:py-16 gap-6 md:gap-7 lg:gap-8">
+      <div className="w-full max-w-[1400px] mx-auto flex flex-col md:flex-row items-center justify-between px-4 md:px-5 lg:px-6 py-12 md:py-20 lg:py-20 gap-6 md:gap-7 lg:gap-8">
         {/* Title Section - Left Side */}
         <div className="w-full md:w-1/3 space-y-4 md:space-y-5 lg:space-y-6 flex-shrink-0">
           <TestimonialsAnimation type="title">
@@ -69,7 +69,7 @@ export const Testimonials = () => {
               </h2>
             </div>
 
-            <p className="text-sm md:text-base lg:text-lg leading-relaxed max-w-[90%] [text-wrap:balance]">
+            <p className="text-sm md:text-base lg:text-lg text-white/70 leading-relaxed max-w-[90%] [text-wrap:balance]">
               Trusted by clients worldwide, delivering exceptional results and
               transforming ideas into reality.
             </p>

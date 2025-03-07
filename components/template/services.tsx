@@ -162,7 +162,7 @@ export const Services = () => {
   }, [isClient]);
 
   return (
-    <div className="relative min-h-screen w-full bg-black py-20">
+    <div className="relative min-h-screen w-full bg-black py-10 md:py-20 lg:py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         {/* Title Section */}
         <div ref={titleRef} className="text-center mb-16">

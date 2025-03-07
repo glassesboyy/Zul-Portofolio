@@ -82,12 +82,12 @@ export const Faq = () => {
   };
 
   return (
-    <div className="w-full py-20 px-4 sm:px-6 lg:px-8 bg-black">
+    <div className="w-full py-8 md:py-20 lg:py-20 px-4 sm:px-6 lg:px-8 bg-black">
       <div className="max-w-6xl mx-auto">
         <div ref={titleRef}>
           <div className="space-y-2 text-center mb-12">
             <div className="inline-flex items-center gap-1 cursor-pointer group">
-              <span className="text-sm font-medium text-violet-400 uppercase tracking-widest">
+              <span className="text-xs md:text-sm lg:text-base font-medium text-violet-400 uppercase tracking-widest">
                 FAQ
               </span>
               <svg
@@ -111,7 +111,7 @@ export const Faq = () => {
             </h2>
             <div ref={subtitleRef}>
               {isSubtitleInView && (
-                <p className="text-base md:text-lg text-white/70 max-w-2xl mx-auto mt-4">
+                <p className="text-sm md:text-base lg:text-lg text-white/70 max-w-2xl mx-auto mt-4">
                   Get answers to common questions about my services, process,
                   and expertise
                 </p>

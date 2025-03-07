@@ -80,11 +80,11 @@ export const HeroParallax = ({
   return (
     <div
       ref={ref}
-      className="h-[40vh] md:h-[40vh] lg:h-[85vh] 
+      className="h-[36vh] md:h-[30vh] lg:h-[57vh] 
         bg-black overflow-hidden antialiased relative flex flex-col self-auto 
-        [perspective:1000px] [transform-style:preserve-3d]"
+        [perspective:1000px] [transform-style:preserve-3d] my-4 md:my-16 lg:my-20"
     >
-      <div className="max-w-7xl relative mx-auto my-4 md:my-8 lg:my-16 px-4 w-full left-0 top-0">
+      <div className="max-w-7xl relative mx-auto px-4 w-full left-0 top-0">
         <div className="space-y-2 text-right">
           {headerTag && (
             <div className="inline-flex items-center gap-1 cursor-pointer group">
@@ -112,7 +112,7 @@ export const HeroParallax = ({
             </span>
           </h2>
           {headerSubtitle && (
-            <p className="text-sm md:text-base lg:text-lg mt-2 md:mt-4 lg:mt-8 dark:text-neutral-200 w-full ml-auto">
+            <p className="text-sm md:text-base lg:text-lg mt-2 md:mt-4 lg:mt-8 text-white/70 w-full ml-auto">
               {headerSubtitle}
             </p>
           )}
