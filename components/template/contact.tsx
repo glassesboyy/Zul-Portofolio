@@ -13,7 +13,7 @@ export const Contact = () => {
   };
 
   return (
-    <div className="relative flex flex-col items-center justify-center min-h-screen p-4">
+    <div className="relative flex flex-col items-center  min-h-screen p-4">
       <ContactAnimation type="title">
         <div className="text-center space-y-4 mb-12">
           <div className="inline-flex items-center gap-1 cursor-pointer group">

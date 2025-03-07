@@ -1,8 +1,8 @@
 "use client";
 
+import { useInView } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { initFaqAnimation } from "../animation/faqAnimation";
-import { useInView } from "framer-motion";
 
 const faqs = [
   {

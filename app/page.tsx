@@ -78,7 +78,7 @@ export default function Home() {
         <section id="services" className="min-h-screen">
           <Services />
         </section>
-        <section id="faq" className="min-h-screen">
+        <section id="faq" className="h-fit">
           <Faq />
         </section>
         <SeparatorRoundDown />

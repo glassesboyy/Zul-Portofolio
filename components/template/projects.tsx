@@ -166,7 +166,7 @@ export const Projects = () => {
             </p>
           )}
         </div>
-        <Separator />
+        <Separator className="hidden md:block" />
       </div>
 
       {/* Project Carousel */}
