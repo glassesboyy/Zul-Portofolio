@@ -1,6 +1,7 @@
 "use client";
 
 import { useAnimationStore } from "@/store/animationStore";
+import { useModalStore } from "@/store/modalStore";
 import {
   IconArrowGuideFilled,
   IconBriefcase,
@@ -18,6 +19,7 @@ import { FloatingNav } from "../ui/floating-navbar";
 
 export function Navbar() {
   const { preloadComplete } = useAnimationStore();
+  const isModalOpen = useModalStore((state) => state.isModalOpen);
   const navbarRef = useRef(null);
 
   useEffect(() => {
@@ -26,7 +28,7 @@ export function Navbar() {
     }
   }, [preloadComplete]);
 
-  if (!preloadComplete) {
+  if (!preloadComplete || isModalOpen) {
     return null;
   }
 

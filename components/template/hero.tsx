@@ -41,6 +41,11 @@ export function Hero() {
     }
   }, [preloadComplete]);
 
+  const handleContactClick = () => {
+    // Add your contact logic here
+    console.log("Contact button clicked");
+  };
+
   return (
     <section className="w-full min-h-screen relative z-10">
       <HeroHighlight
@@ -79,6 +84,7 @@ export function Hero() {
                   fromColor="from-violet-600"
                   toColor="to-cyan-600"
                   radius="rounded-full"
+                  onClick={handleContactClick}
                 />
               </div>
             </div>

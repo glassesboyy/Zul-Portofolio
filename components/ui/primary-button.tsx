@@ -3,6 +3,10 @@ interface HeroButtonProps {
   fromColor?: string;
   toColor?: string;
   radius?: string;
+  height?: string;
+  padding?: string;
+  font?: string;
+  onClick?: () => void;
 }
 
 export function PrimaryButton({
@@ -10,10 +14,15 @@ export function PrimaryButton({
   fromColor = "from-violet-500",
   toColor = "to-cyan-500",
   radius = "rounded-full",
+  height = "h-12",
+  padding = "px-6",
+  font = "font-medium",
+  onClick,
 }: HeroButtonProps) {
   return (
     <button
-      className={`cursor-pointer group relative inline-flex h-12 items-center justify-center ${radius} px-6 font-medium text-white transition-colors`}
+      onClick={onClick}
+      className={`cursor-pointer group relative inline-flex ${height} items-center justify-center ${radius} ${padding} ${font} text-white transition-colors`}
     >
       <span
         className={`absolute inset-0 ${radius} bg-gradient-to-r ${fromColor} ${toColor}`}

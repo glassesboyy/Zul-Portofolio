@@ -4,8 +4,10 @@ import { cn } from "@/lib/utils";
 import { useInView } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { GlowingEffect } from "../ui/glowing-effect";
+import { PrimaryButton } from "../ui/primary-button";
+import { ServiceModal } from "../ui/services-modal";
 
-const services = [
+const servicesData = [
   {
     title: "Front End Development",
     description:
@@ -27,6 +29,32 @@ const services = [
       </svg>
     ),
     size: "large",
+    keywords: [
+      "Responsive Design",
+      "Interactive UI Components",
+      "Cross-browser Compatibility",
+      "Performance Optimization",
+      "Accessibility Standards",
+    ],
+    process: [
+      "Requirements Analysis",
+      "UI/UX Design Review",
+      "Component Development",
+      "Integration & Testing",
+      "Performance Optimization",
+      "Deployment",
+    ],
+    technologies: [
+      "React",
+      "Next.js",
+      "Vue",
+      "TypeScript",
+      "Tailwind CSS",
+      "GSAP",
+      "Framer Motion",
+    ],
+    additionalInfo:
+      "Specializing in creating performant and scalable front-end architectures with modern best practices.",
   },
   {
     title: "UI/UX Design",
@@ -49,6 +77,31 @@ const services = [
       </svg>
     ),
     size: "medium",
+    keywords: [
+      "User Experience (UX) Design",
+      "User Interface (UI) Design",
+      "Wireframing & Prototyping",
+      "User Research",
+      "Usability Testing",
+    ],
+    process: [
+      "Research & Discovery",
+      "Wireframing",
+      "Visual Design",
+      "Prototyping",
+      "User Testing",
+      "Implementation",
+    ],
+    technologies: [
+      "Figma",
+      "Adobe XD",
+      "Sketch",
+      "InVision",
+      "Principle",
+      "Zeplin",
+    ],
+    additionalInfo:
+      "Focused on creating user-centric designs that enhance user engagement and satisfaction.",
   },
   {
     title: "API Development",
@@ -71,6 +124,31 @@ const services = [
       </svg>
     ),
     size: "small",
+    keywords: [
+      "RESTful APIs",
+      "GraphQL",
+      "API Documentation",
+      "Microservices",
+      "Integration",
+    ],
+    process: [
+      "API Design",
+      "Implementation",
+      "Testing",
+      "Documentation",
+      "Security",
+      "Deployment",
+    ],
+    technologies: [
+      "Node.js",
+      "Express",
+      "GraphQL",
+      "Swagger",
+      "Postman",
+      "Docker",
+    ],
+    additionalInfo:
+      "Building robust and scalable APIs with comprehensive documentation and security measures.",
   },
   {
     title: "Database Design",
@@ -93,6 +171,31 @@ const services = [
       </svg>
     ),
     size: "medium",
+    keywords: [
+      "Database Architecture",
+      "Data Modeling",
+      "Query Optimization",
+      "Database Security",
+      "Performance Tuning",
+    ],
+    process: [
+      "Requirements Analysis",
+      "Schema Design",
+      "Implementation",
+      "Optimization",
+      "Migration",
+      "Maintenance",
+    ],
+    technologies: [
+      "MySQL",
+      "PostgreSQL",
+      "MongoDB",
+      "Redis",
+      "Firebase",
+      "ElasticSearch",
+    ],
+    additionalInfo:
+      "Designing efficient and scalable database solutions for optimal data management.",
   },
   {
     title: "Full Stack Development",
@@ -115,6 +218,31 @@ const services = [
       </svg>
     ),
     size: "large",
+    keywords: [
+      "End-to-end Development",
+      "System Architecture",
+      "Full Stack Integration",
+      "Cloud Services",
+      "DevOps",
+    ],
+    process: [
+      "Planning",
+      "Architecture Design",
+      "Frontend Development",
+      "Backend Development",
+      "Integration",
+      "Deployment",
+    ],
+    technologies: [
+      "React",
+      "Node.js",
+      "TypeScript",
+      "MongoDB",
+      "AWS",
+      "Docker",
+    ],
+    additionalInfo:
+      "Delivering complete web solutions with seamless integration between frontend and backend systems.",
   },
   {
     title: "Back End Development",
@@ -137,6 +265,24 @@ const services = [
       </svg>
     ),
     size: "small",
+    keywords: [
+      "Server Architecture",
+      "Microservices",
+      "API Development",
+      "Security",
+      "Performance",
+    ],
+    process: [
+      "Architecture Design",
+      "Implementation",
+      "Testing",
+      "Security Audit",
+      "Deployment",
+      "Maintenance",
+    ],
+    technologies: ["Node.js", "Python", "PHP", "Docker", "Kubernetes", "AWS"],
+    additionalInfo:
+      "Creating robust backend systems with focus on security, scalability, and performance.",
   },
 ];
 
@@ -146,6 +292,9 @@ export const Services = () => {
   const servicesContainerRef = useRef<HTMLDivElement>(null);
   const subtitleRef = useRef<HTMLDivElement>(null);
   const isSubtitleInView = useInView(subtitleRef, { once: true });
+  const [selectedService, setSelectedService] = useState<
+    (typeof servicesData)[0] | null
+  >(null);
 
   useEffect(() => {
     setIsClient(true);
@@ -200,12 +349,12 @@ export const Services = () => {
           </div>
         </div>
 
-        {/* Updated Services Grid */}
+        {/* Services Grid */}
         <div
           ref={servicesContainerRef}
           className="grid grid-cols-1 md:grid-cols-6 gap-6 mt-8 max-w-7xl mx-auto px-4 sm:px-6"
         >
-          {services.map((service, index) => (
+          {servicesData.map((service, index) => (
             <div
               key={index}
               className={cn(
@@ -241,22 +390,16 @@ export const Services = () => {
                       <p className="text-sm text-white/70 leading-relaxed">
                         {service.description}
                       </p>
-                      <button className="inline-flex items-center gap-2 text-sm text-violet-400 hover:text-violet-300 transition-colors">
-                        Learn more
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="16"
-                          height="16"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          className="transition-transform duration-300 group-hover:translate-x-1"
-                        >
-                          <path d="M5 12h14" />
-                          <path d="m12 5 7 7-7 7" />
-                        </svg>
-                      </button>
+                      <PrimaryButton
+                        text="Learn More"
+                        fromColor="from-violet-600"
+                        toColor="to-cyan-600"
+                        radius="rounded-xl"
+                        height="h-10"
+                        padding="p-5"
+                        font="font-normal"
+                        onClick={() => setSelectedService(service)}
+                      />
                     </div>
                   </div>
                 </div>
@@ -265,6 +408,12 @@ export const Services = () => {
           ))}
         </div>
       </div>
+
+      <ServiceModal
+        isOpen={!!selectedService}
+        onClose={() => setSelectedService(null)}
+        service={selectedService!}
+      />
     </div>
   );
 };
