@@ -47,7 +47,7 @@ export const Contact = () => {
       <ContactAnimation type="title">
         <div className="text-center space-y-4 mb-16">
           <div className="inline-flex items-center gap-1 group">
-            <span className="text-xs md:text-sm lg:text-base font-medium text-violet-400 uppercase tracking-widest">
+            <span className="text-xs md:text-sm lg:text-base font-medium text-violet-400 uppercase tracking-widest cursor-pointer">
               Contact
             </span>
             <svg

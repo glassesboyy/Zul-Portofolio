@@ -380,7 +380,7 @@ export const Services = () => {
                 />
                 <div className="relative flex h-full flex-col justify-between gap-6 overflow-hidden rounded-xl border-[0.5px] border-violet-500/20 p-6 bg-black/50 backdrop-blur-sm">
                   <div className="relative flex flex-1 flex-col justify-between gap-3">
-                    <div className="w-fit rounded-lg border border-violet-500/30 p-3 bg-violet-500/10">
+                    <div className="w-fit rounded-xl border border-violet-500/30 p-3 bg-violet-500/10">
                       {service.icon}
                     </div>
                     <div className="space-y-4">
