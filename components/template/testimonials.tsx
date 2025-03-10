@@ -78,7 +78,7 @@ export const Testimonials = () => {
 
         {/* Cards Section - Right Side */}
         <TestimonialsAnimation type="cards">
-          <div className="relative w-full md:w-2/3 h-[38rem] md:h-[42rem] lg:h-[46rem] flex flex-col items-center justify-center overflow-hidden rounded-3xl flex-shrink-0">
+          <div className="relative w-full md:w-2/3 h-[43rem] md:h-[47rem] lg:h-[51.5rem] flex flex-col items-center justify-center overflow-hidden rounded-3xl flex-shrink-0">
             <div className="absolute inset-0 bg-gradient-to-br from-violet-900/10 via-black to-black/90" />
             <div className="absolute left-0 top-0 w-[20%] h-full bg-gradient-to-r from-black to-transparent z-10" />
             <div className="absolute right-0 top-0 w-[20%] h-full bg-gradient-to-l from-black to-transparent z-10" />
