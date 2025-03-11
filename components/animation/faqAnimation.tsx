@@ -68,3 +68,87 @@ export const initFaqAnimation = (
 
   return tl;
 };
+
+export const animateFaqOpen = (contentElement: HTMLElement) => {
+  const content = contentElement;
+  const answer = content.querySelector("p");
+
+  // Reset semua properti terlebih dahulu
+  gsap.set(content, {
+    height: 0,
+    display: "block",
+    overflow: "hidden",
+    opacity: 1,
+    paddingTop: 0,
+    paddingBottom: "1.25rem",
+  });
+
+  gsap.set(answer, {
+    y: 20,
+    opacity: 0,
+    display: "block",
+  });
+
+  const tl = gsap.timeline({
+    defaults: {
+      ease: "power3.out",
+    },
+  });
+
+  tl.to(content, {
+    height: "auto",
+    duration: 0.5,
+  }).to(
+    answer,
+    {
+      y: 0,
+      opacity: 1,
+      duration: 0.4,
+      ease: "power2.out",
+    },
+    "-=0.3"
+  );
+
+  return tl;
+};
+
+export const animateFaqClose = (contentElement: HTMLElement) => {
+  const content = contentElement;
+  const answer = content.querySelector("p");
+  const height = content.offsetHeight;
+
+  const tl = gsap.timeline({
+    defaults: {
+      ease: "power3.inOut",
+    },
+    onComplete: () => {
+      gsap.set(content, {
+        display: "none",
+        clearProps: "padding,height,overflow",
+      });
+    },
+  });
+
+  tl.set(content, {
+    height: height,
+  })
+    .to(answer, {
+      y: 10,
+      opacity: 0,
+      duration: 0.2,
+      ease: "power2.in",
+    })
+    .to(
+      content,
+      {
+        height: 0,
+        paddingTop: 0,
+        paddingBottom: 0,
+        duration: 0.3,
+        ease: "power3.inOut",
+      },
+      "-=0.1"
+    );
+
+  return tl;
+};

@@ -2,7 +2,11 @@
 
 import { useInView } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
-import { initFaqAnimation } from "../animation/faqAnimation";
+import {
+  initFaqAnimation,
+  animateFaqOpen,
+  animateFaqClose,
+} from "../animation/faqAnimation";
 
 const faqs = [
   {
@@ -78,8 +82,72 @@ export const Faq = () => {
   }, [isClient]);
 
   const handleClick = (id: string) => {
-    setActiveId(activeId === id ? null : id);
+    const contentElement = document.querySelector(
+      `#content-${id}`
+    ) as HTMLElement;
+    if (!contentElement) return;
+
+    if (activeId === id) {
+      // Closing
+      animateFaqClose(contentElement);
+      setActiveId(null);
+    } else {
+      // If there's an active FAQ, close it first
+      if (activeId) {
+        const activeElement = document.querySelector(
+          `#content-${activeId}`
+        ) as HTMLElement;
+        if (activeElement) {
+          animateFaqClose(activeElement);
+        }
+      }
+
+      // Open the new FAQ
+      animateFaqOpen(contentElement);
+      setActiveId(id);
+    }
   };
+
+  const renderFaqItem = (faq: (typeof faqs)[0]) => (
+    <div
+      key={faq.id}
+      className="faq-item group rounded-2xl border border-violet-500/20 bg-violet-500/5 hover:bg-violet-500/10 hover:border-violet-500/40 transition-all duration-500"
+    >
+      <button
+        className="flex w-full items-center justify-between px-4 py-5 sm:p-6 transition-all duration-300"
+        onClick={() => handleClick(faq.id)}
+      >
+        <span className="text-base md:text-xl lg:text-lg font-medium text-white">
+          {faq.question}
+        </span>
+        <span className="ml-6 flex-shrink-0">
+          <svg
+            className={`h-6 w-6 text-violet-400 transition-all duration-500 ${
+              activeId === faq.id ? "rotate-[360deg]" : ""
+            }`}
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d={activeId === faq.id ? "M19 9l-7 7-7-7" : "M12 4v16m8-8H4"}
+            />
+          </svg>
+        </span>
+      </button>
+      <div
+        id={`content-${faq.id}`}
+        className="px-4 pb-5 sm:px-6 sm:pb-6 hidden overflow-hidden"
+      >
+        <p className="text-xs md:text-base lg:text-base text-white/70">
+          {faq.answer}
+        </p>
+      </div>
+    </div>
+  );
 
   return (
     <div className="w-full py-8 md:py-20 lg:py-20 px-4 sm:px-6 lg:px-8 bg-black">
@@ -126,92 +194,12 @@ export const Faq = () => {
         >
           {/* Left Column */}
           <div className="flex-1 space-y-4">
-            {leftColumnFaqs.map((faq) => (
-              <div
-                key={faq.id}
-                className="faq-item group rounded-2xl border border-violet-500/20 bg-violet-500/5 hover:border-violet-500/40 transition-all duration-300"
-              >
-                <button
-                  className="flex w-full items-center justify-between px-4 py-5 sm:p-6"
-                  onClick={() => handleClick(faq.id)}
-                >
-                  <span className="text-base md:text-xl lg:text-lg font-medium text-white">
-                    {faq.question}
-                  </span>
-                  <span className="ml-6 flex-shrink-0">
-                    <svg
-                      className={`h-6 w-6 text-violet-400 transition-transform duration-300 ${
-                        activeId === faq.id ? "rotate-180" : ""
-                      }`}
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M19 9l-7 7-7-7"
-                      />
-                    </svg>
-                  </span>
-                </button>
-                <div
-                  className={`px-4 pb-5 sm:px-6 sm:pb-6 ${
-                    activeId === faq.id ? "block" : "hidden"
-                  }`}
-                >
-                  <p className="text-xs md:text-base lg:text-base text-white/70">
-                    {faq.answer}
-                  </p>
-                </div>
-              </div>
-            ))}
+            {leftColumnFaqs.map(renderFaqItem)}
           </div>
 
           {/* Right Column */}
           <div className="flex-1 space-y-4">
-            {rightColumnFaqs.map((faq) => (
-              <div
-                key={faq.id}
-                className="faq-item group rounded-2xl border border-violet-500/20 bg-violet-500/5 hover:border-violet-500/40 transition-all duration-300"
-              >
-                <button
-                  className="flex w-full items-center justify-between px-4 py-5 sm:p-6"
-                  onClick={() => handleClick(faq.id)}
-                >
-                  <span className="text-base md:text-xl lg:text-lg font-medium text-white">
-                    {faq.question}
-                  </span>
-                  <span className="ml-6 flex-shrink-0">
-                    <svg
-                      className={`h-6 w-6 text-violet-400 transition-transform duration-300 ${
-                        activeId === faq.id ? "rotate-180" : ""
-                      }`}
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M19 9l-7 7-7-7"
-                      />
-                    </svg>
-                  </span>
-                </button>
-                <div
-                  className={`px-4 pb-5 sm:px-6 sm:pb-6 ${
-                    activeId === faq.id ? "block" : "hidden"
-                  }`}
-                >
-                  <p className="text-xs md:text-base lg:text-base text-white/70">
-                    {faq.answer}
-                  </p>
-                </div>
-              </div>
-            ))}
+            {rightColumnFaqs.map(renderFaqItem)}
           </div>
         </div>
       </div>

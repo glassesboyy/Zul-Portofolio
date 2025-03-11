@@ -30,8 +30,7 @@ export const Contact = () => {
       icon: <IconBrandInstagram className="h-8 w-8" />,
       href: "https://instagram.com/suryazulfikarr",
       description: "Follow my visual journey",
-      color:
-        "hover:bg-gradient-to-br hover:from-[#833AB4] hover:via-[#FD1D1D] hover:to-[#FCAF45] transition-colors duration-500",
+      color: "hover:bg-[#EA4335] transition-colors duration-500",
     },
     {
       title: "Email",
