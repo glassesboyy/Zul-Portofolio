@@ -70,8 +70,8 @@ export const HeroParallax = ({
       scrollYProgress,
       [0, 0.1],
       [
-        isDesktop ? -50 : isTablet ? -10 : 10,
-        isDesktop ? -50 : isTablet ? -10 : 10,
+        isDesktop ? -50 : isTablet ? -10 : 15,
+        isDesktop ? -50 : isTablet ? -10 : 15,
       ]
     ),
     springConfig

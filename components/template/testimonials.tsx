@@ -52,8 +52,8 @@ export const Testimonials = () => {
         <div className="w-full md:w-1/3 space-y-4 md:space-y-5 lg:space-y-6 flex-shrink-0">
           <TestimonialsAnimation type="title">
             <div className="space-y-2">
-              <div className="inline-flex items-center gap-1 cursor-pointer group">
-                <span className="text-xs md:text-sm lg:text-base font-medium text-violet-400 uppercase tracking-widest">
+              <div className="flex items-center justify-center md:justify-start lg:justify-start gap-1 cursor-pointer group ">
+                <span className="text-xs md:text-sm lg:text-base font-medium text-violet-400 uppercase tracking-widest ">
                   Testimonials
                 </span>
                 <svg
@@ -70,14 +70,14 @@ export const Testimonials = () => {
                   <path d="m12 5 7 7-7 7" />
                 </svg>
               </div>
-              <h2 className="text-3xl md:text-5xl font-bold text-left [text-wrap:balance]">
+              <h2 className="text-3xl md:text-5xl font-bold text-center md:text-left lg:text-left [text-wrap:balance]">
                 <span className="inline-block bg-gradient-to-r from-violet-500 via-purple-500 to-cyan-400 text-transparent bg-clip-text pb-2">
                   What People Are Saying
                 </span>
               </h2>
             </div>
 
-            <p className="text-sm md:text-base lg:text-lg text-white/70 leading-relaxed max-w-[90%] [text-wrap:balance]">
+            <p className="text-sm md:text-base lg:text-lg text-white/70 text-center md:text-left lg:text-left leading-relaxed max-w-[90%] [text-wrap:balance]">
               Trusted by clients worldwide, delivering exceptional results and
               transforming ideas into reality.
             </p>
