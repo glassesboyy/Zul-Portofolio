@@ -35,8 +35,11 @@ export const ContactAnimation: React.FC<ContactAnimationProps> = ({
         ease: "power3.out",
         scrollTrigger: {
           trigger: element,
-          start: "top center+=100",
+          start: "top bottom-=100", // Changed this line
+          end: "bottom top+=100", // Added end position
           toggleActions: "play none none reverse",
+          once: false, // Added to allow re-animation
+          markers: false, // For debugging, set to true if needed
         },
       }
     );
