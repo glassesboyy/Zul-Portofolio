@@ -310,6 +310,14 @@ export const Services = () => {
     }
   }, [isClient]);
 
+  const handleOpenModal = (service: (typeof servicesData)[0]) => {
+    setSelectedService(service);
+  };
+
+  const handleCloseModal = () => {
+    setSelectedService(null);
+  };
+
   return (
     <div className="relative min-h-screen w-full bg-black py-10 md:py-20 lg:py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
@@ -380,7 +388,7 @@ export const Services = () => {
                 />
                 <div className="relative flex h-full flex-col justify-between gap-6 overflow-hidden rounded-xl border-[0.5px] border-violet-500/20 p-6 bg-black/50 backdrop-blur-sm">
                   <div className="relative flex flex-1 flex-col justify-between gap-3">
-                    <div className="w-fit rounded-xl border border-violet-500/30 p-3 bg-violet-500/10">
+                    <div className="w-fit rounded-xl border border-violet-500/30 p-3 bg-black">
                       {service.icon}
                     </div>
                     <div className="space-y-4">
@@ -398,7 +406,7 @@ export const Services = () => {
                         height="h-10"
                         padding="p-5"
                         font="font-normal"
-                        onClick={() => setSelectedService(service)}
+                        onClick={() => handleOpenModal(service)}
                       />
                     </div>
                   </div>
@@ -411,7 +419,7 @@ export const Services = () => {
 
       <ServiceModal
         isOpen={!!selectedService}
-        onClose={() => setSelectedService(null)}
+        onClose={handleCloseModal}
         service={selectedService!}
       />
     </div>
