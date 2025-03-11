@@ -71,7 +71,7 @@ export default function Home() {
           <Projects />
         </section>
         <Separator />
-        <section id="testimonials" className="h-fit bg-black">
+        <section id="testimonials" className="h-fit">
           <Testimonials />
         </section>
         <Separator />
