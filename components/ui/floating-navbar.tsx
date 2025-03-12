@@ -1,9 +1,9 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import { motion, useScroll } from "framer-motion";
-import { forwardRef, useEffect, useState } from "react";
 import { IconMenu2, IconX } from "@tabler/icons-react";
+import { AnimatePresence, motion, useScroll } from "framer-motion";
+import { forwardRef, useEffect, useState } from "react";
 
 export const FloatingNav = forwardRef<
   HTMLDivElement,
@@ -42,6 +42,50 @@ export const FloatingNav = forwardRef<
     setActiveSection(section.toLowerCase());
   };
 
+  const menuVariants = {
+    closed: {
+      opacity: 0,
+      x: "100%",
+      transition: {
+        duration: 0.2,
+        when: "afterChildren",
+      },
+    },
+    open: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        duration: 0.3,
+        when: "beforeChildren",
+        staggerChildren: 0.1,
+      },
+    },
+  };
+
+  const itemVariants = {
+    closed: {
+      opacity: 0,
+      x: 50,
+    },
+    open: {
+      opacity: 1,
+      x: 0,
+    },
+  };
+
+  // Add new useEffect for body overflow control
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [isMenuOpen]);
+
   return (
     <motion.div
       ref={ref}
@@ -54,8 +98,8 @@ export const FloatingNav = forwardRef<
       transition={{ duration: 0.35, ease: "easeInOut" }}
       className={cn(
         "fixed top-6 z-[100]",
-        "lg:inset-x-0 lg:max-w-fit lg:mx-auto", // Center alignment only for desktop
-        "w-full", // Full width container for mobile
+        "lg:inset-x-0 lg:max-w-fit lg:mx-auto",
+        "w-full",
         className
       )}
     >
@@ -86,7 +130,7 @@ export const FloatingNav = forwardRef<
             <span className="relative">
               {item.name}
               {activeSection === item.name.toLowerCase() && (
-                <span className="absolute -bottom-2.5 -left-2 w-full h-[3px] bg-gradient-to-r from-transparent via-cyan-700 to-transparent" />
+                <span className="absolute -bottom-2.5 -left-2 w-full h-[4px] bg-gradient-to-r from-transparent via-cyan-700 to-transparent" />
               )}
             </span>
             {activeSection === item.name.toLowerCase() && (
@@ -128,41 +172,46 @@ export const FloatingNav = forwardRef<
             <IconMenu2 className="w-6 h-6 text-violet-300" />
           )}
         </button>
-        {isMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            className={cn(
-              "fixed inset-0 bg-black/95 backdrop-blur-md pt-20 px-4",
-              "flex flex-col gap-2 z-[100]"
-            )}
-          >
-            <div className="max-h-[calc(100vh-5rem)] overflow-y-auto">
-              {navItems.map((item) => (
-                <button
-                  key={item.name}
-                  onClick={() => {
-                    handleClick(item.name);
-                    setIsMenuOpen(false);
-                  }}
-                  className={cn(
-                    "flex items-center gap-3 p-4 w-full rounded-lg",
-                    "transition-all duration-300",
-                    "text-base sm:text-lg", // Larger text for mobile/tablet
-                    "my-1", // Add spacing between items
-                    activeSection === item.name.toLowerCase()
-                      ? "bg-violet-500/20 text-violet-300"
-                      : "text-zinc-400 hover:bg-violet-500/10"
-                  )}
-                >
-                  <span className="w-6">{item.icon}</span>
-                  <span>{item.name}</span>
-                </button>
-              ))}
-            </div>
-          </motion.div>
-        )}
+        <AnimatePresence>
+          {isMenuOpen && (
+            <motion.div
+              initial="closed"
+              animate="open"
+              exit="closed"
+              variants={menuVariants}
+              className={cn(
+                "fixed inset-0 bg-black/95 backdrop-blur-md pt-20 px-4",
+                "flex flex-col gap-2 z-[100]",
+                "overflow-hidden"
+              )}
+            >
+              <div className="max-h-[calc(100vh-5rem)] overflow-y-auto scrollbar-hide">
+                {navItems.map((item) => (
+                  <motion.button
+                    variants={itemVariants}
+                    key={item.name}
+                    onClick={() => {
+                      handleClick(item.name);
+                      setIsMenuOpen(false);
+                    }}
+                    className={cn(
+                      "flex items-center gap-3 p-4 w-full rounded-lg",
+                      "transition-all duration-300",
+                      "text-base sm:text-lg",
+                      "my-1",
+                      activeSection === item.name.toLowerCase()
+                        ? "bg-violet-500/20 text-violet-300"
+                        : "text-zinc-400 hover:bg-violet-500/10"
+                    )}
+                  >
+                    <span className="w-6">{item.icon}</span>
+                    <span>{item.name}</span>
+                  </motion.button>
+                ))}
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </motion.div>
   );
