@@ -5,6 +5,7 @@ import { About } from "@/components/template/about";
 import { Certificate } from "@/components/template/certificate";
 import { Contact } from "@/components/template/contact";
 import { Faq } from "@/components/template/faq";
+import { Footer } from "@/components/template/footer";
 import { Hero } from "@/components/template/hero";
 import { Navbar } from "@/components/template/navbar";
 import { Philo } from "@/components/template/philo";
@@ -86,7 +87,9 @@ export default function Home() {
         <section id="contact" className="h-fit">
           <Contact />
         </section>
-        <SeparatorRoundDown />
+        <section id="footer" className="h-fit">
+          <Footer />
+        </section>
       </div>
     </>
   );
