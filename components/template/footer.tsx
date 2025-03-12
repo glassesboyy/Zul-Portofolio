@@ -29,10 +29,12 @@ export const Footer = () => {
         <div className="flex flex-col items-center space-y-4">
           {/* Name and Year */}
           <div className="text-center space-y-2">
-            <p className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-violet-500 via-purple-500 to-cyan-400 text-transparent bg-clip-text">
-              Teguh Surya Zulfikar
+            <p className="text-white/70 text-base font-medium">
+              Portofolio Website by -{" "}
+              <span className="text-xl font-bold bg-gradient-to-r from-violet-500 via-purple-500 to-cyan-400 text-transparent bg-clip-text">
+                Teguh Surya Zulfikar
+              </span>
             </p>
-            <p className="text-white/70 text-sm">© 2025 All rights reserved</p>
           </div>
 
           {/* Navigation */}
@@ -56,6 +58,9 @@ export const Footer = () => {
             <p className="text-white/50 text-sm leading-relaxed">
               Thank you for visiting my portfolio. Feel free to reach out if
               you'd like to collaborate on something amazing together.
+            </p>
+            <p className="text-white/50 text-sm mt-3">
+              © 2025 All rights reserved
             </p>
           </div>
         </div>
