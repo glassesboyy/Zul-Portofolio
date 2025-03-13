@@ -7,13 +7,73 @@ import {
   IconBrandLinkedin,
   IconMail,
 } from "@tabler/icons-react";
+import Image from "next/image";
 import { AboutAnimation } from "../animation/aboutAnimation";
 import { FloatingDock } from "../ui/floating-dock";
+import { Separator } from "../ui/separator";
+import { Timeline } from "../ui/timeline";
 
 export const About = () => {
   const preloadComplete = useAnimationStore((state) => state.preloadComplete);
 
   const description = `Let's collaborate to build exceptional digital experiences. As a full-stack developer, I transform innovative ideas into powerful, user-friendly solutions.`;
+
+  const timelineData = [
+    {
+      title: "2024",
+      content: (
+        <div>
+          <p className="text-neutral-200 text-xs md:text-sm font-normal mb-8">
+            Currently working as Full Stack Developer at PT Infosys Solusi
+            Terpadu
+          </p>
+          <div className="grid grid-cols-2 gap-4">
+            <Image
+              src="/assets/fotogitar.png"
+              alt="Project 1"
+              width={500}
+              height={500}
+              className="rounded-xl object-cover h-20 md:h-44 lg:h-60 w-full shadow-xl"
+            />
+            <Image
+              src="/assets/me.png"
+              alt="Project 2"
+              width={500}
+              height={500}
+              className="rounded-xl object-cover h-20 md:h-44 lg:h-60 w-full shadow-xl"
+            />
+          </div>
+        </div>
+      ),
+    },
+    {
+      title: "2023",
+      content: (
+        <div>
+          <p className="text-neutral-200 text-xs md:text-sm font-normal mb-8">
+            Worked as Backend Developer at PT Bank Raya Indonesia and completed
+            several significant projects
+          </p>
+          <div className="grid grid-cols-2 gap-4">
+            <Image
+              src="/assets/me.png"
+              alt="Project 3"
+              width={500}
+              height={500}
+              className="rounded-xl object-cover h-20 md:h-44 lg:h-60 w-full shadow-xl"
+            />
+            <Image
+              src="/assets/fotogitar.png"
+              alt="Project 4"
+              width={500}
+              height={500}
+              className="rounded-xl object-cover h-20 md:h-44 lg:h-60 w-full shadow-xl"
+            />
+          </div>
+        </div>
+      ),
+    },
+  ];
 
   const socialLinks = [
     {
@@ -110,6 +170,17 @@ export const About = () => {
             </div>
           </AboutAnimation>
         </div>
+      </div>
+
+      <div className="w-full max-w-5xl mt-12">
+        <Separator />
+      </div>
+
+      {/* Timeline Section */}
+      <div className="w-full max-w-6xl">
+        <AboutAnimation type="content">
+          <Timeline data={timelineData} />
+        </AboutAnimation>
       </div>
     </div>
   );
