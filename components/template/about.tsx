@@ -2,9 +2,11 @@
 
 import { useAnimationStore } from "@/store/animationStore";
 import {
+  IconBrandDiscord,
   IconBrandGithub,
   IconBrandInstagram,
   IconBrandLinkedin,
+  IconBrandSpotify,
   IconMail,
 } from "@tabler/icons-react";
 import Image from "next/image";
@@ -95,6 +97,16 @@ export const About = () => {
       title: "Email",
       icon: <IconMail className="h-full w-full text-white" />,
       href: "mailto:aliperwira26@gmail.com",
+    },
+    {
+      title: "Spotify",
+      icon: <IconBrandSpotify className="h-full w-full text-white" />,
+      href: "https://open.spotify.com/user/31hdddh6jo5kwyxuxion45xjifv4?si=5d95839ef2174a92",
+    },
+    {
+      title: "Discord",
+      icon: <IconBrandDiscord className="h-full w-full text-white" />,
+      href: "https://discordapp.com/users/811565856541638686",
     },
   ];
 

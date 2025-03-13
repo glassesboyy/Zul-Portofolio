@@ -1,9 +1,11 @@
 "use client";
 
 import {
+  IconBrandDiscord,
   IconBrandGithub,
   IconBrandInstagram,
   IconBrandLinkedin,
+  IconBrandSpotify,
   IconExternalLink,
   IconMail,
 } from "@tabler/icons-react";
@@ -24,6 +26,20 @@ export const Contact = () => {
       href: "https://linkedin.com/in/suryazulfikarr",
       description: "Connect with me professionally",
       color: "hover:bg-[#0077b5] transition-colors duration-500",
+    },
+    {
+      title: "Discord",
+      icon: <IconBrandDiscord className="h-8 w-8" />,
+      href: "https://discordapp.com/users/811565856541638686",
+      description: "Chat with me on Discord",
+      color: "hover:bg-[#5865F2] transition-colors duration-500",
+    },
+    {
+      title: "Spotify",
+      icon: <IconBrandSpotify className="h-8 w-8" />,
+      href: "https://open.spotify.com/user/31hdddh6jo5kwyxuxion45xjifv4?si=5d95839ef2174a92",
+      description: "Check out what I'm listening to",
+      color: "hover:bg-[#1DB954] transition-colors duration-500",
     },
     {
       title: "Instagram",
