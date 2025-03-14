@@ -22,24 +22,25 @@ export const About = () => {
 
   const timelineData = [
     {
-      title: "2024",
+      title: "2018 - 2020",
       content: (
         <div>
           <p className="text-neutral-200 text-xs md:text-sm font-normal mb-8">
-            Currently working as Full Stack Developer at PT Infosys Solusi
-            Terpadu
+            Served as Chairperson of Class Management during junior high school,
+            leading various activities including anniversary celebrations, class
+            meetings, and graduation events.
           </p>
           <div className="grid grid-cols-2 gap-4">
             <Image
-              src="/assets/fotogitar.png"
-              alt="Project 1"
+              src="/assets/me.png"
+              alt="Junior High Activities"
               width={500}
               height={500}
               className="rounded-xl object-cover h-20 md:h-44 lg:h-60 w-full shadow-xl"
             />
             <Image
-              src="/assets/me.png"
-              alt="Project 2"
+              src="/assets/fotogitar.png"
+              alt="Class Management"
               width={500}
               height={500}
               className="rounded-xl object-cover h-20 md:h-44 lg:h-60 w-full shadow-xl"
@@ -49,24 +50,83 @@ export const About = () => {
       ),
     },
     {
-      title: "2023",
+      title: "2019-2021",
       content: (
         <div>
           <p className="text-neutral-200 text-xs md:text-sm font-normal mb-8">
-            Worked as Backend Developer at PT Bank Raya Indonesia and completed
-            several significant projects
+            Ventured into entrepreneurship by managing an online fashion
+            business on Instagram (@kaptenmarket) during my junior and senior
+            high school years, gaining valuable business experience.
+          </p>
+          <div className="grid grid-cols-2 gap-4">
+            <Image
+              src="/assets/fotogitar.png"
+              alt="Business Journey"
+              width={500}
+              height={500}
+              className="rounded-xl object-cover h-20 md:h-44 lg:h-60 w-full shadow-xl"
+            />
+            <Image
+              src="/assets/me.png"
+              alt="Fashion Business"
+              width={500}
+              height={500}
+              className="rounded-xl object-cover h-20 md:h-44 lg:h-60 w-full shadow-xl"
+            />
+          </div>
+        </div>
+      ),
+    },
+    {
+      title: "2020-2023",
+      content: (
+        <div>
+          <p className="text-neutral-200 text-xs md:text-sm font-normal mb-8">
+            Attended SMA N 5 Magelang, graduating with an average score of 82.7.
+            Served as Coordinator of Organization Commission A in MPK (Student
+            Council), where I was responsible for channeling student aspirations
+            to school administration.
           </p>
           <div className="grid grid-cols-2 gap-4">
             <Image
               src="/assets/me.png"
-              alt="Project 3"
+              alt="High School Life"
               width={500}
               height={500}
               className="rounded-xl object-cover h-20 md:h-44 lg:h-60 w-full shadow-xl"
             />
             <Image
               src="/assets/fotogitar.png"
-              alt="Project 4"
+              alt="MPK Activities"
+              width={500}
+              height={500}
+              className="rounded-xl object-cover h-20 md:h-44 lg:h-60 w-full shadow-xl"
+            />
+          </div>
+        </div>
+      ),
+    },
+    {
+      title: "2023 - Present",
+      content: (
+        <div>
+          <p className="text-neutral-200 text-xs md:text-sm font-normal mb-8">
+            Started my journey at Universitas Sebelas Maret, pursuing a degree
+            in Informatics Engineering. Currently actively involved in
+            university academic activities and expanding my knowledge in the
+            field.
+          </p>
+          <div className="grid grid-cols-2 gap-4">
+            <Image
+              src="/assets/fotogitar.png"
+              alt="University Life 1"
+              width={500}
+              height={500}
+              className="rounded-xl object-cover h-20 md:h-44 lg:h-60 w-full shadow-xl"
+            />
+            <Image
+              src="/assets/me.png"
+              alt="University Life 2"
               width={500}
               height={500}
               className="rounded-xl object-cover h-20 md:h-44 lg:h-60 w-full shadow-xl"
