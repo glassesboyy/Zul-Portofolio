@@ -26,9 +26,9 @@ export const About = () => {
       content: (
         <div>
           <p className="text-neutral-200 text-xs md:text-sm font-normal mb-8">
-            Served as Chairperson of Class Management during junior high school,
-            leading various activities including anniversary celebrations, class
-            meetings, and graduation events.
+            Served as Chairperson of Class Management during Junior High School
+            2 Magelang, leading various activities including anniversary
+            celebrations, class meetings, and graduation events.
           </p>
           <div className="grid grid-cols-2 gap-4">
             <Image
@@ -82,10 +82,10 @@ export const About = () => {
       content: (
         <div>
           <p className="text-neutral-200 text-xs md:text-sm font-normal mb-8">
-            Attended SMA N 5 Magelang, graduating with an average score of 82.7.
-            Served as Coordinator of Organization Commission A in MPK (Student
-            Council), where I was responsible for channeling student aspirations
-            to school administration.
+            Attended State Senior High School 5 Magelang, graduating with an
+            average score of 82.7. Served as Coordinator of Organization
+            Commission A in MPK (Student Council), where I was responsible for
+            channeling student aspirations to school administration.
           </p>
           <div className="grid grid-cols-2 gap-4">
             <Image
@@ -111,10 +111,9 @@ export const About = () => {
       content: (
         <div>
           <p className="text-neutral-200 text-xs md:text-sm font-normal mb-8">
-            Started my journey at Universitas Sebelas Maret, pursuing a degree
-            in Informatics Engineering. Currently actively involved in
-            university academic activities and expanding my knowledge in the
-            field.
+            Started my journey at Sebelas Maret University, pursuing a degree in
+            Informatics Engineering. Currently actively involved in university
+            academic activities and expanding my knowledge in the field.
           </p>
           <div className="grid grid-cols-2 gap-4">
             <Image

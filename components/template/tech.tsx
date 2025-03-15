@@ -10,21 +10,37 @@ import {
 } from "../animation/techAnimation";
 import { CardBody, CardContainer, CardItem } from "../ui/3d-card";
 
-const techStack = [
-  { name: "HTML", icon: "devicon-html5-plain" },
-  { name: "CSS", icon: "devicon-css3-plain" },
-  { name: "JavaScript", icon: "devicon-javascript-plain" },
-  { name: "TypeScript", icon: "devicon-typescript-plain" },
-  { name: "Next.js", icon: "devicon-nextjs-plain" },
-  { name: "React", icon: "devicon-react-original" },
-  { name: "Bootstrap", icon: "devicon-bootstrap-plain" },
+// Flatten all tech items into a single array
+const techItems = [
+  // Front-End
+  { name: "React", icon: "devicon-react-plain" },
+  { name: "Vue", icon: "devicon-vuejs-plain" },
   { name: "Tailwind", icon: "devicon-tailwindcss-plain" },
-  { name: "Mysql", icon: "devicon-mysql-plain" },
-  { name: "Node.js", icon: "devicon-nodejs-plain" },
-  { name: "Express", icon: "devicon-express-original" },
-  { name: "MongoDB", icon: "devicon-mongodb-plain" },
+  { name: "Bootstrap", icon: "devicon-bootstrap-plain" },
+  { name: "Next Js", icon: "devicon-nextjs-plain" },
+  { name: "Material UI", icon: "devicon-materialui-plain" },
+  { name: "Redux", icon: "devicon-redux-plain" },
+  { name: "Webpack", icon: "devicon-webpack-plain" },
+  // Back-End
   { name: "Laravel", icon: "devicon-laravel-plain" },
-  { name: "Php", icon: "devicon-php-plain" },
+  { name: "Express", icon: "devicon-express-original" },
+  { name: "Node Js", icon: "devicon-nodejs-plain" },
+  { name: "MongoDB", icon: "devicon-mongodb-plain" },
+  { name: "MySQL", icon: "devicon-mysql-plain" },
+  // UI/UX
+  { name: "Figma", icon: "devicon-figma-plain" },
+  { name: "Illustrator", icon: "devicon-illustrator-plain" },
+  { name: "Photoshop", icon: "devicon-photoshop-plain" },
+  // Mobile
+  { name: "Flutter", icon: "devicon-flutter-plain" },
+  { name: "Dart", icon: "devicon-dart-plain" },
+  // Tools
+  { name: "Git", icon: "devicon-git-plain" },
+  { name: "Github", icon: "devicon-github-plain" },
+  { name: "Gitlab", icon: "devicon-gitlab-plain" },
+  { name: "Docker", icon: "devicon-docker-plain" },
+  { name: "VSCode", icon: "devicon-vscode-plain" },
+  { name: "NPM", icon: "devicon-npm-original-wordmark" },
 ];
 
 export const Tech = () => {
@@ -85,36 +101,11 @@ export const Tech = () => {
   return (
     <div className="my-12 md:my-20 lg:my-20">
       <div ref={titleRef}>
-        <h1 className="mb-4 text-center relative">
-          <div className="space-y-2">
-            <div className="inline-flex items-center gap-1 cursor-pointer group">
-              <span className="text-xs md:text-sm lg:text-base font-medium text-violet-400 uppercase tracking-widest">
-                Tech Stack
-              </span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="17"
-                height="17"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1"
-                className="transition-transform duration-300 group-hover:translate-x-1 text-violet-400"
-              >
-                <path d="M5 12h14" />
-                <path d="m12 5 7 7-7 7" />
-              </svg>
-            </div>
-            <h2 className="text-3xl md:text-5xl font-bold text-center [text-wrap:balance]">
-              <span
-                ref={titleRef}
-                className="inline-block bg-gradient-to-r from-violet-500 via-purple-500 to-cyan-400 text-transparent bg-clip-text pb-2"
-              >
-                Technologies & Tools
-              </span>
-            </h2>
-          </div>
-        </h1>
+        <h2 className="text-3xl md:text-5xl font-bold text-center mb-8">
+          <span className="inline-block bg-gradient-to-r from-violet-500 via-purple-500 to-cyan-400 text-transparent bg-clip-text">
+            Technologies & Tools
+          </span>
+        </h2>
       </div>
 
       <div ref={subtitleRef} className="mb-12 text-center">
@@ -128,9 +119,9 @@ export const Tech = () => {
 
       <div
         ref={containerRef}
-        className="grid grid-cols-3 md:grid-cols-5 lg:grid-cols-7 place-items-center gap-2 md:gap-4 px-14 md:px-12 lg:px-40"
+        className="grid grid-cols-3 md:grid-cols-5 lg:grid-cols-8 place-items-center gap-4 px-4 md:px-8 lg:px-16"
       >
-        {techStack.map((tech, index) => (
+        {techItems.map((tech, index) => (
           <CardContainer
             key={index}
             className="inter-var tech-card"
@@ -138,15 +129,15 @@ export const Tech = () => {
           >
             <CardBody
               className={`
-              relative group/card h-20 w-20 md:h-28 md:w-28 lg:h-32 lg:w-32 cursor-pointer
-              bg-gradient-to-t from-black/10 to-violet-800/30
-              dark:hover:shadow-2xl dark:hover:shadow-violet-600/30
-              border border-violet-900/10 rounded-xl
-              transition-all duration-300 ease-out
-              hover:border-violet-600/50
-              hover:scale-95
-              hover:before:opacity-100
-            `}
+                relative group/card h-20 w-20 md:h-28 md:w-28 lg:h-32 lg:w-32 cursor-pointer
+                bg-gradient-to-t from-black/10 to-violet-800/30
+                dark:hover:shadow-2xl dark:hover:shadow-violet-600/30
+                border border-violet-900/10 rounded-xl
+                transition-all duration-300 ease-out
+                hover:border-violet-600/50
+                hover:scale-95
+                hover:before:opacity-100
+              `}
             >
               <CardItem
                 translateZ={160}
