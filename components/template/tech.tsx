@@ -139,7 +139,7 @@ export const Tech = () => {
 
       <div
         ref={containerRef}
-        className="grid grid-cols-3 md:grid-cols-5 lg:grid-cols-8 place-items-center gap-4 px-4 md:px-8 lg:px-16"
+        className="grid grid-cols-3 md:grid-cols-5 lg:grid-cols-8 place-items-center gap-4 px-16 md:px-16 lg:px-32"
       >
         {techItems.map((tech, index) => (
           <CardContainer

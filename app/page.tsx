@@ -68,7 +68,7 @@ export default function Home() {
           <Certificate />
         </section>
         <Separator />
-        <section id="projects" className="min-h-screen">
+        <section id="projects" className="h-fit">
           <Projects />
         </section>
         <Separator />

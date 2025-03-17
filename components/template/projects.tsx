@@ -166,8 +166,8 @@ export const Projects = () => {
             </p>
           )}
         </div>
-        <Separator className="hidden md:block" />
       </div>
+      <Separator />
 
       {/* Project Carousel */}
       {isClient && (
