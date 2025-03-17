@@ -99,18 +99,38 @@ export const Tech = () => {
   }, []);
 
   return (
-    <div className="my-12 md:my-20 lg:my-20">
+    <div className="my-12 md:my-20 lg:my-20 mb">
       <div ref={titleRef}>
-        <h2 className="text-3xl md:text-5xl font-bold text-center mb-8">
-          <span className="inline-block bg-gradient-to-r from-violet-500 via-purple-500 to-cyan-400 text-transparent bg-clip-text">
-            Technologies & Tools
-          </span>
-        </h2>
+        <div className="text-center space-y-2">
+          <div className="inline-flex items-center gap-1 cursor-pointer group">
+            <span className="text-xs md:text-sm lg:text-base font-medium text-violet-400 uppercase tracking-widest">
+              Tech Stack
+            </span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="17"
+              height="17"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1"
+              className="transition-transform duration-300 group-hover:translate-x-1 text-violet-400"
+            >
+              <path d="M5 12h14" />
+              <path d="m12 5 7 7-7 7" />
+            </svg>
+          </div>
+          <h2 className="text-3xl md:text-5xl font-bold text-center">
+            <span className="inline-block bg-gradient-to-r from-violet-500 via-purple-500 to-cyan-400 text-transparent bg-clip-text pb-2">
+              Technologies & Tools
+            </span>
+          </h2>
+        </div>
       </div>
 
       <div ref={subtitleRef} className="mb-12 text-center">
         {isSubtitleInView && (
-          <p className="text-sm md:text-base lg:text-lg text-white/70 leading-relaxed [text-wrap:balance] max-w-[90%] mx-auto">
+          <p className="text-sm md:text-base lg:text-lg text-white/70 leading-relaxed [text-wrap:balance] max-w-[90%] mx-auto mt-3">
             Crafting powerful web solutions with cutting-edge technologies and
             proven frameworks
           </p>

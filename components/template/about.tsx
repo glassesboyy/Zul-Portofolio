@@ -32,15 +32,22 @@ export const About = () => {
           </p>
           <div className="grid grid-cols-2 gap-4">
             <Image
-              src="/assets/me.png"
-              alt="Junior High Activities"
+              src="/assets/timeline/smp 1.png"
+              alt="Bakti Sosial"
               width={500}
               height={500}
               className="rounded-xl object-cover h-20 md:h-44 lg:h-60 w-full shadow-xl"
             />
             <Image
-              src="/assets/fotogitar.png"
-              alt="Class Management"
+              src="/assets/timeline/smp 3.png"
+              alt="Foto Sekolah"
+              width={500}
+              height={500}
+              className="rounded-xl object-cover h-20 md:h-44 lg:h-60 w-full shadow-xl"
+            />
+            <Image
+              src="/assets/timeline/smp 2.png"
+              alt="Foto Sekolah 2"
               width={500}
               height={500}
               className="rounded-xl object-cover h-20 md:h-44 lg:h-60 w-full shadow-xl"
@@ -60,15 +67,22 @@ export const About = () => {
           </p>
           <div className="grid grid-cols-2 gap-4">
             <Image
-              src="/assets/fotogitar.png"
-              alt="Business Journey"
+              src="/assets/timeline/kapten 4.png"
+              alt="Instagram Account"
               width={500}
               height={500}
               className="rounded-xl object-cover h-20 md:h-44 lg:h-60 w-full shadow-xl"
             />
             <Image
-              src="/assets/me.png"
-              alt="Fashion Business"
+              src="/assets/timeline/kapten 2.png"
+              alt="Kapten Market Sticker for Branding"
+              width={500}
+              height={500}
+              className="rounded-xl object-cover h-20 md:h-44 lg:h-60 w-full shadow-xl"
+            />
+            <Image
+              src="/assets/timeline/kapten 3.png"
+              alt="Instagram Feeds"
               width={500}
               height={500}
               className="rounded-xl object-cover h-20 md:h-44 lg:h-60 w-full shadow-xl"
@@ -89,15 +103,22 @@ export const About = () => {
           </p>
           <div className="grid grid-cols-2 gap-4">
             <Image
-              src="/assets/me.png"
-              alt="High School Life"
+              src="/assets/timeline/sma 1.png"
+              alt="High School Photo"
               width={500}
               height={500}
               className="rounded-xl object-cover h-20 md:h-44 lg:h-60 w-full shadow-xl"
             />
             <Image
-              src="/assets/fotogitar.png"
+              src="/assets/timeline/sma 2.jpeg"
               alt="MPK Activities"
+              width={500}
+              height={500}
+              className="rounded-xl object-cover h-20 md:h-44 lg:h-60 w-full shadow-xl"
+            />
+            <Image
+              src="/assets/timeline/sma 3.jpeg"
+              alt="MPK Activities 2"
               width={500}
               height={500}
               className="rounded-xl object-cover h-20 md:h-44 lg:h-60 w-full shadow-xl"
@@ -117,15 +138,22 @@ export const About = () => {
           </p>
           <div className="grid grid-cols-2 gap-4">
             <Image
-              src="/assets/fotogitar.png"
+              src="/assets/timeline/uns 1.jpg"
               alt="University Life 1"
               width={500}
               height={500}
               className="rounded-xl object-cover h-20 md:h-44 lg:h-60 w-full shadow-xl"
             />
             <Image
-              src="/assets/me.png"
+              src="/assets/timeline/uns 4.jpeg"
               alt="University Life 2"
+              width={500}
+              height={500}
+              className="rounded-xl object-cover h-20 md:h-44 lg:h-60 w-full shadow-xl"
+            />
+            <Image
+              src="/assets/timeline/uns 3.jpeg"
+              alt="University Life 3"
               width={500}
               height={500}
               className="rounded-xl object-cover h-20 md:h-44 lg:h-60 w-full shadow-xl"
