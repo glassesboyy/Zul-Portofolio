@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useRef } from "react";
 import {
   IconBrandDiscord,
   IconBrandGithub,
@@ -9,9 +10,19 @@ import {
   IconExternalLink,
   IconMail,
 } from "@tabler/icons-react";
-import { ContactAnimation } from "../animation/contactAnimation";
+import { initContactAnimation } from "../animation/contactAnimation";
 
 export const Contact = () => {
+  const titleRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (containerRef.current) {
+      const socialLinks = containerRef.current.querySelectorAll("a");
+      initContactAnimation(titleRef.current, Array.from(socialLinks));
+    }
+  }, []);
+
   const socialLinks = [
     {
       title: "GitHub",
@@ -59,68 +70,67 @@ export const Contact = () => {
 
   return (
     <div className="relative flex flex-col items-center p-4 md:mt-16">
-      <ContactAnimation type="title">
-        <div className="text-center space-y-4 mb-16">
-          <div className="inline-flex items-center gap-1 group">
-            <span className="text-xs md:text-sm lg:text-base font-medium text-violet-400 uppercase tracking-widest cursor-pointer">
-              Contact
-            </span>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="17"
-              height="17"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="1"
-              className="transition-transform duration-1000 group-hover:translate-x-1 text-violet-400"
-            >
-              <path d="M5 12h14" />
-              <path d="m12 5 7 7-7 7" />
-            </svg>
-          </div>
-          <h2 className="text-3xl md:text-5xl font-bold [text-wrap:balance]">
-            <span className="inline-block bg-gradient-to-r from-violet-500 via-purple-500 to-cyan-400 text-transparent bg-clip-text pb-2">
-              Get in Touch With Me
-            </span>
-          </h2>
-          <p className="text-sm md:text-base lg:text-lg text-white/70 max-w-2xl mx-auto">
-            Feel free to reach out through any of these platforms. I'm always
-            open to new opportunities and connections.
-          </p>
+      <div ref={titleRef} className="text-center space-y-4 mb-16">
+        <div className="inline-flex items-center gap-1 group">
+          <span className="text-xs md:text-sm lg:text-base font-medium text-violet-400 uppercase tracking-widest cursor-pointer">
+            Contact
+          </span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="17"
+            height="17"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1"
+            className="transition-transform duration-1000 group-hover:translate-x-1 text-violet-400"
+          >
+            <path d="M5 12h14" />
+            <path d="m12 5 7 7-7 7" />
+          </svg>
         </div>
-      </ContactAnimation>
+        <h2 className="text-3xl md:text-5xl font-bold [text-wrap:balance]">
+          <span className="inline-block bg-gradient-to-r from-violet-500 via-purple-500 to-cyan-400 text-transparent bg-clip-text pb-2">
+            Get in Touch With Me
+          </span>
+        </h2>
+        <p className="text-sm md:text-base lg:text-lg text-white/70 max-w-2xl mx-auto">
+          Feel free to reach out through any of these platforms. I'm always open
+          to new opportunities and connections.
+        </p>
+      </div>
 
-      <ContactAnimation type="form">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-4xl">
-          {socialLinks.map((link) => (
-            <a
-              key={link.title}
-              href={link.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`group p-6 rounded-xl border border-violet-900/50 
+      <div
+        ref={containerRef}
+        className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-4xl"
+      >
+        {socialLinks.map((link) => (
+          <a
+            key={link.title}
+            href={link.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`group p-6 rounded-xl border border-violet-900/50 
                 backdrop-blur-sm transition-all duration-300
                 ${link.color} hover:border-transparent`}
-            >
-              <div className="flex items-start space-x-4">
-                <div className="p-3 rounded-xl bg-violet-500/10 group-hover:bg-white/10 transition-colors duration-300">
-                  {link.icon}
-                </div>
-                <div className="flex-1">
-                  <div className="flex items-center space-x-2">
-                    <h3 className="text-xl font-semibold">{link.title}</h3>
-                    <IconExternalLink className="h-4 w-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  </div>
-                  <p className="text-xxs md:text-xs lg:text-xs text-gray-400 mt-1 group-hover:text-white/90 transition-colors duration-300">
-                    {link.description}
-                  </p>
-                </div>
+          >
+            <div className="flex items-start space-x-4">
+              <div className="p-3 rounded-xl bg-violet-500/10 group-hover:bg-white/10 transition-colors duration-300">
+                {link.icon}
               </div>
-            </a>
-          ))}
-        </div>
-      </ContactAnimation>
+              <div className="flex-1">
+                <div className="flex items-center space-x-2">
+                  <h3 className="text-xl font-semibold">{link.title}</h3>
+                  <IconExternalLink className="h-4 w-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                </div>
+                <p className="text-xxs md:text-xs lg:text-xs text-gray-400 mt-1 group-hover:text-white/90 transition-colors duration-300">
+                  {link.description}
+                </p>
+              </div>
+            </div>
+          </a>
+        ))}
+      </div>
     </div>
   );
 };

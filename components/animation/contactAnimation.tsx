@@ -1,53 +1,72 @@
 "use client";
 
-import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-interface ContactAnimationProps {
-  children: React.ReactNode;
-  type: "title" | "form";
-}
+export const initContactAnimation = (
+  titleRef: HTMLElement | null,
+  socialLinks: Element[]
+) => {
+  if (!titleRef || !socialLinks.length) return;
 
-export const ContactAnimation: React.FC<ContactAnimationProps> = ({
-  children,
-  type,
-}) => {
-  const elementRef = useRef<HTMLDivElement>(null);
+  const tl = gsap.timeline({
+    defaults: { ease: "power3.out" },
+    scrollTrigger: {
+      trigger: titleRef,
+      start: "top center+=100",
+      toggleActions: "play none none reverse",
+    },
+  });
 
-  useEffect(() => {
-    const element = elementRef.current;
-    if (!element) return;
-
-    const animation = gsap.fromTo(
-      element,
+  // Title animation
+  tl.fromTo(
+    titleRef,
+    {
+      opacity: 0,
+      y: 50,
+    },
+    {
+      opacity: 1,
+      y: 0,
+      duration: 1,
+    }
+  )
+    // Left column animation (first half of social links)
+    .fromTo(
+      socialLinks.slice(0, 3),
       {
         opacity: 0,
-        y: type === "title" ? -30 : 30,
+        x: -30,
+        scale: 0.95,
       },
       {
         opacity: 1,
-        y: 0,
-        duration: 1.2,
-        delay: type === "title" ? 0 : 0.3,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: element,
-          start: "top bottom-=100",
-          end: "bottom top+=100",
-          toggleActions: "play none none reverse",
-          once: false,
-          markers: false,
-        },
-      }
+        x: 0,
+        scale: 1,
+        duration: 0.8,
+        stagger: 0.1,
+      },
+      "-=0.5"
+    )
+    // Right column animation (second half of social links)
+    .fromTo(
+      socialLinks.slice(3),
+      {
+        opacity: 0,
+        x: 30,
+        scale: 0.95,
+      },
+      {
+        opacity: 1,
+        x: 0,
+        scale: 1,
+        duration: 0.8,
+        stagger: 0.1,
+      },
+      "-=0.8"
     );
 
-    return () => {
-      animation.kill();
-    };
-  }, [type]);
-
-  return <div ref={elementRef}>{children}</div>;
+  return tl;
 };
