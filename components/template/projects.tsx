@@ -150,14 +150,14 @@ export const Projects = () => {
         <div className="relative z-10 max-w-full px-4 sm:px-6">
           <div
             ref={scrollContainerRef}
-            className="relative overflow-x-auto hide-scrollbar"
+            className="relative overflow-x-auto scrollbar-hide"
             style={{ scrollSnapType: "x mandatory" }}
           >
             <div ref={projectsContainerRef} className="flex px-4">
               {projects.map((project, index) => (
                 <div
                   key={index}
-                  className="h-[48vh] md:h-[45vh] lg:h-[90vh] min-w-[70vw] lg:min-w-[70vw] flex items-center justify-center"
+                  className="h-[48vh] md:h-[45vh] lg:h-[91vh] min-w-[70vw] lg:min-w-[70vw] flex items-center justify-center overflow-hidden"
                   style={{ scrollSnapAlign: "center" }}
                 >
                   <PinContainer title={project.title} href={project.href}>
@@ -183,7 +183,7 @@ export const Projects = () => {
                           src={project.image}
                           alt={project.title}
                           fill
-                          className="object-cover rounded-xl opacity-20 hover:opacity-100 transisition-opacity duration-300"
+                          className="object-cover rounded-xl opacity-80 hover:opacity-100 transisition-opacity duration-700"
                           sizes="(max-width: 768px) 90vw, (max-width: 1200px) 45vw, 30vw"
                           priority
                         />

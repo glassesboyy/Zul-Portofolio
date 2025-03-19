@@ -346,7 +346,7 @@ export const Services = () => {
                 index === 5 && "md:col-span-3 lg:col-span-3"
               )}
             >
-              <div className="relative h-full rounded-2xl border p-2">
+              <div className="relative h-full rounded-2xl border border-cyan-700/30 p-2">
                 <GlowingEffect
                   blur={0}
                   borderWidth={2}

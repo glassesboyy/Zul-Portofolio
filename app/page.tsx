@@ -24,7 +24,7 @@ export default function Home() {
   }, []);
 
   return (
-    <>
+    <div>
       <div className="preloader fixed inset-0 z-50 bg-black flex items-center justify-center">
         <svg width="120" height="120" viewBox="0 0 200 200">
           <path
@@ -91,6 +91,6 @@ export default function Home() {
           <Footer />
         </section>
       </div>
-    </>
+    </div>
   );
 }

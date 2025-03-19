@@ -90,7 +90,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
                     style={{ opacity: pointProgress }}
                     className="h-10 absolute left-3 md:left-3 w-10 rounded-full bg-black flex items-center justify-center border border-violet-500/20"
                   >
-                    <div className="h-4 w-4 rounded-full bg-violet-500/20 border border-violet-500/40" />
+                    <div className="h-4 w-4 rounded-full bg-violet-500/50 border border-violet-500/90" />
                   </motion.div>
                   <motion.h3
                     style={{ opacity: pointProgress }}

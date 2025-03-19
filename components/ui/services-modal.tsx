@@ -37,7 +37,7 @@ export function ServiceModal({ isOpen, onClose, service }: ServiceModalProps) {
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="max-w-sm md:max-w-3xl lg:max-w-4xl max-h-[90vh] md:max-h-[90vh] lg:max-h-[90vh] overflow-y-auto bg-black/90 border border-violet-500/20 px-8 pt-8 pb-8">
+      <DialogContent className="max-w-sm md:max-w-3xl lg:max-w-4xl max-h-[90vh] md:max-h-[90vh] lg:max-h-[90vh] overflow-y-auto scrollbar-hide bg-black/90 border border-violet-500/20 px-8 pt-8 pb-8">
         <AnimatePresence>
           {isOpen && (
             <>

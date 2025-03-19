@@ -7,7 +7,7 @@ body {
   min-height: 100vh;
   position: relative;
   overflow-x: hidden;
-  background-color: black; /* Ubah ke warna hitam solid */
+  background-color: black;
 }
 
 @layer utilities {
@@ -18,19 +18,19 @@ body {
 
 @layer base {
   :root {
-    --background: 0 0% 0%; /* Ubah background menjadi hitam */
+    --background: 0 0% 0%;
     --foreground: 180 20% 96%;
     --card: 260 50% 5%;
     --card-foreground: 180 20% 96%;
     --popover: 260 50% 5%;
     --popover-foreground: 180 20% 96%;
-    --primary: 187 100% 42%; /* cyan primary */
+    --primary: 187 100% 42%;
     --primary-foreground: 180 20% 96%;
     --secondary: 260 30% 15%;
     --secondary-foreground: 180 20% 96%;
     --muted: 260 30% 15%;
     --muted-foreground: 180 20% 60%;
-    --accent: 270 75% 60%; /* purple accent */
+    --accent: 270 75% 60%;
     --accent-foreground: 180 20% 96%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 180 20% 96%;
@@ -68,29 +68,11 @@ body {
   }
 }
 
-@layer base {
-  * {
-    @apply border-border;
-  }
-  body {
-    @apply bg-background text-foreground;
-  }
-}
-
-@layer base {
-  * {
-    @apply border-border outline-ring/50;
-  }
-  body {
-    @apply bg-background text-foreground;
-  }
-}
-
-.hide-scrollbar {
-  -ms-overflow-style: none;
+html {
   scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
-.hide-scrollbar::-webkit-scrollbar {
+html::-webkit-scrollbar {
   display: none;
 }

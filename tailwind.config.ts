@@ -186,7 +186,6 @@ const config: Config = {
         ":root": newVars,
       });
     },
-    // Add new plugin for hiding scrollbars
     function ({ addUtilities }: any) {
       addUtilities({
         ".scrollbar-hide": {
