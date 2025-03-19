@@ -11,7 +11,7 @@ const servicesData = [
   {
     title: "Front End Development",
     description:
-      "Creating beautiful, responsive interfaces with modern frameworks like React, Next.js, and Vue. Pixel-perfect execution with smooth animations.",
+      "Creating beautiful, responsive interfaces with modern frameworks like React, Next Js, and Vue. Pixel-perfect execution with smooth animations.",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -46,7 +46,7 @@ const servicesData = [
     ],
     technologies: [
       "React",
-      "Next.js",
+      "Next Js",
       "Vue",
       "TypeScript",
       "Tailwind CSS",
@@ -92,21 +92,14 @@ const servicesData = [
       "User Testing",
       "Implementation",
     ],
-    technologies: [
-      "Figma",
-      "Adobe XD",
-      "Sketch",
-      "InVision",
-      "Principle",
-      "Zeplin",
-    ],
+    technologies: ["Figma", "Adobe Illustrator", "Adobe Photoshop", "Balsamiq"],
     additionalInfo:
       "Focused on creating user-centric designs that enhance user engagement and satisfaction.",
   },
   {
     title: "API Development",
     description:
-      "RESTful and GraphQL API design with comprehensive documentation. Seamless third-party integrations.",
+      "RESTful API design with comprehensive documentation. Seamless third-party integrations.",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -126,7 +119,6 @@ const servicesData = [
     size: "small",
     keywords: [
       "RESTful APIs",
-      "GraphQL",
       "API Documentation",
       "Microservices",
       "Integration",
@@ -139,14 +131,7 @@ const servicesData = [
       "Security",
       "Deployment",
     ],
-    technologies: [
-      "Node.js",
-      "Express",
-      "GraphQL",
-      "Swagger",
-      "Postman",
-      "Docker",
-    ],
+    technologies: ["Node Js", "Express", "Swagger", "Postman", "Docker"],
     additionalInfo:
       "Building robust and scalable APIs with comprehensive documentation and security measures.",
   },
@@ -186,14 +171,7 @@ const servicesData = [
       "Migration",
       "Maintenance",
     ],
-    technologies: [
-      "MySQL",
-      "PostgreSQL",
-      "MongoDB",
-      "Redis",
-      "Firebase",
-      "ElasticSearch",
-    ],
+    technologies: ["MySQL", "MongoDB"],
     additionalInfo:
       "Designing efficient and scalable database solutions for optimal data management.",
   },
@@ -233,21 +211,14 @@ const servicesData = [
       "Integration",
       "Deployment",
     ],
-    technologies: [
-      "React",
-      "Node.js",
-      "TypeScript",
-      "MongoDB",
-      "AWS",
-      "Docker",
-    ],
+    technologies: ["MERN Stack", "Laravel", "Next Js"],
     additionalInfo:
       "Delivering complete web solutions with seamless integration between frontend and backend systems.",
   },
   {
     title: "Back End Development",
     description:
-      "Building secure and scalable server-side solutions using Node.js, Python, and PHP. Expert in microservices architecture.",
+      "Building secure and scalable server-side solutions using Node Js, Express, Laravel, or Next Js. Expert in microservices architecture.",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -280,7 +251,7 @@ const servicesData = [
       "Deployment",
       "Maintenance",
     ],
-    technologies: ["Node.js", "Python", "PHP", "Docker", "Kubernetes", "AWS"],
+    technologies: ["Node Js", "Express", "Laravel", "Next Js"],
     additionalInfo:
       "Creating robust backend systems with focus on security, scalability, and performance.",
   },

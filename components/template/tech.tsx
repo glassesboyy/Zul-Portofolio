@@ -16,9 +16,7 @@ const techItems = [
   { name: "React", icon: "devicon-react-plain" },
   { name: "Vue", icon: "devicon-vuejs-plain" },
   { name: "Tailwind", icon: "devicon-tailwindcss-plain" },
-  { name: "Bootstrap", icon: "devicon-bootstrap-plain" },
   { name: "Next Js", icon: "devicon-nextjs-plain" },
-  { name: "Material UI", icon: "devicon-materialui-plain" },
   { name: "Redux", icon: "devicon-redux-plain" },
   { name: "Webpack", icon: "devicon-webpack-plain" },
   // Back-End
@@ -37,7 +35,6 @@ const techItems = [
   // Tools
   { name: "Git", icon: "devicon-git-plain" },
   { name: "Github", icon: "devicon-github-plain" },
-  { name: "Gitlab", icon: "devicon-gitlab-plain" },
   { name: "Docker", icon: "devicon-docker-plain" },
   { name: "VSCode", icon: "devicon-vscode-plain" },
   { name: "NPM", icon: "devicon-npm-original-wordmark" },
@@ -139,7 +136,7 @@ export const Tech = () => {
 
       <div
         ref={containerRef}
-        className="grid grid-cols-3 md:grid-cols-5 lg:grid-cols-8 place-items-center gap-4 px-16 md:px-16 lg:px-32"
+        className="grid grid-cols-3 md:grid-cols-5 lg:grid-cols-7 place-items-center gap-4 px-16 md:px-16 lg:px-32"
       >
         {techItems.map((tech, index) => (
           <CardContainer
