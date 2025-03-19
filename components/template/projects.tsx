@@ -9,62 +9,22 @@ import { Separator } from "../ui/separator";
 
 const projects = [
   {
-    title: "E-Commerce Platform",
+    title: "Temperature Converter",
     description:
-      "Full-stack e-commerce solution with real-time inventory management",
-    href: "https://project1.demo",
-    tech: "Next.js • TypeScript • MongoDB",
-    image: "/assets/projects/dummy1.png",
+      "A user-friendly web app that quickly converts temperatures between Celsius, Fahrenheit, Kelvin, and Reamur, showing both the result and the conversion formula.",
+    href: "https://revou-fundamental-course.github.io/30-sept-24-glassesboyy/",
+    tech: "HTML • CSS • JavaScript",
+    image: "/assets/projects/kalkulatorfinal.png",
+    status: "done",
   },
   {
-    title: "Task Management App",
-    description: "Collaborative project management tool with real-time updates",
-    href: "https://project2.demo",
-    tech: "React • Node.js • Socket.io",
-    image: "/assets/projects/dummy2.png",
-  },
-  {
-    title: "Learning Platform",
-    description: "Interactive online learning platform with video streaming",
-    href: "https://project3.demo",
-    tech: "Laravel • MySQL • AWS",
-    image: "/assets/projects/dummy1.png",
-  },
-  {
-    title: "Social Network",
-    description: "Feature-rich social platform with real-time messaging",
-    href: "https://project4.demo",
-    tech: "Next.js • PostgreSQL • Redis",
-    image: "/assets/projects/dummy2.png",
-  },
-  {
-    title: "E-Commerce Platform",
+    title: "Startup Landing Page",
     description:
-      "Full-stack e-commerce solution with real-time inventory management",
-    href: "https://project1.demo",
-    tech: "Next.js • TypeScript • MongoDB",
-    image: "/assets/projects/dummy1.png",
-  },
-  {
-    title: "Task Management App",
-    description: "Collaborative project management tool with real-time updates",
-    href: "https://project2.demo",
-    tech: "React • Node.js • Socket.io",
-    image: "/assets/projects/dummy2.png",
-  },
-  {
-    title: "Learning Platform",
-    description: "Interactive online learning platform with video streaming",
-    href: "https://project3.demo",
-    tech: "Laravel • MySQL • AWS",
-    image: "/assets/projects/dummy1.png",
-  },
-  {
-    title: "Social Network",
-    description: "Feature-rich social platform with real-time messaging",
-    href: "https://project4.demo",
-    tech: "Next.js • PostgreSQL • Redis",
-    image: "/assets/projects/dummy2.png",
+      "I designed and developed a modern, responsive landing page for a startup, ensuring a seamless user experience and strong online presence.",
+    href: "https://fe-sistem-final-project-zul.vercel.app/",
+    tech: "Vue • Tailwind • Eslint • Daisy UI • Typescript",
+    image: "/assets/projects/startuplandingpage.png",
+    status: "on progress",
   },
 ];
 
@@ -73,6 +33,22 @@ const Chip = ({ text }: { text: string }) => (
     {text}
   </span>
 );
+
+const StatusBadge = ({ status }: { status: "on progress" | "done" }) => {
+  const statusStyles = {
+    "on progress":
+      "bg-violet-500/20 text-violet-300 border-violet-500/30 hover:border-violet-500/50 shadow-cyan-400/20",
+    done: "bg-cyan-500/20 text-cyan-300 border-cyan-500/30 hover:border-cyan-500/50 shadow-violet-400/20",
+  };
+
+  return (
+    <span
+      className={`inline-flex items-center px-3 py-1 rounded-full text-xs md:text-sm lg:text-sm shadow-sm font-medium border hover:shadow-md transition-all duration-300 ${statusStyles[status]}`}
+    >
+      {status === "on progress" ? "On Progress" : "Done"}
+    </span>
+  );
+};
 
 export const Projects = () => {
   const [isClient, setIsClient] = useState(false);
@@ -181,12 +157,12 @@ export const Projects = () => {
               {projects.map((project, index) => (
                 <div
                   key={index}
-                  className="h-[37vh] min-w-[70vw] lg:min-w-[70vw] lg:h-[80vh] flex items-center justify-center"
+                  className="h-[48vh] md:h-[45vh] lg:h-[90vh] min-w-[70vw] lg:min-w-[70vw] flex items-center justify-center"
                   style={{ scrollSnapAlign: "center" }}
                 >
                   <PinContainer title={project.title} href={project.href}>
                     <div className="flex basis-full flex-col p-6 tracking-tight text-white/70 w-full h-full min-w-[60vw]">
-                      <h3 className="!pb-2 !m-0 font-bold text-lg md:text-3xl lg:text-5xl text-white">
+                      <h3 className="!m-0 !pb-2 font-bold text-lg md:text-3xl lg:text-5xl text-white">
                         {project.title}
                       </h3>
                       <div className="text-xs md:text-base lg:text-lg !m-0 !p-0 font-normal">
@@ -200,18 +176,23 @@ export const Projects = () => {
                         ))}
                       </div>
                       <div
-                        className="relative w-[90%] mx-auto mt-6 rounded-lg overflow-hidden"
+                        className="relative w-full mx-auto mt-6 rounded-lg overflow-hidden"
                         style={{ aspectRatio: "21/9" }}
                       >
                         <Image
                           src={project.image}
                           alt={project.title}
                           fill
-                          className="object-cover"
+                          className="object-cover rounded-xl opacity-20 hover:opacity-100 transisition-opacity duration-300"
                           sizes="(max-width: 768px) 90vw, (max-width: 1200px) 45vw, 30vw"
                           priority
                         />
                         <div className="absolute inset-0 bg-black/20 hover:bg-black/0 transition-colors duration-300" />
+                      </div>
+                      <div className="flex justify-center mt-6">
+                        <StatusBadge
+                          status={project.status as "on progress" | "done"}
+                        />
                       </div>
                     </div>
                   </PinContainer>
