@@ -9,7 +9,6 @@ export const initServicesAnimation = (
 ) => {
   if (!titleContainer || !servicesContainer) return;
 
-  // Title section animation
   gsap.fromTo(
     titleContainer.children,
     {
@@ -29,7 +28,6 @@ export const initServicesAnimation = (
     }
   );
 
-  // Services cards reveal animation
   const serviceCards = servicesContainer.children;
   gsap.fromTo(
     serviceCards,

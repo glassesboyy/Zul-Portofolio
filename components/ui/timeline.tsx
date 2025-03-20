@@ -31,7 +31,6 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
   return (
     <div className="w-full bg-black" ref={containerRef}>
       <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-10">
-        {/* Header with Animation */}
         <TimelineAnimation type="header">
           <div className="space-y-2 text-center md:text-left mb-12">
             <div className="timeline-header-group inline-flex items-center gap-1 cursor-pointer group">
@@ -63,7 +62,6 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
           </div>
         </TimelineAnimation>
 
-        {/* Timeline Content */}
         <div ref={ref} className="relative max-w-7xl mx-auto">
           {data.map((item, index) => {
             const pointProgress = useTransform(
@@ -81,7 +79,6 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
                 key={`timeline-${index}`}
                 className="flex justify-start pt-10 md:pt-40"
               >
-                {/* Timeline Point and Year */}
                 <motion.div
                   style={{ opacity: pointProgress }}
                   className="sticky flex flex-col md:flex-row z-40 items-center top-40 self-start max-w-xs lg:max-w-sm md:w-full"
@@ -116,7 +113,6 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
             );
           })}
 
-          {/* Timeline Line */}
           <div
             style={{
               height: height + "px",

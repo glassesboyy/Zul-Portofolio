@@ -10,7 +10,6 @@ export const initProjectsAnimation = (
 ) => {
   if (!titleContainer || !projectsContainer) return;
 
-  // Title section animation
   gsap.fromTo(
     titleContainer,
     {
@@ -29,7 +28,6 @@ export const initProjectsAnimation = (
     }
   );
 
-  // Subtitle animation
   if (subtitleContainer) {
     gsap.fromTo(
       subtitleContainer,
@@ -52,7 +50,6 @@ export const initProjectsAnimation = (
     );
   }
 
-  // Projects grid animation
   const projectCards = projectsContainer.children;
   gsap.fromTo(
     projectCards,

@@ -73,7 +73,6 @@ export const FloatingNav = forwardRef<
     },
   };
 
-  // Add new useEffect for body overflow control
   useEffect(() => {
     if (isMenuOpen) {
       document.body.style.overflow = "hidden";
@@ -103,7 +102,6 @@ export const FloatingNav = forwardRef<
         className
       )}
     >
-      {/* Desktop Navigation (1025px and above) */}
       <div
         className={cn(
           "relative hidden lg:flex items-center gap-4 px-4 py-2 rounded-full",
@@ -153,10 +151,8 @@ export const FloatingNav = forwardRef<
         ))}
       </div>
 
-      {/* Mobile and Tablet Navigation (0-1024px) */}
       <div className="lg:hidden flex justify-end px-6">
         {" "}
-        {/* Added padding and justify-end */}
         <button
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           className={cn(

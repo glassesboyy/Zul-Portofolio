@@ -93,7 +93,6 @@ export const Projects = () => {
   return (
     <div className="pt-60 md:pt-60 lg:pt-80 pb-10 relative h-full w-full overflow-hidden bg-gradient-to-b from-black via-violet-900 to-violet-700">
       <div className="absolute inset-0 overflow-hidden">
-        {/* Primary curve */}
         <div className="absolute inset-0 -top-16 md:-top-36 lg:-top-44">
           <div
             className="absolute inset-0 bg-black
@@ -102,7 +101,6 @@ export const Projects = () => {
         </div>
       </div>
 
-      {/* Content Container */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 pt-16">
         <div ref={titleRef}>
           <h1 className="mb-4 text-center relative">
@@ -145,7 +143,6 @@ export const Projects = () => {
       </div>
       <Separator />
 
-      {/* Project Carousel */}
       {isClient && (
         <div className="relative z-10 max-w-full px-4 sm:px-6">
           <div
@@ -201,7 +198,6 @@ export const Projects = () => {
             </div>
           </div>
 
-          {/* Navigation Arrows */}
           <div className="flex justify-center gap-4 mt-8">
             <button
               onClick={() => scroll("left")}

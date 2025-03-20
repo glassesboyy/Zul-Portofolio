@@ -18,7 +18,6 @@ export const initFaqAnimation = (
     },
   });
 
-  // Title animation
   tl.fromTo(
     titleRef,
     {
@@ -31,7 +30,6 @@ export const initFaqAnimation = (
       duration: 1,
     }
   )
-    // Left column animation
     .fromTo(
       faqItems.slice(0, 4),
       {
@@ -48,7 +46,6 @@ export const initFaqAnimation = (
       },
       "-=0.5"
     )
-    // Right column animation
     .fromTo(
       faqItems.slice(4),
       {
@@ -73,7 +70,6 @@ export const animateFaqOpen = (contentElement: HTMLElement) => {
   const content = contentElement;
   const answer = content.querySelector("p");
 
-  // Reset semua properti terlebih dahulu
   gsap.set(content, {
     height: 0,
     display: "block",

@@ -200,7 +200,6 @@ export const About = () => {
   return (
     <div className="container mx-auto py-8 md:py-20 flex flex-col items-center gap-8 md:gap-12 h-fit relative overflow-hidden">
       <div className="grid md:grid-cols-2 gap-8 md:gap-12 max-w-7xl relative w-full">
-        {/* Left Column - Image */}
         <div className="flex justify-center items-center order-2 md:order-1">
           <AboutAnimation type="image">
             <div className="relative w-full max-w-[240px] h-[240px] sm:max-w-[280px] sm:h-[280px] lg:max-w-[370px] lg:h-[370px]">
@@ -217,7 +216,6 @@ export const About = () => {
           </AboutAnimation>
         </div>
 
-        {/* Right Column - Content */}
         <div className="order-1 md:order-2">
           <AboutAnimation type="content">
             <div className="flex flex-col justify-center space-y-6 md:space-y-8">
@@ -275,7 +273,6 @@ export const About = () => {
         <Separator />
       </div>
 
-      {/* Timeline Section */}
       <div className="w-full max-w-6xl">
         <AboutAnimation type="content">
           <Timeline data={timelineData} />

@@ -5,7 +5,7 @@ import { useCallback, useEffect, useState } from "react";
 
 export const FlipWords = ({
   words,
-  duration = 6000, // doubled from 3000 to 6000
+  duration = 6000,
   className,
 }: {
   words: string[];
@@ -15,7 +15,6 @@ export const FlipWords = ({
   const [currentWord, setCurrentWord] = useState(words[0]);
   const [isAnimating, setIsAnimating] = useState<boolean>(false);
 
-  // thanks for the fix Julian - https://github.com/Julian-AT
   const startAnimation = useCallback(() => {
     const word = words[words.indexOf(currentWord) + 1] || words[0];
     setCurrentWord(word);
@@ -77,8 +76,8 @@ export const FlipWords = ({
               initial={{ opacity: 0, scale: 0.9, z: -50 }}
               animate={{ opacity: 1, scale: 1, z: 0 }}
               transition={{
-                delay: wordIndex * 0.4, // doubled from 0.2 to 0.4
-                duration: 0.8, // doubled from 0.4 to 0.8
+                delay: wordIndex * 0.4,
+                duration: 0.8,
                 ease: "easeOut",
               }}
               className="inline-block whitespace-nowrap"
@@ -89,8 +88,8 @@ export const FlipWords = ({
                   initial={{ opacity: 0, scale: 0.9, z: -25 }}
                   animate={{ opacity: 1, scale: 1, z: 0 }}
                   transition={{
-                    delay: wordIndex * 0.4 + letterIndex * 0.06, // doubled delays
-                    duration: 0.6, // doubled from 0.3 to 0.6
+                    delay: wordIndex * 0.4 + letterIndex * 0.06,
+                    duration: 0.6,
                     ease: "easeOut",
                   }}
                   className="inline-block"

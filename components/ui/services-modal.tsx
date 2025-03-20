@@ -71,7 +71,6 @@ export function ServiceModal({ isOpen, onClose, service }: ServiceModalProps) {
                 transition={{ duration: 0.3, delay: 0.2 }}
                 className="space-y-6"
               >
-                {/* Description */}
                 <motion.p
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -82,7 +81,6 @@ export function ServiceModal({ isOpen, onClose, service }: ServiceModalProps) {
                   {service.description}
                 </motion.p>
 
-                {/* Keywords */}
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -108,7 +106,6 @@ export function ServiceModal({ isOpen, onClose, service }: ServiceModalProps) {
                   </ul>
                 </motion.div>
 
-                {/* Process */}
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -138,7 +135,6 @@ export function ServiceModal({ isOpen, onClose, service }: ServiceModalProps) {
                   </div>
                 </motion.div>
 
-                {/* Technologies */}
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -164,7 +160,6 @@ export function ServiceModal({ isOpen, onClose, service }: ServiceModalProps) {
                   </div>
                 </motion.div>
 
-                {/* Additional Info */}
                 {service.additionalInfo && (
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}

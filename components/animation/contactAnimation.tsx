@@ -20,7 +20,6 @@ export const initContactAnimation = (
     },
   });
 
-  // Title animation
   tl.fromTo(
     titleRef,
     {
@@ -33,7 +32,6 @@ export const initContactAnimation = (
       duration: 1,
     }
   )
-    // Left column animation (first half of social links)
     .fromTo(
       socialLinks.slice(0, 3),
       {
@@ -50,7 +48,6 @@ export const initContactAnimation = (
       },
       "-=0.5"
     )
-    // Right column animation (second half of social links)
     .fromTo(
       socialLinks.slice(3),
       {

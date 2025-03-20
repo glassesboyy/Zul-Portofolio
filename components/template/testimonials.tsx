@@ -39,16 +39,13 @@ const testimonials = [
 export const Testimonials = () => {
   return (
     <div className="relative flex flex-col items-center justify-center overflow-hidden h-fit bg-gradient-to-b from-violet-700 to-black">
-      {/* Curved section - memindahkan ke bagian atas dan memperbaiki z-index */}
       <div className="absolute inset-0 w-full overflow-hidden">
         <div className="absolute h-full w-full -top-16 md:-top-44 lg:-top-48">
           <div className="absolute h-full w-full bg-black rounded-b-[50%] transform scale-x-[2.3] md:scale-x-[1.9] lg:scale-x-[1.7]" />
         </div>
       </div>
 
-      {/* Content container - menambahkan z-index untuk memastikan konten di atas curve */}
       <div className="relative z-10 w-full max-w-[1400px] mx-auto flex flex-col md:flex-row items-center justify-between px-4 md:px-5 lg:px-6 py-12 md:py-20 lg:py-20 gap-6 md:gap-7 lg:gap-8">
-        {/* Title Section - Left Side */}
         <div className="w-full md:w-1/3 space-y-4 md:space-y-5 lg:space-y-6 flex-shrink-0">
           <TestimonialsAnimation type="title">
             <div className="space-y-2">
@@ -84,7 +81,6 @@ export const Testimonials = () => {
           </TestimonialsAnimation>
         </div>
 
-        {/* Cards Section - Right Side */}
         <TestimonialsAnimation type="cards">
           <div className="relative w-full md:w-2/3 h-[43rem] md:h-[47rem] lg:h-[52rem] flex flex-col items-center justify-center overflow-hidden rounded-3xl flex-shrink-0">
             <div className="absolute inset-0 bg-gradient-to-br from-violet-900/10 via-black to-black/90" />
@@ -92,7 +88,6 @@ export const Testimonials = () => {
             <div className="absolute right-0 top-0 w-[20%] h-full bg-gradient-to-l from-black to-transparent z-10" />
             <div className="absolute inset-0 bg-grid-white/[0.02] bg-[size:30px_30px]" />
 
-            {/* First Row - Moving Right */}
             <div className="w-full h-1/3">
               <InfiniteMovingCards
                 items={testimonials}
@@ -101,7 +96,6 @@ export const Testimonials = () => {
               />
             </div>
 
-            {/* Second Row - Moving Left */}
             <div className="w-full h-1/3">
               <InfiniteMovingCards
                 items={testimonials.slice().reverse()}
@@ -110,7 +104,6 @@ export const Testimonials = () => {
               />
             </div>
 
-            {/* Third Row - Moving Right */}
             <div className="w-full h-1/3">
               <InfiniteMovingCards
                 items={testimonials}

@@ -10,9 +10,7 @@ import {
 } from "../animation/techAnimation";
 import { CardBody, CardContainer, CardItem } from "../ui/3d-card";
 
-// Flatten all tech items into a single array
 const techItems = [
-  // Front-End
   { name: "React", icon: "devicon-react-plain" },
   { name: "Vue", icon: "devicon-vuejs-plain" },
   { name: "Tailwind", icon: "devicon-tailwindcss-plain" },
@@ -21,20 +19,16 @@ const techItems = [
   { name: "Material UI", icon: "devicon-materialui-plain" },
   { name: "Redux", icon: "devicon-redux-plain" },
   { name: "Webpack", icon: "devicon-webpack-plain" },
-  // Back-End
   { name: "Laravel", icon: "devicon-laravel-plain" },
   { name: "Express", icon: "devicon-express-original" },
   { name: "Node Js", icon: "devicon-nodejs-plain" },
   { name: "MongoDB", icon: "devicon-mongodb-plain" },
   { name: "MySQL", icon: "devicon-mysql-plain" },
-  // UI/UX
   { name: "Figma", icon: "devicon-figma-plain" },
   { name: "Illustrator", icon: "devicon-illustrator-plain" },
   { name: "Photoshop", icon: "devicon-photoshop-plain" },
-  // Mobile
   { name: "Flutter", icon: "devicon-flutter-plain" },
   { name: "Dart", icon: "devicon-dart-plain" },
-  // Tools
   { name: "Git", icon: "devicon-git-plain" },
   { name: "Github", icon: "devicon-github-plain" },
   { name: "Gitlab", icon: "devicon-gitlab-plain" },
@@ -52,7 +46,6 @@ export const Tech = () => {
   const isSubtitleInView = useInView(subtitleRef, { once: true });
 
   useEffect(() => {
-    // Set initial state when component mounts
     const elements = containerRef.current?.querySelectorAll(".tech-card") || [];
     if (titleRef.current) {
       gsap.set(titleRef.current, { opacity: 0 });
@@ -67,14 +60,12 @@ export const Tech = () => {
       (entries) => {
         const entry = entries[0];
         if (entry.isIntersecting && !animationTriggered.current) {
-          // Immediately disconnect observer and mark as triggered
           observer.disconnect();
           animationTriggered.current = true;
 
           const cards =
             containerRef.current?.querySelectorAll(".tech-card") || [];
 
-          // Start animation
           initTechAnimation(titleRef.current, Array.from(cards));
         }
       },

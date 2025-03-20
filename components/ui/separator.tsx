@@ -25,7 +25,6 @@ export const Separator = forwardRef<HTMLDivElement, SeparatorProps>(
         )}
       >
         <div className="absolute w-full h-full flex items-center justify-center">
-          {/* Extended central line with glow */}
           <motion.div
             initial={{ scaleX: 0 }}
             animate={isInView ? { scaleX: 1 } : { scaleX: 0 }}
@@ -33,7 +32,6 @@ export const Separator = forwardRef<HTMLDivElement, SeparatorProps>(
             className="w-2/3 h-[1px] bg-gradient-to-r from-transparent via-violet-500 to-transparent"
           />
 
-          {/* Centered geometric shape */}
           <motion.div
             initial={{ scale: 0, rotate: 0 }}
             animate={
@@ -58,7 +56,6 @@ export const Separator = forwardRef<HTMLDivElement, SeparatorProps>(
             }}
             className="absolute w-4 h-4 bg-gradient-to-tr from-violet-500 to-cyan-500"
           >
-            {/* Inner glow effects */}
             <motion.div
               animate={{ opacity: [0.5, 1, 0.5] }}
               transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
@@ -73,7 +70,6 @@ export const Separator = forwardRef<HTMLDivElement, SeparatorProps>(
           </motion.div>
         </div>
 
-        {/* Extended horizontal lines */}
         <div className="absolute inset-0 flex items-center justify-center gap-4">
           <motion.div
             initial={{ width: 0 }}
@@ -81,7 +77,7 @@ export const Separator = forwardRef<HTMLDivElement, SeparatorProps>(
             transition={{ duration: 1.2, ease: "easeOut" }}
             className="h-[0.5px] bg-gradient-to-r from-violet-500/20 to-transparent"
           />
-          <div className="w-8" /> {/* Gap for center */}
+          <div className="w-8" />
           <motion.div
             initial={{ width: 0 }}
             animate={isInView ? { width: "40%" } : { width: 0 }}

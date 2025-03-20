@@ -127,7 +127,6 @@ export const HeroParallax = ({
         }}
         className="relative w-full px-4 mt-6 md:mt-8 lg:mt-16"
       >
-        {/* Single Row with all certificates */}
         <motion.div className="flex overflow-x-auto scrollbar-hide mb-4 md:mb-6 lg:mb-10">
           <div className="flex space-x-4 md:space-x-6 lg:space-x-8 min-w-max px-4">
             {products.map((product) => (

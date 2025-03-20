@@ -26,10 +26,8 @@ export const Footer = () => {
     <footer className="w-full bg-gradient-to-b from-black to-violet-800/20">
       <div className="max-w-7xl mx-auto px-4 pb-8 md:pb-12 lg:pb-8 pt-20 md:pt-24 lg:pt-32">
         <SeparatorRoundUp />
-        {/* Main Footer Content */}
         <div className="flex flex-col items-center space-y-4">
           <FooterAnimation type="name">
-            {/* Name and Year */}
             <div className="text-center space-y-2">
               <p className="text-white/70 text-base font-medium">
                 Portofolio Website by -{" "}
@@ -41,7 +39,6 @@ export const Footer = () => {
           </FooterAnimation>
 
           <FooterAnimation type="nav">
-            {/* Navigation */}
             <nav className="flex flex-wrap justify-center gap-x-6 gap-y-4 max-w-2xl px-4">
               {navItems.map((item) => (
                 <button
@@ -59,7 +56,6 @@ export const Footer = () => {
           </FooterAnimation>
 
           <FooterAnimation type="message">
-            {/* Thank You Message */}
             <div className="pt-4 border-t border-violet-900/30 text-center max-w-xs md:max-w-md lg:max-w-md">
               <p className="text-white/50 text-sm leading-relaxed">
                 Thank you for visiting my portfolio. Feel free to reach out if

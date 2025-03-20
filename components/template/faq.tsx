@@ -88,11 +88,9 @@ export const Faq = () => {
     if (!contentElement) return;
 
     if (activeId === id) {
-      // Closing
       animateFaqClose(contentElement);
       setActiveId(null);
     } else {
-      // If there's an active FAQ, close it first
       if (activeId) {
         const activeElement = document.querySelector(
           `#content-${activeId}`
@@ -102,7 +100,6 @@ export const Faq = () => {
         }
       }
 
-      // Open the new FAQ
       animateFaqOpen(contentElement);
       setActiveId(id);
     }
@@ -192,12 +189,10 @@ export const Faq = () => {
           ref={faqContainerRef}
           className="flex flex-col md:flex-row gap-4 md:gap-6"
         >
-          {/* Left Column */}
           <div className="flex-1 space-y-4">
             {leftColumnFaqs.map(renderFaqItem)}
           </div>
 
-          {/* Right Column */}
           <div className="flex-1 space-y-4">
             {rightColumnFaqs.map(renderFaqItem)}
           </div>

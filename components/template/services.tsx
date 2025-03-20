@@ -292,7 +292,6 @@ export const Services = () => {
   return (
     <div className="relative min-h-screen w-full bg-black py-10 md:py-20 lg:py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        {/* Title Section */}
         <div ref={titleRef} className="text-center mb-16">
           <div className="space-y-2">
             <div className="inline-flex items-center gap-1 cursor-pointer group">
@@ -328,7 +327,6 @@ export const Services = () => {
           </div>
         </div>
 
-        {/* Services Grid */}
         <div
           ref={servicesContainerRef}
           className="grid grid-cols-1 md:grid-cols-6 gap-6 mt-8 max-w-7xl mx-auto px-4 sm:px-6"
