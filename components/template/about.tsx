@@ -205,6 +205,8 @@ export const About = () => {
                 <Image
                   src="/assets/me.png"
                   alt="Profile picture"
+                  width={1000}
+                  height={1000}
                   className="w-full h-full object-cover transition-all duration-700 filter grayscale group-hover:grayscale-0"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
