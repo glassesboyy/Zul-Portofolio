@@ -1,5 +1,5 @@
 "use client";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, MotionValue } from "framer-motion";
 import React, { useEffect, useRef, useState } from "react";
 import { TimelineAnimation } from "../animation/timelineAnimation";
 
@@ -28,18 +28,15 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
   const heightTransform = useTransform(scrollYProgress, [0, 1], [0, height]);
   const opacityTransform = useTransform(scrollYProgress, [0, 0.1], [0, 1]);
 
-  // Create an array of progress transforms for each item
-  const pointProgressArray = data.map((_, index) =>
-    useTransform(
+  const pointProgressArray: MotionValue<number>[] = [];
+  for (let i = 0; i < data.length; i++) {
+    const progress = useTransform(
       scrollYProgress,
-      [
-        (index - 0.2) / data.length,
-        index / data.length,
-        (index + 0.2) / data.length,
-      ],
+      [(i - 0.2) / data.length, i / data.length, (i + 0.2) / data.length],
       [0.3, 1, 1]
-    )
-  );
+    );
+    pointProgressArray.push(progress);
+  }
 
   return (
     <div className="w-full bg-black" ref={containerRef}>
