@@ -84,7 +84,7 @@ export function Hero() {
                   fromColor="from-violet-600"
                   toColor="to-cyan-600"
                   radius="rounded-full"
-                  onClick={handleContactClick}
+                  link="#contact"
                 />
               </div>
             </div>
