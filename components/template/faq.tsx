@@ -108,7 +108,7 @@ export const Faq = () => {
   const renderFaqItem = (faq: (typeof faqs)[0]) => (
     <div
       key={faq.id}
-      className="faq-item group rounded-2xl border border-violet-500/20 bg-violet-500/5 hover:bg-violet-500/10 hover:border-violet-500/40 transition-all duration-500"
+      className="faq-item group rounded-xl border border-violet-500/20 bg-violet-500/5 hover:bg-violet-500/10 hover:border-violet-500/40 transition-all duration-500"
     >
       <button
         className="flex w-full items-center justify-between px-4 py-5 sm:p-6 transition-all duration-300"

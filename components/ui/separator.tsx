@@ -3,19 +3,21 @@
 import { cn } from "@/lib/utils";
 import { motion, useInView } from "framer-motion";
 import { forwardRef, useRef } from "react";
+import { useMergeRefs } from "@/hooks/use-merge-refs";
 
 interface SeparatorProps {
   className?: string;
 }
 
 export const Separator = forwardRef<HTMLDivElement, SeparatorProps>(
-  ({ className }, ref) => {
-    const separatorRef = useRef(null);
-    const isInView = useInView(separatorRef, { once: true, margin: "-100px" });
+  ({ className }, forwardedRef) => {
+    const internalRef = useRef<HTMLDivElement>(null);
+    const isInView = useInView(internalRef, { once: true, margin: "-100px" });
+    const mergedRefs = useMergeRefs(internalRef, forwardedRef);
 
     return (
       <motion.div
-        ref={ref}
+        ref={mergedRefs}
         initial={{ opacity: 0 }}
         animate={isInView ? { opacity: 1 } : { opacity: 0 }}
         transition={{ duration: 0.5 }}
