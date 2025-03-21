@@ -41,11 +41,6 @@ export function Hero() {
     }
   }, [preloadComplete]);
 
-  const handleContactClick = () => {
-    // Add your contact logic here
-    console.log("Contact button clicked");
-  };
-
   return (
     <section className="w-full min-h-screen relative z-10">
       <HeroHighlight
@@ -72,7 +67,7 @@ export function Hero() {
                 ))}
               </h1>
               <div ref={contentRef} className="mt-5 max-w-6xl">
-                <p className="text-sm md:text-2xl lg:text-2xl text-foreground/80">
+                <p className="text-sm md:text-2xl lg:text-xl text-foreground/80">
                   Crafting Innovative Solutions as a Passionate Fullstack Web
                   Developer.
                 </p>
