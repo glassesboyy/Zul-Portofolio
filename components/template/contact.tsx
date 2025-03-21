@@ -98,9 +98,6 @@ export const Contact = () => {
           Feel free to reach out through any of these platforms. I'm always open
           to new opportunities and connections.
         </p>
-        <p className="text-sm md:text-base lg:text-lg text-white/70 max-w-2xl mx-auto">
-          I&apos;m always open to new opportunities and connections.
-        </p>
       </div>
 
       <div

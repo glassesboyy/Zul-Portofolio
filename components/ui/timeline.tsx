@@ -1,5 +1,5 @@
 "use client";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, MotionValue } from "framer-motion";
 import React, { useEffect, useRef, useState } from "react";
 import { TimelineAnimation } from "../animation/timelineAnimation";
 
@@ -7,6 +7,10 @@ interface TimelineEntry {
   title: string;
   content: React.ReactNode;
 }
+
+const usePointProgress = (progress: MotionValue<number>) => {
+  return useTransform(progress, [0, 1], [0.2, 1]);
+};
 
 export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
   const ref = useRef<HTMLDivElement>(null);

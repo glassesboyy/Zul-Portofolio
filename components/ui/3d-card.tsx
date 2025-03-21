@@ -94,6 +94,18 @@ export const CardBody = ({
   );
 };
 
+type CardItemProps = {
+  as?: React.ElementType;
+  children: React.ReactNode;
+  className?: string;
+  translateX?: number | string;
+  translateY?: number | string;
+  translateZ?: number | string;
+  rotateX?: number | string;
+  rotateY?: number | string;
+  rotateZ?: number | string;
+} & React.HTMLAttributes<HTMLElement>;
+
 export const CardItem = ({
   as: Tag = "div",
   children,
@@ -105,24 +117,13 @@ export const CardItem = ({
   rotateY = 0,
   rotateZ = 0,
   ...rest
-}: {
-  as?: React.ElementType;
-  children: React.ReactNode;
-  className?: string;
-  translateX?: number | string;
-  translateY?: number | string;
-  translateZ?: number | string;
-  rotateX?: number | string;
-  rotateY?: number | string;
-  rotateZ?: number | string;
-  [key: string]: any;
-}) => {
+}: CardItemProps) => {
   const ref = useRef<HTMLDivElement>(null);
   const [isMouseEntered] = useMouseEnter();
 
   useEffect(() => {
     handleAnimations();
-  }, [isMouseEntered]);
+  }, [handleAnimations, isMouseEntered]);
 
   const handleAnimations = () => {
     if (!ref.current) return;
