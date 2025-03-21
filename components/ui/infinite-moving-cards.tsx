@@ -25,7 +25,7 @@ export const InfiniteMovingCards = ({
 
   useEffect(() => {
     addAnimation();
-  }, []);
+  }, [addAnimation]);
   const [start, setStart] = useState(false);
   function addAnimation() {
     if (containerRef.current && scrollerRef.current) {
@@ -106,7 +106,7 @@ export const InfiniteMovingCards = ({
 
             <blockquote className="relative">
               <span className="absolute -left-2 -top-2 text-2xl md:text-3xl lg:text-4xl text-violet-500/20">
-                "
+                &quot;
               </span>
               <span className="absolute -bottom-8 -right-2 text-2xl md:text-3xl lg:text-4xl text-violet-500/20">
                 "

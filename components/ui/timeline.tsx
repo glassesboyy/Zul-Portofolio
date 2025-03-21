@@ -28,6 +28,19 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
   const heightTransform = useTransform(scrollYProgress, [0, 1], [0, height]);
   const opacityTransform = useTransform(scrollYProgress, [0, 0.1], [0, 1]);
 
+  // Move useTransform outside the map callback
+  const createPointProgress = (index: number) => {
+    return useTransform(
+      scrollYProgress,
+      [
+        (index - 0.2) / data.length,
+        index / data.length,
+        (index + 0.2) / data.length,
+      ],
+      [0.3, 1, 1]
+    );
+  };
+
   return (
     <div className="w-full bg-black" ref={containerRef}>
       <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-10">
@@ -64,15 +77,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
 
         <div ref={ref} className="relative max-w-7xl mx-auto">
           {data.map((item, index) => {
-            const pointProgress = useTransform(
-              scrollYProgress,
-              [
-                (index - 0.2) / data.length,
-                index / data.length,
-                (index + 0.2) / data.length,
-              ],
-              [0.3, 1, 1]
-            );
+            const pointProgress = createPointProgress(index);
 
             return (
               <div

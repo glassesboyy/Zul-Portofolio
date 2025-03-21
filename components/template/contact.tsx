@@ -1,6 +1,5 @@
 "use client";
 
-import { useEffect, useRef } from "react";
 import {
   IconBrandDiscord,
   IconBrandGithub,
@@ -10,6 +9,7 @@ import {
   IconExternalLink,
   IconMail,
 } from "@tabler/icons-react";
+import { useEffect, useRef } from "react";
 import { initContactAnimation } from "../animation/contactAnimation";
 
 export const Contact = () => {
@@ -97,6 +97,9 @@ export const Contact = () => {
         <p className="text-sm md:text-base lg:text-lg text-white/70 max-w-2xl mx-auto">
           Feel free to reach out through any of these platforms. I'm always open
           to new opportunities and connections.
+        </p>
+        <p className="text-sm md:text-base lg:text-lg text-white/70 max-w-2xl mx-auto">
+          I&apos;m always open to new opportunities and connections.
         </p>
       </div>
 

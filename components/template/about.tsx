@@ -1,6 +1,5 @@
 "use client";
 
-import { useAnimationStore } from "@/store/animationStore";
 import {
   IconBrandDiscord,
   IconBrandGithub,
@@ -16,8 +15,6 @@ import { Separator } from "../ui/separator";
 import { Timeline } from "../ui/timeline";
 
 export const About = () => {
-  const preloadComplete = useAnimationStore((state) => state.preloadComplete);
-
   const description = `Let's collaborate to build exceptional digital experiences. As a full-stack developer, I transform innovative ideas into powerful, user-friendly solutions.`;
 
   const timelineData = [
@@ -205,7 +202,7 @@ export const About = () => {
             <div className="relative w-full max-w-[240px] h-[240px] sm:max-w-[280px] sm:h-[280px] lg:max-w-[370px] lg:h-[370px]">
               <div className="absolute inset-0 rounded-xl bg-gradient-to-tr from-violet-500 to-cyan-500 blur-lg opacity-70 animate-pulse" />
               <div className="relative rounded-xl overflow-hidden w-full h-full group">
-                <img
+                <Image
                   src="/assets/me.png"
                   alt="Profile picture"
                   className="w-full h-full object-cover transition-all duration-700 filter grayscale group-hover:grayscale-0"
