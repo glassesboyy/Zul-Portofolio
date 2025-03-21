@@ -25,27 +25,6 @@ export const InfiniteMovingCards = ({
 
   const [start, setStart] = useState(false);
 
-  useEffect(() => {
-    const addAnimation = () => {
-      if (containerRef.current && scrollerRef.current) {
-        const scrollerContent = Array.from(scrollerRef.current.children);
-
-        scrollerContent.forEach((item) => {
-          const duplicatedItem = item.cloneNode(true);
-          if (scrollerRef.current) {
-            scrollerRef.current.appendChild(duplicatedItem);
-          }
-        });
-
-        getDirection();
-        getSpeed();
-        setStart(true);
-      }
-    };
-
-    addAnimation();
-  }, []);
-
   const getDirection = () => {
     if (containerRef.current) {
       if (direction === "left") {
@@ -73,6 +52,27 @@ export const InfiniteMovingCards = ({
       }
     }
   };
+
+  useEffect(() => {
+    const addAnimation = () => {
+      if (containerRef.current && scrollerRef.current) {
+        const scrollerContent = Array.from(scrollerRef.current.children);
+
+        scrollerContent.forEach((item) => {
+          const duplicatedItem = item.cloneNode(true);
+          if (scrollerRef.current) {
+            scrollerRef.current.appendChild(duplicatedItem);
+          }
+        });
+
+        getDirection();
+        getSpeed();
+        setStart(true);
+      }
+    };
+
+    addAnimation();
+  }, [getDirection, getSpeed]);
 
   return (
     <div
@@ -114,7 +114,7 @@ export const InfiniteMovingCards = ({
                 &quot;
               </span>
               <span className="absolute -bottom-8 -right-2 text-2xl md:text-3xl lg:text-4xl text-violet-500/20">
-                "
+                &quot;
               </span>
 
               <span className="relative z-20 text-xs md:text-sm lg:text-base leading-relaxed text-gray-100 font-normal">

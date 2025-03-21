@@ -59,7 +59,7 @@ export const Footer = () => {
             <div className="pt-4 border-t border-violet-900/30 text-center max-w-xs md:max-w-md lg:max-w-md">
               <p className="text-white/50 text-sm leading-relaxed">
                 Thank you for visiting my portfolio. Feel free to reach out if
-                you'd like to collaborate on something amazing together.
+                you&apos;d like to collaborate on something amazing together.
               </p>
               <p className="text-white/50 text-sm mt-3">
                 © 2025 All rights reserved

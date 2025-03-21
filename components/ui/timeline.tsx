@@ -8,10 +8,6 @@ interface TimelineEntry {
   content: React.ReactNode;
 }
 
-const usePointProgress = (progress: MotionValue<number>) => {
-  return useTransform(progress, [0, 1], [0.2, 1]);
-};
-
 export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
   const ref = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -31,19 +27,6 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
 
   const heightTransform = useTransform(scrollYProgress, [0, 1], [0, height]);
   const opacityTransform = useTransform(scrollYProgress, [0, 0.1], [0, 1]);
-
-  // Move useTransform outside the map callback
-  const createPointProgress = (index: number) => {
-    return useTransform(
-      scrollYProgress,
-      [
-        (index - 0.2) / data.length,
-        index / data.length,
-        (index + 0.2) / data.length,
-      ],
-      [0.3, 1, 1]
-    );
-  };
 
   return (
     <div className="w-full bg-black" ref={containerRef}>
@@ -81,7 +64,15 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
 
         <div ref={ref} className="relative max-w-7xl mx-auto">
           {data.map((item, index) => {
-            const pointProgress = createPointProgress(index);
+            const pointProgress = useTransform(
+              scrollYProgress,
+              [
+                (index - 0.2) / data.length,
+                index / data.length,
+                (index + 0.2) / data.length,
+              ],
+              [0.3, 1, 1]
+            );
 
             return (
               <div
@@ -106,7 +97,6 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
                   </motion.h3>
                 </motion.div>
 
-                {/* Timeline Content */}
                 <div className="relative pl-20 pr-4 md:pl-1 w-full">
                   <motion.h3
                     style={{ opacity: pointProgress }}

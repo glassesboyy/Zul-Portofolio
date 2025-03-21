@@ -15,7 +15,7 @@ export const SeparatorRoundUp = forwardRef<HTMLDivElement, SeparatorProps>(
 
     return (
       <motion.div
-        ref={separatorRef}
+        ref={ref}
         initial={{ opacity: 0 }}
         animate={isInView ? { opacity: 1 } : { opacity: 0 }}
         transition={{ duration: 0.5 }}
