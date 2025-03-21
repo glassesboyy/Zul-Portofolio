@@ -1,5 +1,5 @@
 "use client";
-import { motion, useScroll, useTransform, MotionValue } from "framer-motion";
+import { motion, MotionValue, useScroll, useTransform } from "framer-motion";
 import React, { useEffect, useRef, useState } from "react";
 import { TimelineAnimation } from "../animation/timelineAnimation";
 
@@ -7,6 +7,64 @@ interface TimelineEntry {
   title: string;
   content: React.ReactNode;
 }
+
+const TimelineItem = ({
+  title,
+  content,
+  scrollYProgress,
+  index,
+  totalItems,
+}: {
+  title: string;
+  content: React.ReactNode;
+  scrollYProgress: MotionValue<number>;
+  index: number;
+  totalItems: number;
+}) => {
+  const pointProgress = useTransform(
+    scrollYProgress,
+    [
+      (index - 0.2) / totalItems,
+      index / totalItems,
+      (index + 0.2) / totalItems,
+    ],
+    [0.3, 1, 1]
+  );
+
+  return (
+    <div className="flex justify-start pt-10 md:pt-40">
+      <motion.div
+        style={{ opacity: pointProgress }}
+        className="sticky flex flex-col md:flex-row z-40 items-center top-40 self-start max-w-xs lg:max-w-sm md:w-full"
+      >
+        <motion.div
+          style={{ opacity: pointProgress }}
+          className="h-10 absolute left-3 md:left-3 w-10 rounded-full bg-black flex items-center justify-center border border-violet-500/20"
+        >
+          <div className="h-4 w-4 rounded-full bg-violet-500/50 border border-violet-500/90" />
+        </motion.div>
+        <motion.h3
+          style={{ opacity: pointProgress }}
+          className="hidden md:block text-xl md:pl-20 md:text-4xl lg:text-5xl font-bold text-white"
+        >
+          {title}
+        </motion.h3>
+      </motion.div>
+
+      <div className="relative pl-20 pr-4 md:pl-1 w-full">
+        <motion.h3
+          style={{ opacity: pointProgress }}
+          className="md:hidden block text-2xl mb-4 text-left font-bold text-white/20"
+        >
+          {title}
+        </motion.h3>
+        <div className="bg-violet-500/5 border border-violet-500/20 rounded-2xl p-6 hover:bg-violet-500/10 hover:border-violet-500/40 transition-all duration-500">
+          {content}
+        </div>
+      </div>
+    </div>
+  );
+};
 
 export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
   const ref = useRef<HTMLDivElement>(null);
@@ -27,16 +85,6 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
 
   const heightTransform = useTransform(scrollYProgress, [0, 1], [0, height]);
   const opacityTransform = useTransform(scrollYProgress, [0, 0.1], [0, 1]);
-
-  const pointProgressArray: MotionValue<number>[] = [];
-  for (let i = 0; i < data.length; i++) {
-    const progress = useTransform(
-      scrollYProgress,
-      [(i - 0.2) / data.length, i / data.length, (i + 0.2) / data.length],
-      [0.3, 1, 1]
-    );
-    pointProgressArray.push(progress);
-  }
 
   return (
     <div className="w-full bg-black" ref={containerRef}>
@@ -73,46 +121,16 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
         </TimelineAnimation>
 
         <div ref={ref} className="relative max-w-7xl mx-auto">
-          {data.map((item, index) => {
-            const pointProgress = pointProgressArray[index];
-
-            return (
-              <div
-                key={`timeline-${index}`}
-                className="flex justify-start pt-10 md:pt-40"
-              >
-                <motion.div
-                  style={{ opacity: pointProgress }}
-                  className="sticky flex flex-col md:flex-row z-40 items-center top-40 self-start max-w-xs lg:max-w-sm md:w-full"
-                >
-                  <motion.div
-                    style={{ opacity: pointProgress }}
-                    className="h-10 absolute left-3 md:left-3 w-10 rounded-full bg-black flex items-center justify-center border border-violet-500/20"
-                  >
-                    <div className="h-4 w-4 rounded-full bg-violet-500/50 border border-violet-500/90" />
-                  </motion.div>
-                  <motion.h3
-                    style={{ opacity: pointProgress }}
-                    className="hidden md:block text-xl md:pl-20 md:text-4xl lg:text-5xl font-bold text-white"
-                  >
-                    {item.title}
-                  </motion.h3>
-                </motion.div>
-
-                <div className="relative pl-20 pr-4 md:pl-1 w-full">
-                  <motion.h3
-                    style={{ opacity: pointProgress }}
-                    className="md:hidden block text-2xl mb-4 text-left font-bold text-white/20"
-                  >
-                    {item.title}
-                  </motion.h3>
-                  <div className="bg-violet-500/5 border border-violet-500/20 rounded-2xl p-6 hover:bg-violet-500/10 hover:border-violet-500/40 transition-all duration-500">
-                    {item.content}
-                  </div>
-                </div>
-              </div>
-            );
-          })}
+          {data.map((item, index) => (
+            <TimelineItem
+              key={`timeline-${index}`}
+              title={item.title}
+              content={item.content}
+              scrollYProgress={scrollYProgress}
+              index={index}
+              totalItems={data.length}
+            />
+          ))}
 
           <div
             style={{
