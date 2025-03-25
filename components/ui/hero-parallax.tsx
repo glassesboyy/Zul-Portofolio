@@ -69,10 +69,7 @@ export const HeroParallax = ({
     useTransform(
       scrollYProgress,
       [0, 0.1],
-      [
-        isDesktop ? -50 : isTablet ? -10 : 15,
-        isDesktop ? -50 : isTablet ? -10 : 15,
-      ]
+      [isDesktop ? 10 : isTablet ? 10 : 30, isDesktop ? 10 : isTablet ? 10 : 30]
     ),
     springConfig
   );
@@ -80,7 +77,7 @@ export const HeroParallax = ({
   return (
     <div
       ref={ref}
-      className="h-[36vh] md:h-[30vh] lg:h-[60vh] 
+      className="h-[45vh] md:h-[34vh] lg:h-[64vh] 
         bg-black overflow-hidden antialiased relative flex flex-col self-auto 
         [perspective:1000px] [transform-style:preserve-3d] my-4 md:my-16 lg:my-20"
     >
