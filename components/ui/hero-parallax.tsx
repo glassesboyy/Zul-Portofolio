@@ -8,7 +8,6 @@ import {
   useTransform,
 } from "framer-motion";
 import Image from "next/image";
-import Link from "next/link";
 import React from "react";
 
 export const HeroParallax = ({
@@ -16,15 +15,16 @@ export const HeroParallax = ({
   headerTitle,
   headerSubtitle,
   headerTag,
+  onProductClick,
 }: {
   products: {
     title: string;
-    link: string;
     thumbnail: string;
   }[];
   headerTitle?: string;
   headerSubtitle?: string;
   headerTag?: string;
+  onProductClick?: (product: { title: string; thumbnail: string }) => void;
 }) => {
   const ref = React.useRef(null);
   const { scrollYProgress } = useScroll({
@@ -131,6 +131,7 @@ export const HeroParallax = ({
                 product={product}
                 translate={translateX}
                 key={product.title}
+                onClick={() => onProductClick?.(product)}
               />
             ))}
           </div>
@@ -143,13 +144,14 @@ export const HeroParallax = ({
 export const ProductCard = ({
   product,
   translate,
+  onClick,
 }: {
   product: {
     title: string;
-    link: string;
     thumbnail: string;
   };
   translate: MotionValue<number>;
+  onClick?: () => void;
 }) => {
   return (
     <motion.div
@@ -159,11 +161,11 @@ export const ProductCard = ({
       whileHover={{
         scale: 0.95,
       }}
+      onClick={onClick}
       key={product.title}
-      className="group/product h-40 md:h-52 lg:h-72 w-[240px] md:w-[320px] lg:w-[460px] relative flex-shrink-0"
+      className="group/product h-40 md:h-52 lg:h-72 w-[240px] md:w-[320px] lg:w-[460px] relative flex-shrink-0 cursor-pointer"
     >
-      <Link
-        href={product.link}
+      <div
         className="block relative h-full w-full rounded-xl overflow-hidden
           before:absolute before:inset-0
           before:bg-gradient-to-t before:from-black/80 before:to-transparent
@@ -205,7 +207,7 @@ export const ProductCard = ({
             to-cyan-400 rounded-full group-hover/product:w-0 transition-all duration-700"
           />
         </div>
-      </Link>
+      </div>
     </motion.div>
   );
 };
