@@ -54,7 +54,7 @@ const TimelineItem = ({
       <div className="relative pl-20 pr-4 md:pl-1 w-full">
         <motion.h3
           style={{ opacity: pointProgress }}
-          className="md:hidden block text-2xl mb-4 text-left font-bold text-white/20"
+          className="md:hidden block text-4xl mb-4 text-left font-bold text-white"
         >
           {title}
         </motion.h3>
