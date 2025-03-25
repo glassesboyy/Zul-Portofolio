@@ -96,7 +96,7 @@ export const Projects = () => {
         <div className="absolute inset-0 -top-16 md:-top-36 lg:-top-44">
           <div
             className="absolute inset-0 bg-black
-            rounded-t-[100%] transform origin-center scale-x-[2.3] md:scale-x-[1.9] lg:scale-x-[1.7]  translate-y-[25%]"
+            rounded-t-[100%] transform origin-center scale-x-[2.3] md:scale-x-[1.9] lg:scale-x-[1.7]  translate-y-[21%]"
           />
         </div>
       </div>
@@ -154,7 +154,7 @@ export const Projects = () => {
               {projects.map((project, index) => (
                 <div
                   key={index}
-                  className="h-[48vh] md:h-[45vh] lg:h-[91vh] min-w-[70vw] lg:min-w-[70vw] flex items-center justify-center overflow-hidden"
+                  className="h-[55vh] md:h-[50vh] lg:h-[100vh] min-w-[70vw] lg:min-w-[70vw] flex items-center justify-center overflow-hidden"
                   style={{ scrollSnapAlign: "center" }}
                 >
                   <PinContainer title={project.title} href={project.href}>
