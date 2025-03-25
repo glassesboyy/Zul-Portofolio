@@ -77,9 +77,9 @@ export const HeroParallax = ({
   return (
     <div
       ref={ref}
-      className="h-[45vh] md:h-[34vh] lg:h-[64vh] 
+      className="h-[80vh] md:h-[70vh] lg:h-[80vh] 
         bg-black overflow-hidden antialiased relative flex flex-col self-auto 
-        [perspective:1000px] [transform-style:preserve-3d] my-4 md:my-16 lg:my-20"
+        [perspective:1000px] [transform-style:preserve-3d] my-4 md:my-12 lg:my-16"
     >
       <div className="max-w-7xl relative mx-auto px-4 w-full left-0 top-0">
         <div className="space-y-2 text-right">
@@ -122,7 +122,7 @@ export const HeroParallax = ({
           translateY,
           opacity,
         }}
-        className="relative w-full px-4 mt-6 md:mt-8 lg:mt-16"
+        className="relative w-full px-4 mt-4 md:mt-6 lg:mt-12"
       >
         <motion.div className="flex overflow-x-auto scrollbar-hide mb-4 md:mb-6 lg:mb-10">
           <div className="flex space-x-4 md:space-x-6 lg:space-x-8 min-w-max px-4">
@@ -164,7 +164,7 @@ export const ProductCard = ({
     >
       <Link
         href={product.link}
-        className="block relative h-full w-full rounded-lg md:rounded-xl overflow-hidden
+        className="block relative h-full w-full rounded-xl overflow-hidden
           before:absolute before:inset-0
           before:bg-gradient-to-t before:from-black/80 before:to-transparent
           before:opacity-100 before:transition-opacity before:duration-700
