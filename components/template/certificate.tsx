@@ -1,9 +1,9 @@
 "use client";
 
-import { HeroParallax } from "../ui/hero-parallax";
-import { Modal } from "../ui/certificate-modal";
-import { useState } from "react";
 import { useModalStore } from "@/store/modalStore";
+import { useState } from "react";
+import { Modal } from "../ui/certificate-modal";
+import { HeroParallax } from "../ui/hero-parallax";
 
 const certificates = [
   {
@@ -43,6 +43,10 @@ const certificates = [
       "Red Hat OpenStack Administration I: Core Operations for Domain Operators (CL110)",
     thumbnail:
       "/assets/certificate/Certificate of Attendance (CL110-16.1)-1.png",
+  },
+  {
+    title: "Certificate of Perticipation SIC6",
+    thumbnail: "/assets/certificate/Certificate of Perticipation SIC6.png",
   },
 ];
 
