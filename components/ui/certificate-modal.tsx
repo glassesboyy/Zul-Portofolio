@@ -63,7 +63,7 @@ export const Modal = ({ isOpen, onClose, imageUrl, title }: ModalProps) => {
               <path d="m6 6 12 12" />
             </svg>
           </button>
-          <div className="relative aspect-[16/10] w-full">
+          <div className="relative aspect-[16/10] w-11/12 mx-auto">
             <Image
               src={imageUrl}
               alt={title}
