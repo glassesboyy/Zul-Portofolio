@@ -9,7 +9,7 @@ export const initHeroAnimation = (
 
   const tl = gsap.timeline();
 
-  tl.set({}, {}, "+=0.3");
+  tl.set({}, {}, "+=0.2");
 
   titleCharsRef.forEach((char, index) => {
     tl.to(
@@ -17,11 +17,11 @@ export const initHeroAnimation = (
       {
         opacity: 1,
         y: 0,
-        duration: 0.25,
-        delay: index * 0.01,
+        duration: 0.16,
+        delay: index * 0.0001,
         ease: "power2.out",
       },
-      "-=0.25"
+      "-=0.1"
     );
   });
 
