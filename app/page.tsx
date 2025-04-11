@@ -8,13 +8,11 @@ import { Faq } from "@/components/template/faq";
 import { Footer } from "@/components/template/footer";
 import { Hero } from "@/components/template/hero";
 import { Navbar } from "@/components/template/navbar";
-import { Philo } from "@/components/template/philo";
 import { Projects } from "@/components/template/projects";
 import { Services } from "@/components/template/services";
 import { Tech } from "@/components/template/tech";
 import { Testimonials } from "@/components/template/testimonials";
 import { Separator } from "@/components/ui/separator";
-import { SeparatorRoundDown } from "@/components/ui/separator-round-down";
 import { SeparatorRoundUp } from "@/components/ui/separator-round-up";
 import { useEffect } from "react";
 
@@ -53,8 +51,6 @@ export default function Home() {
         <section id="home">
           <Hero />
         </section>
-        <SeparatorRoundDown />
-        <Philo />
         <SeparatorRoundUp />
         <section id="about" className="h-fit">
           <About />
