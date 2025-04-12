@@ -17,7 +17,7 @@ export const initHeroAnimation = (
       {
         opacity: 1,
         y: 0,
-        duration: 0.16,
+        duration: 0.15,
         delay: index * 0.0001,
         ease: "power2.out",
       },
