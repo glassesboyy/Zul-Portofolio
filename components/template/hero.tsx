@@ -87,10 +87,11 @@ export function Hero() {
                 className="mt-8 max-w-3xl md:max-w-3xl lg:max-w-6xl mx-auto"
               >
                 <p className="text-sm md:text-2xl lg:text-2xl text-foreground/80 text-center">
-                  With clean architecture, user-first design, and meaningful
-                  digital experiences. From front-end elegance to back-end
-                  logic, I bring passion, precision, and purpose to every line
-                  of code.
+                  With a user-first design approach and a commitment to creating
+                  meaningful digital experiences, I specialize in crafting
+                  elegant and intuitive front-end solutions. From seamless
+                  interfaces to smooth interactions, I bring passion, precision,
+                  and purpose to every pixel and line of code.
                 </p>
               </div>
 

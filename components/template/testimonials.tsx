@@ -6,33 +6,33 @@ import { InfiniteMovingCards } from "../ui/infinite-moving-cards";
 const testimonials = [
   {
     quote:
-      "Surya delivered an exceptional website that perfectly captured our vision. His attention to detail and technical expertise made the entire process smooth and successful.",
-    name: "Sarah Johnson",
-    title: "CEO, TechStart",
+      "Zul's expertise in React and modern frontend frameworks truly shines through in our project. He delivered a highly responsive and beautiful user interface that our customers love.",
+    name: "David Anderson",
+    title: "Product Manager, TechCorp",
   },
   {
     quote:
-      "Working with Surya was a game-changer for our project. His full-stack expertise and problem-solving skills helped us create a robust and scalable solution.",
-    name: "Michael Chen",
-    title: "CTO, InnovateX",
+      "Working with Zul was amazing. His deep understanding of frontend architecture and attention to UI/UX details helped us create a seamless user experience.",
+    name: "Jessica Chen",
+    title: "Design Lead, WebFlow Solutions",
   },
   {
     quote:
-      "The web application Surya developed exceeded our expectations. His ability to understand our requirements and translate them into a user-friendly interface was impressive.",
-    name: "Emily Rodriguez",
-    title: "Product Manager, DigitalFlow",
+      "Zul transformed our outdated website into a modern, responsive platform. His knowledge of Next.js and Tailwind CSS made the development process efficient and the results outstanding.",
+    name: "Mark Wilson",
+    title: "CEO, Digital Innovate",
   },
   {
     quote:
-      "Surya's technical skills and creativity shine through in every project. He's a reliable developer who consistently delivers high-quality solutions.",
-    name: "David Kim",
-    title: "Lead Developer, WebSphere",
+      "The frontend optimizations Zul implemented significantly improved our website's performance. His commitment to clean code and best practices is remarkable.",
+    name: "Sarah Martinez",
+    title: "Technical Director, WebSphere",
   },
   {
     quote:
-      "We were amazed by Surya's ability to tackle complex challenges and deliver elegant solutions. His full-stack expertise was invaluable to our project.",
-    name: "Lisa Zhang",
-    title: "Tech Director, CloudNine",
+      "Zul's ability to translate design concepts into pixel-perfect implementations is exceptional. His frontend expertise and problem-solving skills made our project a success.",
+    name: "James Lee",
+    title: "UX Director, CreativeHub",
   },
 ];
 
@@ -75,8 +75,8 @@ export const Testimonials = () => {
             </div>
 
             <p className="text-sm md:text-base lg:text-lg text-white/70 text-center md:text-left lg:text-left leading-relaxed max-w-[90%] [text-wrap:balance]">
-              Trusted by clients worldwide, delivering exceptional results and
-              transforming ideas into reality.
+              Delivering exceptional frontend solutions and creating engaging
+              user experiences that exceed client expectations.
             </p>
           </TestimonialsAnimation>
         </div>

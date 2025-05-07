@@ -18,13 +18,13 @@ const projects = [
     status: "done",
   },
   {
-    title: "Startup Landing Page",
+    title: "ZulCryptoCap – Modern Cryptocurrency Web App",
     description:
-      "I designed and developed a modern, responsive landing page for a startup, ensuring a seamless user experience and strong online presence.",
-    href: "https://fe-sistem-final-project-zul.vercel.app/",
-    tech: "Vue • Tailwind • Eslint • Daisy UI • Typescript",
-    image: "/assets/projects/startuplandingpage.png",
-    status: "on progress",
+      "A modern crypto web app featuring coin listings, price charts, news, and educational content. Built with cutting-edge frontend technologies as a portfolio showcase.",
+    href: "https://zulcryptocap.vercel.app/",
+    tech: "Next.js • React • Tailwind CSS • Framer Motion • ESLint",
+    image: "/assets/projects/zulcryptocap.jpg",
+    status: "done",
   },
 ];
 

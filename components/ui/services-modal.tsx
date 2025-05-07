@@ -1,6 +1,5 @@
 "use client";
 
-import { Badge } from "@/components/ui/badge";
 import {
   Dialog,
   DialogContent,
@@ -8,7 +7,7 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { useModalStore } from "@/store/modalStore";
-import { motion, AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { useEffect } from "react";
 
 interface ServiceModalProps {
@@ -20,7 +19,6 @@ interface ServiceModalProps {
     description: string;
     keywords: string[];
     process: string[];
-    technologies: string[];
     additionalInfo?: string;
   };
 }
@@ -141,24 +139,7 @@ export function ServiceModal({ isOpen, onClose, service }: ServiceModalProps) {
                   exit={{ opacity: 0, y: -20 }}
                   transition={{ duration: 0.3, delay: 0.8 }}
                   className="space-y-2"
-                >
-                  <h3 className="text-2xl font-bold text-white">
-                    Technologies
-                  </h3>
-                  <div className="flex flex-wrap gap-2">
-                    {service.technologies.map((tech, index) => (
-                      <motion.div
-                        key={index}
-                        initial={{ opacity: 0, scale: 0.8 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        exit={{ opacity: 0, scale: 0.8 }}
-                        transition={{ duration: 0.3, delay: 0.9 + index * 0.1 }}
-                      >
-                        <Badge variant="default">{tech}</Badge>
-                      </motion.div>
-                    ))}
-                  </div>
-                </motion.div>
+                ></motion.div>
 
                 {service.additionalInfo && (
                   <motion.div

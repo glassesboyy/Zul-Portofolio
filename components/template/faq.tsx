@@ -3,59 +3,59 @@
 import { useInView } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import {
-  initFaqAnimation,
-  animateFaqOpen,
   animateFaqClose,
+  animateFaqOpen,
+  initFaqAnimation,
 } from "../animation/faqAnimation";
 
 const faqs = [
   {
     id: "faq-1",
-    question: "What is your development process?",
+    question: "What front-end technologies do you work with?",
     answer:
-      "My development process follows an agile methodology, starting with requirement gathering, followed by design, development, testing, and deployment. I ensure continuous communication and iterations based on feedback.",
+      "I primarily work with React.js, Next.js, TypeScript, and TailwindCSS. I'm also experienced with modern JavaScript (ES6+), HTML5, CSS3, and various front-end libraries and frameworks. I stay current with the latest front-end development trends and best practices.",
   },
   {
     id: "faq-2",
-    question: "How do you handle project timelines?",
+    question: "Can you make my website responsive and mobile-friendly?",
     answer:
-      "I break down projects into manageable milestones with clear deadlines. Regular updates and transparent communication help keep projects on track and address any potential delays proactively.",
+      "Absolutely! I implement responsive design principles in all my projects, ensuring optimal viewing experience across all devices - from mobile phones to desktop computers. I use modern CSS techniques like Flexbox, Grid, and mobile-first approach.",
   },
   {
     id: "faq-3",
-    question: "Do you provide ongoing support?",
+    question: "How do you handle website performance optimization?",
     answer:
-      "Yes, I offer post-development support and maintenance services to ensure your application runs smoothly. This includes bug fixes, updates, and feature enhancements as needed.",
+      "I focus on core web vitals and implement various optimization techniques including code splitting, lazy loading, image optimization, caching strategies, and efficient asset delivery. I also use performance monitoring tools to ensure fast loading times and smooth user experience.",
   },
   {
     id: "faq-4",
-    question: "What technologies do you specialize in?",
+    question: "Do you work with APIs and backend integration?",
     answer:
-      "I specialize in modern web technologies including React, Next.js, TypeScript, Node.js, and various other frontend and backend technologies. I stay updated with the latest industry trends.",
+      "Yes, I have extensive experience integrating front-end applications with RESTful APIs and GraphQL endpoints. I can handle state management, data fetching, error handling, and implement proper security measures for API communications.",
   },
   {
     id: "faq-5",
-    question: "How do you ensure project quality?",
+    question: "How do you ensure cross-browser compatibility?",
     answer:
-      "I implement comprehensive testing strategies, including unit testing, integration testing, and end-to-end testing. Code reviews and best practices are integral to my development process.",
+      "I test thoroughly across different browsers (Chrome, Firefox, Safari, Edge) and use modern CSS prefixing and polyfills when needed. I follow progressive enhancement principles to ensure a consistent experience for all users.",
   },
   {
     id: "faq-6",
-    question: "What is your communication style?",
+    question: "Can you implement animations and interactive features?",
     answer:
-      "I maintain clear and consistent communication through regular updates, scheduled meetings, and responsive channels. I believe in transparency and keeping all stakeholders informed throughout the project lifecycle.",
+      "Yes, I create smooth, performant animations using CSS transitions, Framer Motion, and GSAP. I ensure all interactive elements are accessible and enhance the user experience without compromising performance.",
   },
   {
     id: "faq-7",
-    question: "Do you offer custom solutions?",
+    question: "How do you approach accessibility (a11y)?",
     answer:
-      "Yes, I specialize in creating tailored solutions that meet specific business needs. Each project is approached uniquely, considering your requirements, goals, and target audience.",
+      "I follow WCAG guidelines and implement proper ARIA attributes, semantic HTML, keyboard navigation, and screen reader compatibility. I believe in creating inclusive web experiences that work for all users regardless of their abilities.",
   },
   {
     id: "faq-8",
-    question: "What is your pricing structure?",
+    question: "What is your development workflow like?",
     answer:
-      "I offer flexible pricing models including project-based, hourly rates, and retainer options. Each quote is customized based on project scope, complexity, and timeline requirements.",
+      "I use Git for version control, implement CI/CD practices, and follow component-based architecture. I write clean, documented code and use tools like ESLint and Prettier for code quality. I'm comfortable with agile methodologies and can adapt to team workflows.",
   },
 ];
 
@@ -114,9 +114,7 @@ export const Faq = () => {
         className="flex w-full items-center justify-between px-4 py-5 sm:p-6 transition-all duration-300"
         onClick={() => handleClick(faq.id)}
       >
-        <span className="text-base md:text-xl lg:text-lg font-medium text-white">
-          {faq.question}
-        </span>
+        <span className="text-basefont-medium text-white">{faq.question}</span>
         <span className="ml-6 flex-shrink-0">
           <svg
             className={`h-6 w-6 text-violet-400 transition-all duration-500 ${
@@ -139,9 +137,7 @@ export const Faq = () => {
         id={`content-${faq.id}`}
         className="px-4 pb-5 sm:px-6 sm:pb-6 hidden overflow-hidden"
       >
-        <p className="text-xs md:text-base lg:text-base text-white/70">
-          {faq.answer}
-        </p>
+        <p className="text-xs  text-white/70">{faq.answer}</p>
       </div>
     </div>
   );

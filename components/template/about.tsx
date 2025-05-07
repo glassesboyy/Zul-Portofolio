@@ -15,7 +15,7 @@ import { Separator } from "../ui/separator";
 import { Timeline } from "../ui/timeline";
 
 export const About = () => {
-  const description = `Let's collaborate to build exceptional digital experiences. As a full-stack developer, I transform innovative ideas into powerful, user-friendly solutions.`;
+  const description = `Let's collaborate to create exceptional digital experiences. As a front-end developer, I bring innovative ideas to life with sleek, user-friendly interfaces that prioritize both design and functionality.`;
 
   const timelineData = [
     {

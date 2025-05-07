@@ -9,9 +9,9 @@ import { ServiceModal } from "../ui/services-modal";
 
 const servicesData = [
   {
-    title: "Front End Development",
+    title: "Static Website Development",
     description:
-      "Creating beautiful, responsive interfaces with modern frameworks like React, Next Js, and Vue. Pixel-perfect execution with smooth animations.",
+      "Creating high-quality static websites like landing pages, company profiles, or personal portfolios with a focus on modern design, smooth navigation, and fast performance, ensuring an excellent user experience across devices.",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -30,36 +30,27 @@ const servicesData = [
     ),
     size: "large",
     keywords: [
-      "Responsive Design",
-      "Interactive UI Components",
-      "Cross-browser Compatibility",
-      "Performance Optimization",
-      "Accessibility Standards",
+      "Landing Page",
+      "Company Profile",
+      "Portfolio Website",
+      "Modern Design",
+      "Fast Loading",
     ],
     process: [
       "Requirements Analysis",
-      "UI/UX Design Review",
-      "Component Development",
-      "Integration & Testing",
-      "Performance Optimization",
+      "Wireframe Creation",
+      "Development",
+      "Optimization",
+      "Testing",
       "Deployment",
     ],
-    technologies: [
-      "React",
-      "Next Js",
-      "Vue",
-      "TypeScript",
-      "Tailwind CSS",
-      "GSAP",
-      "Framer Motion",
-    ],
     additionalInfo:
-      "Specializing in creating performant and scalable front-end architectures with modern best practices.",
+      "Specializing in creating fast, secure, and easy-to-manage static websites.",
   },
   {
-    title: "UI/UX Design",
+    title: "Design to Code Conversion",
     description:
-      "User-centered design solutions that combine aesthetics with functionality. Creating intuitive and engaging experiences.",
+      "Turning designs into clean, responsive code, ensuring pixel-perfect accuracy and smooth functionality across devices.",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -78,28 +69,180 @@ const servicesData = [
     ),
     size: "medium",
     keywords: [
-      "User Experience (UX) Design",
-      "User Interface (UI) Design",
-      "Wireframing & Prototyping",
-      "User Research",
-      "Usability Testing",
+      "UI to Code",
+      "Pixel Perfect",
+      "Clean Code",
+      "Design Implementation",
+      "Cross Browser Support",
     ],
     process: [
-      "Research & Discovery",
-      "Wireframing",
-      "Visual Design",
-      "Prototyping",
-      "User Testing",
-      "Implementation",
+      "Design Review",
+      "Asset Analysis",
+      "Code Implementation",
+      "Responsive Check",
+      "Testing",
     ],
-    technologies: ["Figma", "Adobe Illustrator", "Adobe Photoshop", "Balsamiq"],
     additionalInfo:
-      "Focused on creating user-centric designs that enhance user engagement and satisfaction.",
+      "Prioritizing visual accuracy and code quality in every design conversion.",
   },
   {
-    title: "API Development",
+    title: "Responsive Website Development",
     description:
-      "RESTful API design with comprehensive documentation. Seamless third-party integrations.",
+      "Ensuring optimal website display across all screen sizes using mobile-first approach and modern responsive techniques.",
+    icon: (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        strokeWidth={1.5}
+        stroke="currentColor"
+        className="w-8 h-8"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M14.25 9.75L16.5 12l-2.25 2.25m-4.5 0L7.5 12l2.25-2.25M6 20.25h12A2.25 2.25 0 0020.25 18V6A2.25 2.25 0 0018 3.75H6A2.25 2.25 0 003.75 6v12A2.25 2.25 0 006 20.25z"
+        />
+      </svg>
+    ),
+    size: "medium",
+    keywords: [
+      "Mobile First",
+      "Responsive Design",
+      "Cross Device",
+      "Fluid Layout",
+      "Adaptive Images",
+    ],
+    process: [
+      "Mobile First Planning",
+      "Responsive Development",
+      "Cross Device Testing",
+      "Performance Check",
+      "Browser Testing",
+    ],
+    additionalInfo: "Focus on consistent user experience across all devices.",
+  },
+  {
+    title: "Dynamic Web/SPA Development",
+    description:
+      "Developing modern web applications that offer dynamic, interactive, and responsive user experiences. The focus is on creating smooth navigation, adaptable interfaces, and ensuring the application works well across different devices and screen sizes. The aim is to deliver a seamless, user-friendly experience that meets diverse needs efficiently.",
+    icon: (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        strokeWidth={1.5}
+        stroke="currentColor"
+        className="w-8 h-8"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75m-16.5-3.75v3.75m16.5 0v3.75C20.25 16.153 16.556 18 12 18s-8.25-1.847-8.25-4.125v-3.75m16.5 0c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125"
+        />
+      </svg>
+    ),
+    size: "large",
+    keywords: [
+      "Single Page Application",
+      "Dynamic Content",
+      "State Management",
+      "Client-side Routing",
+      "Modern Web Apps",
+    ],
+    process: [
+      "Architecture Planning",
+      "Component Design",
+      "Development",
+      "State Management",
+      "Testing",
+      "Deployment",
+    ],
+    additionalInfo:
+      "Building modern web applications with high performance and optimal user experience.",
+  },
+  {
+    title: "Frontend API Integration",
+    description:
+      "Integrating the frontend with different data sources to display real-time information and enable dynamic interactions. This involves connecting the user interface to external systems, ensuring that data is updated seamlessly and that the user experience remains interactive and responsive.",
+    icon: (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        strokeWidth={1.5}
+        stroke="currentColor"
+        className="w-8 h-8"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5"
+        />
+      </svg>
+    ),
+    size: "medium",
+    keywords: [
+      "API Integration",
+      "Real-time Data",
+      "Data Fetching",
+      "Error Handling",
+      "State Management",
+    ],
+    process: [
+      "API Analysis",
+      "Integration Planning",
+      "Implementation",
+      "Error Handling",
+      "Testing",
+      "Documentation",
+    ],
+    additionalInfo:
+      "Integrating APIs with robust error handling and optimal performance.",
+  },
+  {
+    title: "Reusable UI Components",
+    description:
+      "Creating reusable and maintainable user interface components that streamline the development process. These components are designed to be flexible, allowing for easy updates and consistent use across different parts of the application, which helps improve efficiency and reduce repetitive work.",
+    icon: (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        strokeWidth={1.5}
+        stroke="currentColor"
+        className="w-8 h-8"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M5.25 14.25h13.5m-13.5 0a3 3 0 01-3-3m3 3a3 3 0 100 6h13.5a3 3 0 100-6m-16.5-3a3 3 0 013-3h13.5a3 3 0 013 3m0 0a4.5 4.5 0 01.9-2.7L5.737 5.1a3.375 3.375 0 012.7-1.35h7.126c1.062 0 2.062.5 2.7 1.35l2.587 3.45a4.5 4.5 0 01.9 2.7m0 0a3 3 0 01-3 3m0 3h.008v.008h-.008v-.008zm0-6h.008v.008h-.008v-.008zm-3 6h.008v.008h-.008v-.008zm0-6h.008v.008h-.008v-.008z"
+        />
+      </svg>
+    ),
+    size: "medium",
+    keywords: [
+      "Component Library",
+      "Reusable UI",
+      "Design System",
+      "Maintainable Code",
+      "Documentation",
+    ],
+    process: [
+      "Component Planning",
+      "Development",
+      "Testing",
+      "Documentation",
+      "Integration",
+      "Maintenance",
+    ],
+    additionalInfo:
+      "Creating consistent, reusable components that are easy to integrate.",
+  },
+  {
+    title: "Frontend Performance Optimization",
+    description:
+      "Improving website loading speed and performance through various modern optimization techniques.",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -118,27 +261,26 @@ const servicesData = [
     ),
     size: "small",
     keywords: [
-      "RESTful APIs",
-      "API Documentation",
-      "Microservices",
-      "Integration",
+      "Performance Optimization",
+      "Load Time",
+      "Core Web Vitals",
+      "Image Optimization",
+      "Code Splitting",
     ],
     process: [
-      "API Design",
+      "Performance Audit",
+      "Optimization Planning",
       "Implementation",
       "Testing",
-      "Documentation",
-      "Security",
-      "Deployment",
+      "Monitoring",
     ],
-    technologies: ["Node Js", "Express", "Swagger", "Postman", "Docker"],
     additionalInfo:
-      "Building robust and scalable APIs with comprehensive documentation and security measures.",
+      "Focus on performance optimization for better user experience.",
   },
   {
-    title: "Database Design",
+    title: "UI Testing and Debugging",
     description:
-      "Optimized database architecture using SQL and NoSQL solutions. Expert in data modeling and query optimization.",
+      "Performing comprehensive testing to ensure that the user interface functions correctly and consistently across a wide range of browsers and devices. This includes checking layout, responsiveness, and overall user experience to identify and fix any issues, ensuring the application runs smoothly for all users regardless of how they access it.",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -151,109 +293,28 @@ const servicesData = [
         <path
           strokeLinecap="round"
           strokeLinejoin="round"
-          d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75m-16.5-3.75v3.75m16.5 0v3.75C20.25 16.153 16.556 18 12 18s-8.25-1.847-8.25-4.125v-3.75m16.5 0c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125"
-        />
-      </svg>
-    ),
-    size: "medium",
-    keywords: [
-      "Database Architecture",
-      "Data Modeling",
-      "Query Optimization",
-      "Database Security",
-      "Performance Tuning",
-    ],
-    process: [
-      "Requirements Analysis",
-      "Schema Design",
-      "Implementation",
-      "Optimization",
-      "Migration",
-      "Maintenance",
-    ],
-    technologies: ["MySQL", "MongoDB"],
-    additionalInfo:
-      "Designing efficient and scalable database solutions for optimal data management.",
-  },
-  {
-    title: "Full Stack Development",
-    description:
-      "End-to-end web solutions from concept to deployment. Bridging front-end aesthetics with back-end functionality.",
-    icon: (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        strokeWidth={1.5}
-        stroke="currentColor"
-        className="w-8 h-8"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5"
-        />
-      </svg>
-    ),
-    size: "large",
-    keywords: [
-      "End-to-end Development",
-      "System Architecture",
-      "Full Stack Integration",
-      "Cloud Services",
-      "DevOps",
-    ],
-    process: [
-      "Planning",
-      "Architecture Design",
-      "Frontend Development",
-      "Backend Development",
-      "Integration",
-      "Deployment",
-    ],
-    technologies: ["MERN Stack", "Laravel", "Next Js"],
-    additionalInfo:
-      "Delivering complete web solutions with seamless integration between frontend and backend systems.",
-  },
-  {
-    title: "Back End Development",
-    description:
-      "Building secure and scalable server-side solutions using Node Js, Express, Laravel, or Next Js. Expert in microservices architecture.",
-    icon: (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        strokeWidth={1.5}
-        stroke="currentColor"
-        className="w-8 h-8"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          d="M5.25 14.25h13.5m-13.5 0a3 3 0 01-3-3m3 3a3 3 0 100 6h13.5a3 3 0 100-6m-16.5-3a3 3 0 013-3h13.5a3 3 0 013 3m-19.5 0a4.5 4.5 0 01.9-2.7L5.737 5.1a3.375 3.375 0 012.7-1.35h7.126c1.062 0 2.062.5 2.7 1.35l2.587 3.45a4.5 4.5 0 01.9 2.7m0 0a3 3 0 01-3 3m0 3h.008v.008h-.008v-.008zm0-6h.008v.008h-.008v-.008zm-3 6h.008v.008h-.008v-.008zm0-6h.008v.008h-.008v-.008z"
+          d="M5.25 14.25h13.5m-13.5 0a3 3 0 01-3-3m3 3a3 3 0 100 6h13.5a3 3 0 100-6m-16.5-3a3 3 0 013-3h13.5a3 3 0 013 3m0 0a4.5 4.5 0 01.9-2.7L5.737 5.1a3.375 3.375 0 012.7-1.35h7.126c1.062 0 2.062.5 2.7 1.35l2.587 3.45a4.5 4.5 0 01.9 2.7m0 0a3 3 0 01-3 3m0 3h.008v.008h-.008v-.008zm0-6h.008v.008h-.008v-.008zm-3 6h.008v.008h-.008v-.008zm0-6h.008v.008h-.008v-.008z"
         />
       </svg>
     ),
     size: "small",
     keywords: [
-      "Server Architecture",
-      "Microservices",
-      "API Development",
-      "Security",
-      "Performance",
+      "Cross Browser Testing",
+      "Responsive Testing",
+      "Debug",
+      "Error Fixing",
+      "Quality Assurance",
     ],
     process: [
-      "Architecture Design",
+      "Test Planning",
       "Implementation",
-      "Testing",
-      "Security Audit",
-      "Deployment",
+      "Debug",
+      "Fix Issues",
+      "Documentation",
       "Maintenance",
     ],
-    technologies: ["Node Js", "Express", "Laravel", "Next Js"],
     additionalInfo:
-      "Creating robust backend systems with focus on security, scalability, and performance.",
+      "Ensuring UI quality through comprehensive testing and effective debugging.",
   },
 ];
 
@@ -321,7 +382,8 @@ export const Services = () => {
           <div ref={subtitleRef}>
             {isSubtitleInView && (
               <p className="text-sm md:text-base lg:text-lg text-white/70 max-w-2xl mx-auto mt-4 [text-wrap:balance]">
-                Comprehensive web development solutions tailored to your needs
+                Comprehensive Front-End Web Development solutions tailored to
+                your needs
               </p>
             )}
           </div>
@@ -341,7 +403,9 @@ export const Services = () => {
                 index === 2 && "md:col-span-3 lg:col-span-2",
                 index === 3 && "md:col-span-3 lg:col-span-4",
                 index === 4 && "md:col-span-3 lg:col-span-3",
-                index === 5 && "md:col-span-3 lg:col-span-3"
+                index === 5 && "md:col-span-3 lg:col-span-3",
+                index === 6 && "md:col-span-3 lg:col-span-2",
+                index === 7 && "md:col-span-3 lg:col-span-4"
               )}
             >
               <div className="relative h-full rounded-2xl border border-cyan-700/30 p-2">
