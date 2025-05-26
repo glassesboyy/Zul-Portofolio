@@ -1,11 +1,9 @@
 "use client";
 
 import {
-  IconBrandDiscord,
   IconBrandGithub,
   IconBrandInstagram,
   IconBrandLinkedin,
-  IconBrandSpotify,
   IconMail,
 } from "@tabler/icons-react";
 import Image from "next/image";
@@ -15,36 +13,36 @@ import { Separator } from "../ui/separator";
 import { Timeline } from "../ui/timeline";
 
 export const About = () => {
-  const description = `Let's collaborate to create exceptional digital experiences. As a front-end developer, I bring innovative ideas to life with sleek, user-friendly interfaces that prioritize both design and functionality.`;
+  const description = `As an innovative tech startup, we're dedicated to delivering cutting-edge software solutions that empower businesses to thrive in the digital age. Our team of talented developers and strategists work together to transform your ideas into powerful, scalable applications.`;
 
   const timelineData = [
     {
-      title: "2018 - 2020",
+      title: "2021",
       content: (
         <div>
           <p className="text-neutral-200 text-xs md:text-sm font-normal mb-8">
-            Served as Chairperson of Class Management during Junior High School
-            2 Magelang, leading various activities including anniversary
-            celebrations, class meetings, and graduation events.
+            Founded with a vision to revolutionize digital solutions. Started as
+            a small team of passionate developers working on custom web
+            applications and mobile solutions.
           </p>
           <div className="grid grid-cols-2 gap-4">
             <Image
-              src="/assets/timeline/smp 1.png"
-              alt="Bakti Sosial"
+              src="/assets/logo.png"
+              alt="Company Milestone 1"
               width={500}
               height={500}
               className="rounded-xl object-cover h-20 md:h-44 lg:h-60 w-full shadow-xl"
             />
             <Image
-              src="/assets/timeline/smp 3.png"
-              alt="Foto Sekolah"
+              src="/assets/logo.png"
+              alt="Company Milestone 2"
               width={500}
               height={500}
               className="rounded-xl object-cover h-20 md:h-44 lg:h-60 w-full shadow-xl"
             />
             <Image
-              src="/assets/timeline/smp 2.png"
-              alt="Foto Sekolah 2"
+              src="/assets/logo.png"
+              alt="Company Milestone 3"
               width={500}
               height={500}
               className="rounded-xl object-cover h-20 md:h-44 lg:h-60 w-full shadow-xl"
@@ -54,32 +52,32 @@ export const About = () => {
       ),
     },
     {
-      title: "2019-2021",
+      title: "2022",
       content: (
         <div>
           <p className="text-neutral-200 text-xs md:text-sm font-normal mb-8">
-            Ventured into entrepreneurship by managing an online fashion
-            business on Instagram (@kaptenmarket) during my junior and senior
-            high school years, gaining valuable business experience.
+            Expanded our services to include cloud solutions and AI integration.
+            Successfully delivered projects for multiple enterprise clients and
+            secured seed funding.
           </p>
           <div className="grid grid-cols-2 gap-4">
             <Image
-              src="/assets/timeline/kapten 4.png"
-              alt="Instagram Account"
+              src="/assets/logo.png"
+              alt="Company Growth 1"
               width={500}
               height={500}
               className="rounded-xl object-cover h-20 md:h-44 lg:h-60 w-full shadow-xl"
             />
             <Image
-              src="/assets/timeline/kapten 2.png"
-              alt="Kapten Market Sticker for Branding"
+              src="/assets/logo.png"
+              alt="Company Growth 2"
               width={500}
               height={500}
               className="rounded-xl object-cover h-20 md:h-44 lg:h-60 w-full shadow-xl"
             />
             <Image
-              src="/assets/timeline/kapten 3.png"
-              alt="Instagram Feeds"
+              src="/assets/logo.png"
+              alt="Company Growth 3"
               width={500}
               height={500}
               className="rounded-xl object-cover h-20 md:h-44 lg:h-60 w-full shadow-xl"
@@ -89,33 +87,32 @@ export const About = () => {
       ),
     },
     {
-      title: "2020-2023",
+      title: "2023",
       content: (
         <div>
           <p className="text-neutral-200 text-xs md:text-sm font-normal mb-8">
-            Attended State Senior High School 5 Magelang, graduating with an
-            average score of 82.7. Served as Coordinator of Organization
-            Commission A in MPK (Student Council), where I was responsible for
-            channeling student aspirations to school administration.
+            Achieved significant growth with a team of 50+ professionals.
+            Launched our flagship SaaS product and established partnerships with
+            major tech companies.
           </p>
           <div className="grid grid-cols-2 gap-4">
             <Image
-              src="/assets/timeline/sma 1.png"
-              alt="High School Photo"
+              src="/assets/logo.png"
+              alt="Company Success 1"
               width={500}
               height={500}
               className="rounded-xl object-cover h-20 md:h-44 lg:h-60 w-full shadow-xl"
             />
             <Image
-              src="/assets/timeline/sma 2.jpeg"
-              alt="MPK Activities"
+              src="/assets/logo.png"
+              alt="Company Success 2"
               width={500}
               height={500}
               className="rounded-xl object-cover h-20 md:h-44 lg:h-60 w-full shadow-xl"
             />
             <Image
-              src="/assets/timeline/sma 3.jpeg"
-              alt="MPK Activities 2"
+              src="/assets/logo.png"
+              alt="Company Success 3"
               width={500}
               height={500}
               className="rounded-xl object-cover h-20 md:h-44 lg:h-60 w-full shadow-xl"
@@ -125,32 +122,32 @@ export const About = () => {
       ),
     },
     {
-      title: "2023 - Present",
+      title: "2024 - Present",
       content: (
         <div>
           <p className="text-neutral-200 text-xs md:text-sm font-normal mb-8">
-            Started my journey at Sebelas Maret University, pursuing a degree in
-            Informatics Engineering. Currently actively involved in university
-            academic activities and expanding my knowledge in the field.
+            Continuing to innovate and expand our global presence. Focus on
+            developing sustainable tech solutions and fostering digital
+            transformation across industries.
           </p>
           <div className="grid grid-cols-2 gap-4">
             <Image
-              src="/assets/timeline/uns 1.jpg"
-              alt="University Life 1"
+              src="/assets/logo.png"
+              alt="Company Future 1"
               width={500}
               height={500}
               className="rounded-xl object-cover h-20 md:h-44 lg:h-60 w-full shadow-xl"
             />
             <Image
-              src="/assets/timeline/uns 4.jpeg"
-              alt="University Life 2"
+              src="/assets/logo.png"
+              alt="Company Future 2"
               width={500}
               height={500}
               className="rounded-xl object-cover h-20 md:h-44 lg:h-60 w-full shadow-xl"
             />
             <Image
-              src="/assets/timeline/uns 3.jpeg"
-              alt="University Life 3"
+              src="/assets/logo.png"
+              alt="Company Future 3"
               width={500}
               height={500}
               className="rounded-xl object-cover h-20 md:h-44 lg:h-60 w-full shadow-xl"
@@ -165,32 +162,22 @@ export const About = () => {
     {
       title: "GitHub",
       icon: <IconBrandGithub className="h-full w-full text-white" />,
-      href: "https://github.com/glassesboyy",
+      href: "https://github.com/company",
     },
     {
       title: "LinkedIn",
       icon: <IconBrandLinkedin className="h-full w-full text-white" />,
-      href: "https://linkedin.com/in/suryazulfikarr",
+      href: "https://linkedin.com/company/company",
     },
     {
       title: "Instagram",
       icon: <IconBrandInstagram className="h-full w-full text-white" />,
-      href: "https://instagram.com/suryazulfikarr",
+      href: "https://instagram.com/company",
     },
     {
       title: "Email",
       icon: <IconMail className="h-full w-full text-white" />,
-      href: "mailto:aliperwira26@gmail.com",
-    },
-    {
-      title: "Spotify",
-      icon: <IconBrandSpotify className="h-full w-full text-white" />,
-      href: "https://open.spotify.com/user/31hdddh6jo5kwyxuxion45xjifv4?si=5d95839ef2174a92",
-    },
-    {
-      title: "Discord",
-      icon: <IconBrandDiscord className="h-full w-full text-white" />,
-      href: "https://discordapp.com/users/811565856541638686",
+      href: "mailto:contact@company.com",
     },
   ];
 
@@ -203,7 +190,7 @@ export const About = () => {
               <div className="absolute inset-0 rounded-xl bg-gradient-to-tr from-violet-500 to-cyan-500 blur-lg opacity-70 animate-pulse" />
               <div className="relative rounded-xl overflow-hidden w-full h-full group">
                 <Image
-                  src="/assets/me.png"
+                  src="/assets/logo.png"
                   alt="Profile picture"
                   width={1000}
                   height={1000}
@@ -222,7 +209,7 @@ export const About = () => {
                 <div className="title-container relative z-10 space-y-2">
                   <div className="inline-flex items-center gap-1 cursor-pointer group justify-center md:justify-start w-full">
                     <span className="text-xs md:text-sm uppercase tracking-wider text-violet-400 font-medium">
-                      About Me
+                      About Us
                     </span>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -240,10 +227,10 @@ export const About = () => {
                   </div>
                   <div className="space-y-1">
                     <h2 className="text-4xl md:text-4xl lg:text-5xl font-extrabold bg-gradient-to-r from-violet-500 via-purple-500 to-cyan-400 text-transparent bg-clip-text leading-[1.1]">
-                      Hi There! Its Me,
+                      Welcome to
                     </h2>
                     <h2 className="text-5xl md:text-5xl lg:text-7xl font-extrabold text-white leading-[1.1]">
-                      Surya Zulfikar
+                      TechVision
                     </h2>
                   </div>
                 </div>

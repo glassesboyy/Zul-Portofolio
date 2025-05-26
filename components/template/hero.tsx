@@ -11,8 +11,8 @@ export function Hero() {
   const contentRef = useRef<HTMLDivElement>(null);
   const ctaRef = useRef<HTMLDivElement>(null);
 
-  const firstLine = "Driven by Passion,".split("");
-  const secondLine = "Powered by Code.".split("");
+  const firstLine = "Innovating Future,".split("");
+  const secondLine = "Delivering Solutions.".split("");
 
   const { preloadComplete } = useAnimationStore();
 
@@ -87,17 +87,18 @@ export function Hero() {
                 className="mt-8 max-w-3xl md:max-w-3xl lg:max-w-6xl mx-auto"
               >
                 <p className="text-sm md:text-2xl lg:text-2xl text-foreground/80 text-center">
-                  With a user-first design approach and a commitment to creating
-                  meaningful digital experiences, I specialize in crafting
-                  elegant and intuitive front-end solutions. From seamless
-                  interfaces to smooth interactions, I bring passion, precision,
-                  and purpose to every pixel and line of code.
+                  As a leading technology innovator, we transform businesses
+                  through cutting-edge digital solutions. Our team of expert
+                  developers and strategists specializes in creating powerful,
+                  scalable applications that drive growth and efficiency. From
+                  custom software development to cloud solutions, we're your
+                  partner in digital transformation.
                 </p>
               </div>
 
               <div ref={ctaRef} className="flex justify-center mt-12">
                 <PrimaryButton
-                  text="Let's Collaborate"
+                  text="Start Your Project"
                   fromColor="from-violet-600"
                   toColor="to-cyan-600"
                   radius="rounded-full"

@@ -111,11 +111,11 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
             </div>
             <h2 className="timeline-title text-3xl md:text-5xl font-bold [text-wrap:balance]">
               <span className="inline-block bg-gradient-to-r from-violet-500 via-purple-500 to-cyan-400 text-transparent bg-clip-text pb-2">
-                My Career Timeline
+                Our Career Timeline
               </span>
             </h2>
             <p className="timeline-description text-sm md:text-base lg:text-lg text-white/70 max-w-2xl">
-              Exploring my journey and key milestones
+              Exploring TechVision journey and key milestones
             </p>
           </div>
         </TimelineAnimation>

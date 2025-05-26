@@ -11,22 +11,63 @@ import {
 import { CardBody, CardContainer, CardItem } from "../ui/3d-card";
 
 const techItems = [
-  { name: "HTML", icon: "devicon-html5-plain" },
-  { name: "CSS", icon: "devicon-css3-plain" },
-  { name: "JavaScript", icon: "devicon-javascript-plain" },
-  { name: "TypeScript", icon: "devicon-typescript-plain" },
+  // Cloud & Infrastructure
+  { name: "AWS", icon: "devicon-amazonwebservices-original" },
+  { name: "Azure", icon: "devicon-azure-plain" },
+  { name: "GCP", icon: "devicon-googlecloud-plain" },
+  { name: "Docker", icon: "devicon-docker-plain" },
+  { name: "Kubernetes", icon: "devicon-kubernetes-plain" },
+  { name: "Terraform", icon: "devicon-terraform-plain" },
+
+  // Backend Technologies
+  { name: "Java", icon: "devicon-java-plain" },
+  { name: "Spring", icon: "devicon-spring-plain" },
+  { name: "Python", icon: "devicon-python-plain" },
+  { name: "Django", icon: "devicon-django-plain" },
+  { name: "Node.js", icon: "devicon-nodejs-plain" },
+  { name: "Express", icon: "devicon-express-original" },
+  { name: ".NET", icon: "devicon-dot-net-plain" },
+  { name: "Go", icon: "devicon-go-original-wordmark" },
+
+  // Frontend Technologies
   { name: "React", icon: "devicon-react-plain" },
-  { name: "Vite", icon: "devicon-vitejs-plain" },
-  { name: "Next Js", icon: "devicon-nextjs-plain" },
-  { name: "Tailwind", icon: "devicon-tailwindcss-plain" },
-  { name: "Redux", icon: "devicon-redux-original" },
-  { name: "ESLint", icon: "devicon-eslint-plain" },
-  { name: "Motion", icon: "devicon-framermotion-plain" },
-  { name: "Figma", icon: "devicon-figma-plain" },
-  { name: "Git", icon: "devicon-git-plain" },
+  { name: "Angular", icon: "devicon-angularjs-plain" },
+  { name: "Vue.js", icon: "devicon-vuejs-plain" },
+  { name: "Next.js", icon: "devicon-nextjs-original" },
+  { name: "TypeScript", icon: "devicon-typescript-plain" },
+  { name: "Webpack", icon: "devicon-webpack-plain" },
+
+  // Databases
+  { name: "MongoDB", icon: "devicon-mongodb-plain" },
+  { name: "PostgreSQL", icon: "devicon-postgresql-plain" },
+  { name: "MySQL", icon: "devicon-mysql-plain" },
+  { name: "Redis", icon: "devicon-redis-plain" },
+  { name: "Elasticsearch", icon: "devicon-elasticsearch-plain" },
+  { name: "Oracle", icon: "devicon-oracle-original" },
+
+  // DevOps & Tools
+  { name: "Jenkins", icon: "devicon-jenkins-plain" },
+  { name: "GitLab", icon: "devicon-gitlab-plain" },
   { name: "GitHub", icon: "devicon-github-plain" },
-  { name: "NPM", icon: "devicon-npm-original-wordmark" },
-  { name: "VSCode", icon: "devicon-vscode-plain" },
+  { name: "Ansible", icon: "devicon-ansible-plain" },
+  { name: "Prometheus", icon: "devicon-prometheus-original" },
+  { name: "Grafana", icon: "devicon-grafana-original" },
+
+  // Project Management & Collaboration
+  { name: "Jira", icon: "devicon-jira-plain" },
+  { name: "Confluence", icon: "devicon-confluence-original" },
+  { name: "Slack", icon: "devicon-slack-plain" },
+  { name: "Bitbucket", icon: "devicon-bitbucket-original" },
+
+  // Testing & Quality
+  { name: "Jest", icon: "devicon-jest-plain" },
+  { name: "Selenium", icon: "devicon-selenium-original" },
+  { name: "SonarQube", icon: "devicon-sonarqube-plain" },
+
+  // Security
+  { name: "Vault", icon: "devicon-vault-plain" },
+  { name: "Apache", icon: "devicon-apache-plain" },
+  { name: "Nginx", icon: "devicon-nginx-original" },
 ];
 
 export const Tech = () => {
@@ -87,7 +128,7 @@ export const Tech = () => {
         <div className="text-center space-y-2">
           <div className="inline-flex items-center gap-1 cursor-pointer group">
             <span className="text-xs md:text-sm lg:text-base font-medium text-violet-400 uppercase tracking-widest">
-              Tech Stack
+              Our Technology Stack
             </span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -105,7 +146,7 @@ export const Tech = () => {
           </div>
           <h2 className="text-3xl md:text-5xl font-bold text-center">
             <span className="inline-block bg-gradient-to-r from-violet-500 via-purple-500 to-cyan-400 text-transparent bg-clip-text pb-2">
-              Technologies & Tools
+              Enterprise Solutions & Tools
             </span>
           </h2>
         </div>
@@ -114,15 +155,15 @@ export const Tech = () => {
       <div ref={subtitleRef} className="mb-12 text-center">
         {isSubtitleInView && (
           <p className="text-sm md:text-base lg:text-lg text-white/70 leading-relaxed [text-wrap:balance] max-w-[90%] mx-auto mt-3">
-            Crafting powerful web solutions with cutting-edge technologies and
-            proven frameworks
+            Leveraging industry-leading technologies to deliver scalable,
+            secure, and innovative solutions for modern businesses
           </p>
         )}
       </div>
 
       <div
         ref={containerRef}
-        className="grid grid-cols-4 md:grid-cols-4 lg:grid-cols-8 place-items-center gap-4 px-7 md:px-40 lg:px-32"
+        className="grid grid-cols-3 md:grid-cols-6 lg:grid-cols-9 place-items-center gap-4 px-4 md:px-16 lg:px-12"
       >
         {techItems.map((tech, index) => (
           <CardContainer
@@ -132,7 +173,7 @@ export const Tech = () => {
           >
             <CardBody
               className={`
-                relative group/card h-20 w-20 md:h-28 md:w-28 lg:h-32 lg:w-32 cursor-pointer
+                relative group/card h-24 w-24 md:h-28 md:w-28 lg:h-32 lg:w-32 cursor-pointer
                 bg-gradient-to-t from-black/10 to-violet-800/30
                 dark:hover:shadow-2xl dark:hover:shadow-violet-600/30
                 border border-violet-900/10 rounded-xl
