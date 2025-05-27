@@ -13,7 +13,7 @@ import { Separator } from "../ui/separator";
 import { Timeline } from "../ui/timeline";
 
 export const About = () => {
-  const description = `As an innovative tech startup, we're dedicated to delivering cutting-edge software solutions that empower businesses to thrive in the digital age. Our team of talented developers and strategists work together to transform your ideas into powerful, scalable applications.`;
+  const description = `With a team of creative and experienced technology professionals, TechVision is committed to delivering innovative solutions that are user-friendly and provide real value. Our vision is to be at the forefront of Indonesia's digital advancement by providing relevant, adaptive, and sustainable solutions.`;
 
   const timelineData = [
     {
@@ -21,9 +21,9 @@ export const About = () => {
       content: (
         <div>
           <p className="text-neutral-200 text-xs md:text-sm font-normal mb-8">
-            Founded with a vision to revolutionize digital solutions. Started as
-            a small team of passionate developers working on custom web
-            applications and mobile solutions.
+            TechVision was founded with a vision for Indonesia's digital
+            revolution. Started with a small team of talented developers
+            focusing on web and mobile solutions for SMEs.
           </p>
           <div className="grid grid-cols-2 gap-4">
             <Image
@@ -56,9 +56,9 @@ export const About = () => {
       content: (
         <div>
           <p className="text-neutral-200 text-xs md:text-sm font-normal mb-8">
-            Expanded our services to include cloud solutions and AI integration.
-            Successfully delivered projects for multiple enterprise clients and
-            secured seed funding.
+            Expanded services to include cloud solutions and AI integration.
+            Successfully delivered projects for enterprise clients and secured
+            seed funding for growth.
           </p>
           <div className="grid grid-cols-2 gap-4">
             <Image
@@ -93,7 +93,7 @@ export const About = () => {
           <p className="text-neutral-200 text-xs md:text-sm font-normal mb-8">
             Achieved significant growth with a team of 50+ professionals.
             Launched our flagship SaaS product and established partnerships with
-            major tech companies.
+            leading technology companies.
           </p>
           <div className="grid grid-cols-2 gap-4">
             <Image
@@ -126,8 +126,8 @@ export const About = () => {
       content: (
         <div>
           <p className="text-neutral-200 text-xs md:text-sm font-normal mb-8">
-            Continuing to innovate and expand our global presence. Focus on
-            developing sustainable tech solutions and fostering digital
+            Continuing to innovate and expand our presence in Indonesia. Focused
+            on developing sustainable technology solutions and driving digital
             transformation across industries.
           </p>
           <div className="grid grid-cols-2 gap-4">
@@ -162,22 +162,22 @@ export const About = () => {
     {
       title: "GitHub",
       icon: <IconBrandGithub className="h-full w-full text-white" />,
-      href: "https://github.com/company",
+      href: "https://github.com/glassesboyy",
     },
     {
       title: "LinkedIn",
       icon: <IconBrandLinkedin className="h-full w-full text-white" />,
-      href: "https://linkedin.com/company/company",
+      href: "https://www.linkedin.com/in/surya-zulfikar-021316287/",
     },
     {
       title: "Instagram",
       icon: <IconBrandInstagram className="h-full w-full text-white" />,
-      href: "https://instagram.com/company",
+      href: "https://instagram.com/suryazulfikarr",
     },
     {
       title: "Email",
       icon: <IconMail className="h-full w-full text-white" />,
-      href: "mailto:contact@company.com",
+      href: "mailto:aliperwira26@gmail.com",
     },
   ];
 

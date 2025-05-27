@@ -25,45 +25,47 @@ export const Contact = () => {
 
   const socialLinks = [
     {
-      title: "GitHub",
+      title: "Development Hub",
       icon: <IconBrandGithub className="h-8 w-8" />,
       href: "https://github.com/glassesboyy",
-      description: "Check out my open-source projects and contributions",
+      description:
+        "Explore our open-source contributions and technical documentation",
       color: "hover:bg-[#2b3137] transition-colors duration-500",
     },
     {
-      title: "LinkedIn",
+      title: "Corporate Network",
       icon: <IconBrandLinkedin className="h-8 w-8" />,
-      href: "https://linkedin.com/in/suryazulfikarr",
-      description: "Connect with me professionally",
+      href: "https://www.linkedin.com/in/surya-zulfikar-021316287/",
+      description: "Connect with our team and stay updated with company news",
       color: "hover:bg-[#0077b5] transition-colors duration-500",
     },
     {
-      title: "Discord",
+      title: "Developer Community",
       icon: <IconBrandDiscord className="h-8 w-8" />,
       href: "https://discordapp.com/users/811565856541638686",
-      description: "Chat with me on Discord",
+      description:
+        "Join our tech community for real-time support and discussions",
       color: "hover:bg-[#5865F2] transition-colors duration-500",
     },
     {
-      title: "Spotify",
+      title: "Company Culture",
       icon: <IconBrandSpotify className="h-8 w-8" />,
       href: "https://open.spotify.com/user/31hdddh6jo5kwyxuxion45xjifv4?si=5d95839ef2174a92",
-      description: "Check out what I'm listening to",
+      description: "Experience our company culture and work environment",
       color: "hover:bg-[#1DB954] transition-colors duration-500",
     },
     {
-      title: "Instagram",
+      title: "Visual Updates",
       icon: <IconBrandInstagram className="h-8 w-8" />,
       href: "https://instagram.com/suryazulfikarr",
-      description: "Follow my visual journey",
+      description: "Stay connected with our latest events and achievements",
       color: "hover:bg-[#EA4335] transition-colors duration-500",
     },
     {
-      title: "Email",
+      title: "Business Inquiries",
       icon: <IconMail className="h-8 w-8" />,
       href: "mailto:aliperwira26@gmail.com",
-      description: "Send me a direct message",
+      description: "Contact us for partnerships and business opportunities",
       color: "hover:bg-[#EA4335] transition-colors duration-500",
     },
   ];
@@ -91,12 +93,12 @@ export const Contact = () => {
         </div>
         <h2 className="text-3xl md:text-5xl font-bold [text-wrap:balance]">
           <span className="inline-block bg-gradient-to-r from-violet-500 via-purple-500 to-cyan-400 text-transparent bg-clip-text pb-2">
-            Get in Touch With Me
+            Connect With TechVision
           </span>
         </h2>
         <p className="text-sm md:text-base lg:text-lg text-white/70 max-w-2xl mx-auto">
-          Feel free to reach out through any of these platforms. I&apos;m always open
-          to new opportunities and connections.
+          Reach out to discuss how we can help transform your business through
+          innovative technology solutions. Our team is ready to assist you.
         </p>
       </div>
 

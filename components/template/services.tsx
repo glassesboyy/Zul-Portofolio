@@ -9,9 +9,9 @@ import { ServiceModal } from "../ui/services-modal";
 
 const servicesData = [
   {
-    title: "Static Website Development",
+    title: "Custom Software Development",
     description:
-      "Creating high-quality static websites like landing pages, company profiles, or personal portfolios with a focus on modern design, smooth navigation, and fast performance, ensuring an excellent user experience across devices.",
+      "End-to-end custom software development tailored to your business needs. From enterprise applications to specialized industry solutions, we deliver scalable, secure, and efficient software that drives your business forward.",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -30,27 +30,27 @@ const servicesData = [
     ),
     size: "large",
     keywords: [
-      "Landing Page",
-      "Company Profile",
-      "Portfolio Website",
-      "Modern Design",
-      "Fast Loading",
+      "Enterprise Solutions",
+      "Custom Applications",
+      "Scalable Architecture",
+      "Cloud Integration",
+      "Industry-Specific Solutions",
     ],
     process: [
       "Requirements Analysis",
-      "Wireframe Creation",
+      "System Design",
       "Development",
-      "Optimization",
-      "Testing",
+      "Quality Assurance",
       "Deployment",
+      "Maintenance",
     ],
     additionalInfo:
-      "Specializing in creating fast, secure, and easy-to-manage static websites.",
+      "Full-cycle software development with focus on scalability and security.",
   },
   {
-    title: "Design to Code Conversion",
+    title: "Cloud Solutions",
     description:
-      "Turning designs into clean, responsive code, ensuring pixel-perfect accuracy and smooth functionality across devices.",
+      "Cloud services for migration, optimization, and management on AWS, Azure, and Google Cloud to boost scalability, security, and cost efficiency.",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -69,26 +69,27 @@ const servicesData = [
     ),
     size: "medium",
     keywords: [
-      "UI to Code",
-      "Pixel Perfect",
-      "Clean Code",
-      "Design Implementation",
-      "Cross Browser Support",
+      "Cloud Migration",
+      "Infrastructure Design",
+      "Cloud Security",
+      "Cost Optimization",
+      "24/7 Support",
     ],
     process: [
-      "Design Review",
-      "Asset Analysis",
-      "Code Implementation",
-      "Responsive Check",
+      "Assessment",
+      "Strategy Planning",
+      "Migration",
       "Testing",
+      "Optimization",
+      "Monitoring",
     ],
     additionalInfo:
-      "Prioritizing visual accuracy and code quality in every design conversion.",
+      "Expert cloud solutions with focus on security and cost optimization.",
   },
   {
-    title: "Responsive Website Development",
+    title: "Digital Transformation",
     description:
-      "Ensuring optimal website display across all screen sizes using mobile-first approach and modern responsive techniques.",
+      "Strategic digital transformation services helping businesses modernize their operations, implement new technologies, and improve efficiency through innovative solutions.",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -107,25 +108,26 @@ const servicesData = [
     ),
     size: "medium",
     keywords: [
-      "Mobile First",
-      "Responsive Design",
-      "Cross Device",
-      "Fluid Layout",
-      "Adaptive Images",
+      "Process Automation",
+      "Legacy Modernization",
+      "Digital Strategy",
+      "Innovation",
+      "Technology Integration",
     ],
     process: [
-      "Mobile First Planning",
-      "Responsive Development",
-      "Cross Device Testing",
-      "Performance Check",
-      "Browser Testing",
+      "Digital Assessment",
+      "Strategy Development",
+      "Implementation",
+      "Change Management",
+      "Training",
     ],
-    additionalInfo: "Focus on consistent user experience across all devices.",
+    additionalInfo:
+      "Comprehensive digital transformation solutions for modern businesses.",
   },
   {
-    title: "Dynamic Web/SPA Development",
+    title: "Enterprise Mobile Solutions",
     description:
-      "Developing modern web applications that offer dynamic, interactive, and responsive user experiences. The focus is on creating smooth navigation, adaptable interfaces, and ensuring the application works well across different devices and screen sizes. The aim is to deliver a seamless, user-friendly experience that meets diverse needs efficiently.",
+      "Custom mobile application development for enterprises, providing both native and cross-platform solutions tailored to specific business needs. We design, develop, and deploy secure, scalable, and user-friendly mobile apps that streamline business operations, increase productivity, and enhance customer engagement. Our expertise ensures seamless integration with existing systems and delivers innovative features that drive growth across various industries.",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -144,27 +146,27 @@ const servicesData = [
     ),
     size: "large",
     keywords: [
-      "Single Page Application",
-      "Dynamic Content",
-      "State Management",
-      "Client-side Routing",
-      "Modern Web Apps",
+      "Mobile Apps",
+      "Cross-Platform",
+      "Enterprise Mobility",
+      "App Security",
+      "UX Design",
     ],
     process: [
-      "Architecture Planning",
-      "Component Design",
+      "Requirements Gathering",
+      "UX/UI Design",
       "Development",
-      "State Management",
       "Testing",
       "Deployment",
+      "Support",
     ],
     additionalInfo:
-      "Building modern web applications with high performance and optimal user experience.",
+      "Enterprise-grade mobile solutions with focus on security and scalability.",
   },
   {
-    title: "Frontend API Integration",
+    title: "AI & Machine Learning",
     description:
-      "Integrating the frontend with different data sources to display real-time information and enable dynamic interactions. This involves connecting the user interface to external systems, ensuring that data is updated seamlessly and that the user experience remains interactive and responsive.",
+      "Advanced AI and ML solutions to help businesses automate processes, gain insights from data, and make informed decisions. From predictive analytics to natural language processing.",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -183,27 +185,25 @@ const servicesData = [
     ),
     size: "medium",
     keywords: [
-      "API Integration",
-      "Real-time Data",
-      "Data Fetching",
-      "Error Handling",
-      "State Management",
+      "Machine Learning",
+      "Predictive Analytics",
+      "Data Science",
+      "Process Automation",
+      "AI Integration",
     ],
     process: [
-      "API Analysis",
-      "Integration Planning",
-      "Implementation",
-      "Error Handling",
-      "Testing",
-      "Documentation",
+      "Data Assessment",
+      "Model Development",
+      "Training",
+      "Integration",
+      "Monitoring",
     ],
-    additionalInfo:
-      "Integrating APIs with robust error handling and optimal performance.",
+    additionalInfo: "Cutting-edge AI solutions for business optimization.",
   },
   {
-    title: "Reusable UI Components",
+    title: "Cybersecurity Services",
     description:
-      "Creating reusable and maintainable user interface components that streamline the development process. These components are designed to be flexible, allowing for easy updates and consistent use across different parts of the application, which helps improve efficiency and reduce repetitive work.",
+      "Comprehensive security solutions including threat detection, prevention, and response. We protect your digital assets with advanced security measures and continuous monitoring.",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -222,27 +222,26 @@ const servicesData = [
     ),
     size: "medium",
     keywords: [
-      "Component Library",
-      "Reusable UI",
-      "Design System",
-      "Maintainable Code",
-      "Documentation",
+      "Security Audit",
+      "Threat Detection",
+      "Compliance",
+      "Data Protection",
+      "Security Training",
     ],
     process: [
-      "Component Planning",
-      "Development",
-      "Testing",
-      "Documentation",
-      "Integration",
-      "Maintenance",
+      "Security Assessment",
+      "Strategy Development",
+      "Implementation",
+      "Monitoring",
+      "Incident Response",
     ],
     additionalInfo:
-      "Creating consistent, reusable components that are easy to integrate.",
+      "Enterprise-grade security solutions for digital assets protection.",
   },
   {
-    title: "Frontend Performance Optimization",
+    title: "IoT Solutions",
     description:
-      "Improving website loading speed and performance through various modern optimization techniques.",
+      "End-to-end IoT solutions for smart manufacturing, monitoring, and automation to enhance efficiency and data-driven decisions..",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -261,26 +260,25 @@ const servicesData = [
     ),
     size: "small",
     keywords: [
-      "Performance Optimization",
-      "Load Time",
-      "Core Web Vitals",
-      "Image Optimization",
-      "Code Splitting",
+      "IoT Development",
+      "Sensor Integration",
+      "Real-time Monitoring",
+      "Data Analytics",
+      "Automation",
     ],
     process: [
-      "Performance Audit",
-      "Optimization Planning",
+      "Requirements Analysis",
+      "Architecture Design",
       "Implementation",
       "Testing",
-      "Monitoring",
+      "Deployment",
     ],
-    additionalInfo:
-      "Focus on performance optimization for better user experience.",
+    additionalInfo: "Innovative IoT solutions for modern enterprises.",
   },
   {
-    title: "UI Testing and Debugging",
+    title: "Managed IT Services",
     description:
-      "Performing comprehensive testing to ensure that the user interface functions correctly and consistently across a wide range of browsers and devices. This includes checking layout, responsiveness, and overall user experience to identify and fix any issues, ensuring the application runs smoothly for all users regardless of how they access it.",
+      "Comprehensive IT management and support services designed to ensure seamless business operations. Our offerings include proactive infrastructure maintenance, responsive help desk support, and expert technology consulting tailored to your organization’s unique needs. We help optimize your IT environment, minimize downtime, and enhance overall system performance, enabling your business to focus on growth and innovation with confidence.",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -299,22 +297,20 @@ const servicesData = [
     ),
     size: "small",
     keywords: [
-      "Cross Browser Testing",
-      "Responsive Testing",
-      "Debug",
-      "Error Fixing",
-      "Quality Assurance",
+      "IT Support",
+      "Infrastructure Management",
+      "Help Desk",
+      "System Maintenance",
+      "Technology Consulting",
     ],
     process: [
-      "Test Planning",
+      "Assessment",
+      "Strategy Planning",
       "Implementation",
-      "Debug",
-      "Fix Issues",
-      "Documentation",
-      "Maintenance",
+      "Monitoring",
+      "Support",
     ],
-    additionalInfo:
-      "Ensuring UI quality through comprehensive testing and effective debugging.",
+    additionalInfo: "24/7 IT support and management services.",
   },
 ];
 
@@ -382,8 +378,8 @@ export const Services = () => {
           <div ref={subtitleRef}>
             {isSubtitleInView && (
               <p className="text-sm md:text-base lg:text-lg text-white/70 max-w-2xl mx-auto mt-4 [text-wrap:balance]">
-                Comprehensive Front-End Web Development solutions tailored to
-                your needs
+                Comprehensive technology solutions driving business growth and
+                digital innovation
               </p>
             )}
           </div>

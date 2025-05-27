@@ -7,46 +7,40 @@ import { HeroParallax } from "../ui/hero-parallax";
 
 const certificates = [
   {
-    title: "JF Java Fundamentals Learner - English",
-    thumbnail:
-      "/assets/certificate/JF Java Fundamentals Learner - English-1.png",
+    title: "ISO 27001 Information Security Management Certification",
+    thumbnail: "/assets/dummy-certificate.jpg",
   },
   {
-    title: "PCAP Programming Essentials in Python",
-    thumbnail:
-      "/assets/certificate/PCAP Programming Essentials in Python-1.png",
+    title: "AWS Advanced Consulting Partner Certification",
+    thumbnail: "/assets/dummy-certificate.jpg",
   },
   {
-    title: "RevoU Fundamental Course Software Engineering-1",
-    thumbnail:
-      "/assets/certificate/Sertifikat RevoU Fundamental Course Software Engineering-1.png",
+    title: "Google Cloud Premier Partner Excellence",
+    thumbnail: "/assets/dummy-certificate.jpg",
   },
   {
-    title: "Bootcamp FE Intermediate SISTEM x D3TI UNS",
-    thumbnail: "/assets/certificate/TIC-V3423083-TEGUH-1.png",
+    title: "Microsoft Gold Partner for Cloud Solutions",
+    thumbnail: "/assets/dummy-certificate.jpg",
   },
   {
-    title: "Myskill Fundamental Career Preparation",
-    thumbnail: "/assets/certificate/Fundamental Career Preparation-1.png",
+    title: "CMMI Level 5 Service Excellence Certification",
+    thumbnail: "/assets/dummy-certificate.jpg",
   },
   {
-    title: "DD Database Design Learner - English",
-    thumbnail: "/assets/certificate/DD Database Design Learner - English-1.png",
+    title: "Best Digital Innovation Award 2023 - Indonesia Tech Awards",
+    thumbnail: "/assets/dummy-certificate.jpg",
   },
   {
-    title: "Red Hat System Administration I (RH124)",
-    thumbnail:
-      "/assets/certificate/Certificate of Attendance (RH124-9.0)-1.png",
+    title: "SOC 2 Type II Security Compliance Certification",
+    thumbnail: "/assets/dummy-certificate.jpg",
   },
   {
-    title:
-      "Red Hat OpenStack Administration I: Core Operations for Domain Operators (CL110)",
-    thumbnail:
-      "/assets/certificate/Certificate of Attendance (CL110-16.1)-1.png",
+    title: "Top 50 Most Innovative Companies in Southeast Asia 2023",
+    thumbnail: "/assets/dummy-certificate.jpg",
   },
   {
-    title: "Certificate of Perticipation SIC6",
-    thumbnail: "/assets/certificate/Certificate of Perticipation SIC6.png",
+    title: "Forbes Asia's 100 to Watch 2023",
+    thumbnail: "/assets/dummy-certificate.jpg",
   },
 ];
 
@@ -74,9 +68,9 @@ export const Certificate = () => {
       <div className="relative z-10">
         <HeroParallax
           products={certificates}
-          headerTitle="Professional Certifications"
-          headerSubtitle="A showcase of my continuous learning journey and technical expertise, validated by industry leaders"
-          headerTag="Certifications"
+          headerTitle="Company Achievements"
+          headerSubtitle="Recognition of our excellence in technology innovation and digital transformation solutions"
+          headerTag="Awards & Certifications"
           onProductClick={(product) => handleOpenModal(product)}
         />
       </div>

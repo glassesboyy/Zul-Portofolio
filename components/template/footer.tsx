@@ -8,8 +8,8 @@ export const Footer = () => {
   const navItems = [
     "Home",
     "About",
-    "Tech",
-    "Certificate",
+    "Technologies", // Changed from Tech
+    "Achievements", // Changed from Certificate
     "Projects",
     "Testimonials",
     "Services",
@@ -29,12 +29,17 @@ export const Footer = () => {
         <div className="flex flex-col items-center space-y-4">
           <FooterAnimation type="name">
             <div className="text-center space-y-2">
-              <p className="text-white/70 text-base font-medium">
-                Portofolio Website by -{" "}
-                <span className="text-xl font-bold bg-gradient-to-r from-violet-500 via-purple-500 to-cyan-400 text-transparent bg-clip-text">
-                  Teguh Surya Zulfikar
-                </span>
-              </p>
+              <div className="flex flex-col items-center gap-2">
+                <h3 className="text-2xl font-bold bg-gradient-to-r from-violet-500 via-purple-500 to-cyan-400 text-transparent bg-clip-text">
+                  TechVision
+                </h3>
+                <p className="text-white/70 text-sm">
+                  Website developed by{" "}
+                  <span className="font-medium text-violet-400">
+                    Teguh Surya Zulfikar
+                  </span>
+                </p>
+              </div>
             </div>
           </FooterAnimation>
 
@@ -58,11 +63,11 @@ export const Footer = () => {
           <FooterAnimation type="message">
             <div className="pt-4 border-t border-violet-900/30 text-center max-w-xs md:max-w-md lg:max-w-md">
               <p className="text-white/50 text-sm leading-relaxed">
-                Thank you for visiting my portfolio. Feel free to reach out if
-                you&apos;d like to collaborate on something amazing together.
+                Empowering businesses through innovative technology solutions.
+                Let's transform your digital future together.
               </p>
               <p className="text-white/50 text-sm mt-3">
-                © 2025 All rights reserved
+                © 2024 TechVision. All rights reserved
               </p>
             </div>
           </FooterAnimation>

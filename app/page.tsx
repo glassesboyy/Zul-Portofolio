@@ -60,7 +60,7 @@ export default function Home() {
           <Tech />
         </section>
         <Separator />
-        <section id="certificate" className="h-fit">
+        <section id="achievements" className="h-fit">
           <Certificate />
         </section>
         <Separator />

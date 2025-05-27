@@ -12,7 +12,7 @@ import { CardBody, CardContainer, CardItem } from "../ui/3d-card";
 
 const techItems = [
   // Cloud & Infrastructure
-  { name: "AWS", icon: "devicon-amazonwebservices-original" },
+  { name: "AWS", icon: "devicon-amazonwebservices-plain" }, // Fixed AWS icon
   { name: "Azure", icon: "devicon-azure-plain" },
   { name: "GCP", icon: "devicon-googlecloud-plain" },
   { name: "Docker", icon: "devicon-docker-plain" },
@@ -33,7 +33,7 @@ const techItems = [
   { name: "React", icon: "devicon-react-plain" },
   { name: "Angular", icon: "devicon-angularjs-plain" },
   { name: "Vue.js", icon: "devicon-vuejs-plain" },
-  { name: "Next.js", icon: "devicon-nextjs-original" },
+  { name: "Next.js", icon: "devicon-nextjs-plain-wordmark" },
   { name: "TypeScript", icon: "devicon-typescript-plain" },
   { name: "Webpack", icon: "devicon-webpack-plain" },
 
@@ -51,11 +51,11 @@ const techItems = [
   { name: "GitHub", icon: "devicon-github-plain" },
   { name: "Ansible", icon: "devicon-ansible-plain" },
   { name: "Prometheus", icon: "devicon-prometheus-original" },
-  { name: "Grafana", icon: "devicon-grafana-original" },
+  { name: "Grafana", icon: "devicon-grafana-plain" }, // Fixed Grafana icon
 
   // Project Management & Collaboration
   { name: "Jira", icon: "devicon-jira-plain" },
-  { name: "Confluence", icon: "devicon-confluence-original" },
+  { name: "Confluence", icon: "devicon-confluence-plain" }, // Fixed Confluence icon
   { name: "Slack", icon: "devicon-slack-plain" },
   { name: "Bitbucket", icon: "devicon-bitbucket-original" },
 
@@ -68,6 +68,12 @@ const techItems = [
   { name: "Vault", icon: "devicon-vault-plain" },
   { name: "Apache", icon: "devicon-apache-plain" },
   { name: "Nginx", icon: "devicon-nginx-original" },
+
+  // Add 3 new technologies
+  // Mobile Development
+  { name: "Flutter", icon: "devicon-flutter-plain" },
+  { name: "Swift", icon: "devicon-swift-plain" },
+  { name: "Kotlin", icon: "devicon-kotlin-plain" },
 ];
 
 export const Tech = () => {

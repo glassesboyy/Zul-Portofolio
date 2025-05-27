@@ -9,22 +9,58 @@ import { Separator } from "../ui/separator";
 
 const projects = [
   {
-    title: "Temperature Converter",
+    title: "Enterprise Resource Planning (ERP) System",
     description:
-      "A user-friendly web app that quickly converts temperatures between Celsius, Fahrenheit, Kelvin, and Reamur, showing both the result and the conversion formula.",
-    href: "https://revou-fundamental-course.github.io/30-sept-24-glassesboyy/",
-    tech: "HTML • CSS • JavaScript",
-    image: "/assets/projects/kalkulatorfinal.png",
+      "A comprehensive ERP solution designed for large-scale manufacturing companies, featuring modules for inventory management, supply chain, HR, and financial operations.",
+    href: "https://github.com/glassesboyy",
+    tech: "Java Spring Boot • React • PostgreSQL • Docker • Redis • Kubernetes",
+    image: "/assets/dummy-project.png",
     status: "done",
   },
   {
-    title: "ZulCryptoCap – Modern Cryptocurrency Web App",
+    title: "Smart Banking Platform",
     description:
-      "A modern crypto web app featuring coin listings, price charts, news, and educational content. Built with cutting-edge frontend technologies as a portfolio showcase.",
-    href: "https://zulcryptocap.vercel.app/",
-    tech: "Next.js • React • Tailwind CSS • Framer Motion • ESLint",
-    image: "/assets/projects/zulcryptocap.jpg",
+      "Digital banking solution with features for mobile payments, real-time transfers, investment management, and AI-powered fraud detection system.",
+    href: "https://github.com/glassesboyy",
+    tech: "Node.js • React Native • MongoDB • AWS • Tensorflow • GraphQL",
+    image: "/assets/dummy-project.png",
     status: "done",
+  },
+  {
+    title: "Healthcare Management System",
+    description:
+      "Integrated healthcare platform for hospitals and clinics, managing patient records, appointments, billing, and telemedicine services.",
+    href: "https://github.com/glassesboyy",
+    tech: "Python • Django • Vue.js • PostgreSQL • Docker • Azure",
+    image: "/assets/dummy-project.png",
+    status: "done",
+  },
+  {
+    title: "E-commerce Analytics Dashboard",
+    description:
+      "Real-time analytics platform for e-commerce businesses, providing insights on sales, customer behavior, inventory, and market trends.",
+    href: "https://github.com/glassesboyy",
+    tech: "Next.js • TypeScript • MongoDB • Elasticsearch • Tableau • AWS",
+    image: "/assets/dummy-project.png",
+    status: "done",
+  },
+  {
+    title: "Supply Chain Management Platform",
+    description:
+      "Blockchain-based supply chain solution for tracking products from manufacturer to end consumer, ensuring transparency and authenticity.",
+    href: "https://github.com/glassesboyy",
+    tech: "Hyperledger • Node.js • React • PostgreSQL • Docker • GCP",
+    image: "/assets/dummy-project.png",
+    status: "on progress",
+  },
+  {
+    title: "AI-Powered Customer Service Platform",
+    description:
+      "Intelligent customer service solution featuring chatbots, sentiment analysis, and automated ticket routing system.",
+    href: "https://github.com/glassesboyy",
+    tech: "Python • FastAPI • React • MongoDB • TensorFlow • Azure",
+    image: "/assets/dummy-project.png",
+    status: "on progress",
   },
 ];
 
@@ -135,8 +171,8 @@ export const Projects = () => {
         <div ref={subtitleRef} className="mb-12 text-center">
           {isSubtitleInView && (
             <p className="text-sm md:text-base lg:text-lg leading-relaxed text-white/70 max-w-2xl mx-auto [text-wrap:balance]">
-              Explore my latest work showcasing innovative solutions and
-              creative designs
+              Discover our portfolio of innovative enterprise solutions
+              delivering digital transformation across industries
             </p>
           )}
         </div>

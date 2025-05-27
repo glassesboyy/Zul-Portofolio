@@ -6,33 +6,63 @@ import { InfiniteMovingCards } from "../ui/infinite-moving-cards";
 const testimonials = [
   {
     quote:
-      "Zul's expertise in React and modern frontend frameworks truly shines through in our project. He delivered a highly responsive and beautiful user interface that our customers love.",
-    name: "David Anderson",
-    title: "Product Manager, TechCorp",
+      "TechVision transformed our business operations with their innovative ERP solution. The system's efficiency has improved our productivity by 40% within just three months.",
+    name: "Robert Mitchell",
+    title: "CTO, Global Manufacturing Corp",
   },
   {
     quote:
-      "Working with Zul was amazing. His deep understanding of frontend architecture and attention to UI/UX details helped us create a seamless user experience.",
-    name: "Jessica Chen",
-    title: "Design Lead, WebFlow Solutions",
+      "Their cloud migration expertise helped us seamlessly transition our legacy systems. The dedicated support team and robust security measures exceeded our expectations.",
+    name: "Emily Chang",
+    title: "IT Director, FinanceHub International",
   },
   {
     quote:
-      "Zul transformed our outdated website into a modern, responsive platform. His knowledge of Next.js and Tailwind CSS made the development process efficient and the results outstanding.",
-    name: "Mark Wilson",
-    title: "CEO, Digital Innovate",
+      "The AI-powered analytics dashboard TechVision developed gives us real-time insights that have revolutionized our decision-making process. A game-changer for our retail chain.",
+    name: "Michael Davidson",
+    title: "CEO, RetailTech Solutions",
   },
   {
     quote:
-      "The frontend optimizations Zul implemented significantly improved our website's performance. His commitment to clean code and best practices is remarkable.",
-    name: "Sarah Martinez",
-    title: "Technical Director, WebSphere",
+      "Outstanding delivery on our healthcare management system. Their understanding of compliance requirements and user experience design has set new standards in medical software.",
+    name: "Dr. Sarah Williams",
+    title: "Director, Metropolitan Healthcare",
   },
   {
     quote:
-      "Zul's ability to translate design concepts into pixel-perfect implementations is exceptional. His frontend expertise and problem-solving skills made our project a success.",
-    name: "James Lee",
-    title: "UX Director, CreativeHub",
+      "TechVision's mobile banking solution has helped us acquire 100,000+ new users in just six months. Their technical expertise and security implementations are world-class.",
+    name: "James Rodriguez",
+    title: "Digital Banking Head, NextGen Bank",
+  },
+  {
+    quote:
+      "The custom CRM system perfectly aligned with our workflow. Their agile approach and attention to our specific needs made the development process smooth and effective.",
+    name: "Lisa Chen",
+    title: "Operations Manager, Sales Force Pro",
+  },
+  {
+    quote:
+      "Their blockchain supply chain solution has brought unprecedented transparency to our operations. We've reduced verification time by 75% and improved customer trust.",
+    name: "David Kumar",
+    title: "Supply Chain Director, Global Logistics",
+  },
+  {
+    quote:
+      "TechVision's cybersecurity implementation has fortified our infrastructure. Their proactive approach and continuous monitoring have prevented numerous potential threats.",
+    name: "Jennifer Smith",
+    title: "Security Officer, SecureNet Solutions",
+  },
+  {
+    quote:
+      "The e-commerce platform they built handles our peak season traffic effortlessly. We've seen a 200% increase in online sales since implementation.",
+    name: "Andrew Wilson",
+    title: "E-commerce Director, Retail Giant",
+  },
+  {
+    quote:
+      "Their IoT solution for our smart factory has reduced downtime by 60%. The real-time monitoring and predictive maintenance features are exceptional.",
+    name: "Tom Anderson",
+    title: "Plant Manager, Industrial Innovations",
   },
 ];
 
@@ -69,14 +99,14 @@ export const Testimonials = () => {
               </div>
               <h2 className="text-3xl md:text-5xl font-bold text-center md:text-left lg:text-left [text-wrap:balance]">
                 <span className="inline-block bg-gradient-to-r from-violet-500 via-purple-500 to-cyan-400 text-transparent bg-clip-text pb-2">
-                  What People Are Saying
+                  Client Success Stories
                 </span>
               </h2>
             </div>
 
             <p className="text-sm md:text-base lg:text-lg text-white/70 text-center md:text-left lg:text-left leading-relaxed max-w-[90%] [text-wrap:balance]">
-              Delivering exceptional frontend solutions and creating engaging
-              user experiences that exceed client expectations.
+              Empowering businesses through innovative technology solutions and
+              delivering transformative digital experiences across industries.
             </p>
           </TestimonialsAnimation>
         </div>

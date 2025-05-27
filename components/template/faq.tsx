@@ -11,51 +11,51 @@ import {
 const faqs = [
   {
     id: "faq-1",
-    question: "What front-end technologies do you work with?",
+    question: "What industries does TechVision serve?",
     answer:
-      "I primarily work with React.js, Next.js, TypeScript, and TailwindCSS. I'm also experienced with modern JavaScript (ES6+), HTML5, CSS3, and various front-end libraries and frameworks. I stay current with the latest front-end development trends and best practices.",
+      "We serve a wide range of industries including healthcare, finance, retail, manufacturing, and education. Our solutions are customized to meet specific industry requirements while maintaining compliance with relevant regulations and standards.",
   },
   {
     id: "faq-2",
-    question: "Can you make my website responsive and mobile-friendly?",
+    question: "How do you ensure data security and privacy?",
     answer:
-      "Absolutely! I implement responsive design principles in all my projects, ensuring optimal viewing experience across all devices - from mobile phones to desktop computers. I use modern CSS techniques like Flexbox, Grid, and mobile-first approach.",
+      "We implement industry-leading security measures including end-to-end encryption, regular security audits, and compliance with GDPR, HIPAA, and other relevant standards. Our team follows strict security protocols and best practices in all development processes.",
   },
   {
     id: "faq-3",
-    question: "How do you handle website performance optimization?",
+    question: "What is your typical project timeline and process?",
     answer:
-      "I focus on core web vitals and implement various optimization techniques including code splitting, lazy loading, image optimization, caching strategies, and efficient asset delivery. I also use performance monitoring tools to ensure fast loading times and smooth user experience.",
+      "Project timelines vary based on scope and complexity. We follow an agile methodology with clear milestones and regular client communications. Typically, medium-sized projects take 3-6 months from discovery to deployment, with ongoing support and maintenance afterward.",
   },
   {
     id: "faq-4",
-    question: "Do you work with APIs and backend integration?",
+    question: "Do you provide post-deployment support and maintenance?",
     answer:
-      "Yes, I have extensive experience integrating front-end applications with RESTful APIs and GraphQL endpoints. I can handle state management, data fetching, error handling, and implement proper security measures for API communications.",
+      "Yes, we offer comprehensive support packages including 24/7 technical support, regular maintenance, security updates, and performance monitoring. Our dedicated support team ensures your systems run smoothly and efficiently.",
   },
   {
     id: "faq-5",
-    question: "How do you ensure cross-browser compatibility?",
+    question: "How do you handle scalability and future growth?",
     answer:
-      "I test thoroughly across different browsers (Chrome, Firefox, Safari, Edge) and use modern CSS prefixing and polyfills when needed. I follow progressive enhancement principles to ensure a consistent experience for all users.",
+      "Our solutions are built with scalability in mind, using cloud-native architectures and microservices. We design systems that can easily scale with your business growth, ensuring performance and reliability as user demands increase.",
   },
   {
     id: "faq-6",
-    question: "Can you implement animations and interactive features?",
+    question: "What sets TechVision apart from other IT companies?",
     answer:
-      "Yes, I create smooth, performant animations using CSS transitions, Framer Motion, and GSAP. I ensure all interactive elements are accessible and enhance the user experience without compromising performance.",
+      "Our combination of technical expertise, industry experience, and client-focused approach sets us apart. We prioritize innovation, quality, and long-term partnerships, delivering solutions that drive real business value and digital transformation.",
   },
   {
     id: "faq-7",
-    question: "How do you approach accessibility (a11y)?",
+    question: "Can you integrate with existing systems and technologies?",
     answer:
-      "I follow WCAG guidelines and implement proper ARIA attributes, semantic HTML, keyboard navigation, and screen reader compatibility. I believe in creating inclusive web experiences that work for all users regardless of their abilities.",
+      "Yes, we specialize in seamless integration with existing infrastructure and legacy systems. Our team has extensive experience in creating custom APIs and middleware solutions to ensure smooth data flow and system interoperability.",
   },
   {
     id: "faq-8",
-    question: "What is your development workflow like?",
+    question: "What are your payment terms and pricing models?",
     answer:
-      "I use Git for version control, implement CI/CD practices, and follow component-based architecture. I write clean, documented code and use tools like ESLint and Prettier for code quality. I'm comfortable with agile methodologies and can adapt to team workflows.",
+      "We offer flexible pricing models including project-based, time and materials, and retainer options. Our transparent pricing structure ensures no hidden costs, with payment terms tailored to project scope and client requirements.",
   },
 ];
 
@@ -173,8 +173,8 @@ export const Faq = () => {
             <div ref={subtitleRef}>
               {isSubtitleInView && (
                 <p className="text-sm md:text-base lg:text-lg text-white/70 max-w-2xl mx-auto mt-4">
-                  Get answers to common questions about my services, process,
-                  and expertise
+                  Learn more about our services, processes, and how we can help
+                  transform your business through technology
                 </p>
               )}
             </div>
