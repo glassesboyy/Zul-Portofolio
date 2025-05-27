@@ -8,8 +8,9 @@ const raleway = Raleway({
 });
 
 export const metadata: Metadata = {
-  title: "Personal Website | Teguh Surya Zulfikar",
-  description: "Your portfolio description",
+  title: "TechVision | Innovative Technology Solutions",
+  description:
+    "Leading provider of digital transformation and innovative technology solutions for enterprises",
 };
 
 export default function RootLayout({
