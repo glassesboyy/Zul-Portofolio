@@ -64,7 +64,7 @@ export const Footer = () => {
             <div className="pt-4 border-t border-violet-900/30 text-center max-w-xs md:max-w-md lg:max-w-md">
               <p className="text-white/50 text-sm leading-relaxed">
                 Empowering businesses through innovative technology solutions.
-                Let's transform your digital future together.
+                Let&apos;s transform your digital future together.
               </p>
               <p className="text-white/50 text-sm mt-3">
                 © 2024 TechVision. All rights reserved

@@ -23,28 +23,20 @@ export default function Home() {
 
   return (
     <div>
-      <div className="preloader fixed inset-0 z-50 bg-black flex items-center justify-center">
-        <svg width="120" height="120" viewBox="0 0 200 200">
-          <path
-            className="z-letter"
-            d="M30 40
-               L170 40
-               L170 60
-               L70 140
-               L170 140
-               L170 160
-               L30 160
-               L30 140
-               L130 60
-               L30 60
-               Z"
-            stroke="white"
-            strokeWidth="5"
-            fill="none"
-            strokeLinecap="square"
-            strokeLinejoin="miter"
-          />
-        </svg>
+      <div className="preloader fixed inset-0 z-50 flex items-center justify-center">
+        <div className="flex">
+          {"TechVision".split("").map((letter, index) => (
+            <span
+              key={index}
+              className="letter text-6xl font-bold tracking-wider"
+              style={{
+                textShadow: "0 0 25px rgba(147, 51, 234, 0.6)",
+              }}
+            >
+              {letter}
+            </span>
+          ))}
+        </div>
       </div>
       <div className="flex min-h-screen flex-col bg-black">
         <Navbar />

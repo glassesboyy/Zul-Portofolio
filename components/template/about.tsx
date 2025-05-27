@@ -13,7 +13,7 @@ import { Separator } from "../ui/separator";
 import { Timeline } from "../ui/timeline";
 
 export const About = () => {
-  const description = `With a team of creative and experienced technology professionals, TechVision is committed to delivering innovative solutions that are user-friendly and provide real value. Our vision is to be at the forefront of Indonesia's digital advancement by providing relevant, adaptive, and sustainable solutions.`;
+  const description = `With a team of creative and experienced technology professionals, TechVision is committed to delivering innovative solutions that are user-friendly and provide real value. Our vision is to be at the forefront of Indonesia&apos;s digital advancement by providing relevant, adaptive, and sustainable solutions.`;
 
   const timelineData = [
     {
@@ -21,7 +21,7 @@ export const About = () => {
       content: (
         <div>
           <p className="text-neutral-200 text-xs md:text-sm font-normal mb-8">
-            TechVision was founded with a vision for Indonesia's digital
+            TechVision was founded with a vision for Indonesia&apos;s digital
             revolution. Started with a small team of talented developers
             focusing on web and mobile solutions for SMEs.
           </p>

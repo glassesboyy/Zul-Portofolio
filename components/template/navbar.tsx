@@ -45,7 +45,7 @@ export function Navbar() {
         { name: "Tech", link: "tech", icon: <IconCode className="w-4 h-4" /> },
         {
           name: "Achievements",
-          link: "achievements", // Changed from 'achievements' to 'certificate'
+          link: "achievements",
           icon: <IconCertificate className="w-4 h-4" />,
         },
         {
